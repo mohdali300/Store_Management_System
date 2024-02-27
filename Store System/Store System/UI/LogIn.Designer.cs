@@ -42,7 +42,6 @@
             button1 = new Button();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            label5 = new Label();
             label6 = new Label();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
@@ -109,12 +108,12 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.Cursor = Cursors.Hand;
-            radioButton2.Font = new Font("ae_AlMothnna", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            radioButton2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             radioButton2.ForeColor = Color.Maroon;
             radioButton2.Location = new Point(123, 383);
             radioButton2.Name = "radioButton2";
             radioButton2.RightToLeft = RightToLeft.Yes;
-            radioButton2.Size = new Size(92, 34);
+            radioButton2.Size = new Size(77, 29);
             radioButton2.TabIndex = 8;
             radioButton2.TabStop = true;
             radioButton2.Text = "كاشير";
@@ -124,12 +123,12 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.Cursor = Cursors.Hand;
-            radioButton1.Font = new Font("ae_AlMothnna", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            radioButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             radioButton1.ForeColor = Color.Maroon;
             radioButton1.Location = new Point(240, 383);
             radioButton1.Name = "radioButton1";
             radioButton1.RightToLeft = RightToLeft.Yes;
-            radioButton1.Size = new Size(73, 34);
+            radioButton1.Size = new Size(67, 29);
             radioButton1.TabIndex = 7;
             radioButton1.TabStop = true;
             radioButton1.Text = "أدمن";
@@ -139,11 +138,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("ae_AlHor", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(261, 283);
             label4.Name = "label4";
-            label4.Size = new Size(101, 31);
+            label4.Size = new Size(108, 29);
             label4.TabIndex = 6;
             label4.Text = ":كلمة المرور";
             // 
@@ -151,11 +150,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("ae_AlHor", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(238, 184);
             label3.Name = "label3";
-            label3.Size = new Size(121, 31);
+            label3.Size = new Size(115, 29);
             label3.TabIndex = 5;
             label3.Text = ":اسم المستخدم";
             // 
@@ -163,11 +162,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("ae_AlMothnna", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Maroon;
             label1.Location = new Point(72, 113);
             label1.Name = "label1";
-            label1.Size = new Size(305, 34);
+            label1.Size = new Size(255, 29);
             label1.TabIndex = 4;
             label1.Text = " .برجاء تسجيل الدخول للنظام";
             // 
@@ -175,11 +174,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("ae_AlMothnna", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Maroon;
             label2.Location = new Point(141, 40);
             label2.Name = "label2";
-            label2.Size = new Size(162, 55);
+            label2.Size = new Size(138, 42);
             label2.TabIndex = 3;
             label2.Text = "مرحبا بك";
             // 
@@ -187,7 +186,7 @@
             // 
             button1.BackColor = Color.Snow;
             button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("ae_AlHor", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.Maroon;
             button1.Location = new Point(126, 436);
             button1.Name = "button1";
@@ -212,29 +211,16 @@
             textBox1.Size = new Size(263, 43);
             textBox1.TabIndex = 0;
             // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Top;
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("ae_AlMothnna", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(354, 56);
-            label5.Name = "label5";
-            label5.Size = new Size(283, 59);
-            label5.TabIndex = 7;
-            label5.Text = "Black Store";
-            // 
             // label6
             // 
             label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("ae_AlHor", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
             label6.Location = new Point(12, 559);
             label6.Name = "label6";
-            label6.Size = new Size(139, 25);
+            label6.Size = new Size(120, 22);
             label6.TabIndex = 7;
             label6.Text = "Developed by";
             // 
@@ -274,7 +260,6 @@
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(label6);
-            Controls.Add(label5);
             Controls.Add(panel1);
             MinimumSize = new Size(993, 775);
             Name = "LogIn";
@@ -302,7 +287,6 @@
         private TextBox textBox1;
         private Label label4;
         private Label label3;
-        private Label label5;
         private Label label6;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
