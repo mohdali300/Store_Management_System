@@ -217,11 +217,11 @@
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("ae_AlMothnna", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Font = new Font("ae_AlMothnna", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
             label5.Location = new Point(354, 56);
             label5.Name = "label5";
-            label5.Size = new Size(263, 55);
+            label5.Size = new Size(283, 59);
             label5.TabIndex = 7;
             label5.Text = "Black Store";
             // 
