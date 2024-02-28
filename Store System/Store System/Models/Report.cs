@@ -8,6 +8,6 @@ namespace Store_System.Models
 {
     internal class Report
     {
-
+      
     }
 }
