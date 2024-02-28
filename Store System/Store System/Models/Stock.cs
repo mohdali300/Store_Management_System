@@ -13,5 +13,9 @@ namespace Store_System.Models
         public int ID { get; set; }
         public int QuantityInStock { get; set; }
         public int MinQuantity { get; set; }
+
+        // !!!! stock relation
+        public virtual List<Product> Products { get; set; }
+        ////////////////////////////
     }
 }

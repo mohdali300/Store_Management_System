@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace Store_System.Models
 {
-    internal class Returned
+    internal class Pillitems
     {
+        public virtual Product Product { get; set; }
+        public virtual Pill Pill { get; set; }
 
+        public int product_Id { get; set; }
 
+        public int Pill_Id { get; set; }
     }
 }

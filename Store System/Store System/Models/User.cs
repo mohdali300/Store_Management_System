@@ -1,14 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Store_System.Models
 {
+    public enum Role
+    {
+        Admin,
+        Cashier,
+    }
+
     internal class User
     {
+        
+
         [Key]
         public int ID { get; set; }
         [Required]
@@ -23,10 +32,19 @@ namespace Store_System.Models
         [Required]
         public string? Password { get; set; }
         [Required]
-        public Role Type { get; set; }
+        public Role Role { get; set; }
+
+        // Relationships 
+        public virtual List<Pill>? Pills { get; set; }
+        public Branch Branch  { get; set; }
+        [ForeignKey("Branch")]
+        public int Branch_Id { get; set; }
+        public string MoneyStockName { get; set; }
+        public double MoneyStockAmount { get; set; }
+
+
+
+
     }
-    public enum Role { 
-    Admin,
-    Cashier,
-   }
+
 }

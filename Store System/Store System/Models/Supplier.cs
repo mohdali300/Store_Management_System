@@ -10,6 +10,7 @@ namespace Store_System.Models
 {
     internal class Supplier
     {
+        [Key]
         public int ID { get; set; }
         public string? Name { get; set; }
         public string? Address { get; set; }
@@ -18,6 +19,12 @@ namespace Store_System.Models
         public string? Phone { get; set; }
         [EmailAddress]
         public string? Email { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public DateTime?  ContractDate { get; set; }
+        /// Relations
+        public List<ProductsSuppliers> ProductsSuppliers { get; set; }
+        public List<Pill> Pills  { get; set; }
+        public List<BranchSuppliers> branchSuppliers { get; set; }
+
+
     }
 }
