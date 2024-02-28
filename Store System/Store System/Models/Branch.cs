@@ -17,6 +17,11 @@ namespace Store_System.Models
         public string?  Address  { get; set; }
         public string? Phone { get; set; }
         public string? Email { get; set; }
+        public double MainMoneyStock { get; set; }
+        public virtual List<User> Users  { get; set; }
+        public List<BranchSuppliers> branchSuppliers { get; set; }
+        public  virtual List<Employee> Employees { get; set; }
+
 
     }
 }
