@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace Store_System.Models
 {
-    internal class Pillitems
+    internal class OrderItems
     {
         public virtual Product Product { get; set; }
-        public virtual Pill Pill { get; set; }
-
+        public virtual Order Order { get; set; }
+        [ForeignKey("Product")]
         public int product_Id { get; set; }
+        [ForeignKey("Order")]
 
-        public int Pill_Id { get; set; }
+        public int Order_Id { get; set; }
+
+       
     }
 }

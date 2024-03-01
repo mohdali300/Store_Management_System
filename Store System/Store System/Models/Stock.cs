@@ -11,11 +11,11 @@ namespace Store_System.Models
     {
         [Key]
         public int ID { get; set; }
-        public int QuantityInStock { get; set; }
-        public int MinQuantity { get; set; }
 
-        // !!!! stock relation
-        public virtual List<Product> Products { get; set; }
-        ////////////////////////////
+        public string? Name { get; set; }
+        public string? StockManager { get; set; }
+        public List<ProductsStocks> ProductsStocks { get; set; }
+
+
     }
 }
