@@ -14,11 +14,6 @@ namespace Store_System.UI
 {
     public partial class LogIn : Form
     {
-        Login Login;
-        Home home;
-        UserDashboard userDashboard;
-
-
         public LogIn()
         {
             InitializeComponent();
