@@ -33,15 +33,15 @@
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            Cashierradio = new RadioButton();
+            Adminradio = new RadioButton();
             label4 = new Label();
             label3 = new Label();
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            SignInBtn = new Button();
+            PasswordBox = new TextBox();
+            UserNameBox = new TextBox();
             label6 = new Label();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
@@ -60,15 +60,15 @@
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(radioButton2);
-            panel1.Controls.Add(radioButton1);
+            panel1.Controls.Add(Cashierradio);
+            panel1.Controls.Add(Adminradio);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(SignInBtn);
+            panel1.Controls.Add(PasswordBox);
+            panel1.Controls.Add(UserNameBox);
             panel1.Location = new Point(265, 153);
             panel1.Name = "panel1";
             panel1.Size = new Size(436, 507);
@@ -104,35 +104,35 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
-            // radioButton2
+            // Cashierradio
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Cursor = Cursors.Hand;
-            radioButton2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            radioButton2.ForeColor = Color.Maroon;
-            radioButton2.Location = new Point(123, 383);
-            radioButton2.Name = "radioButton2";
-            radioButton2.RightToLeft = RightToLeft.Yes;
-            radioButton2.Size = new Size(77, 29);
-            radioButton2.TabIndex = 8;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "كاشير";
-            radioButton2.UseVisualStyleBackColor = true;
+            Cashierradio.AutoSize = true;
+            Cashierradio.Cursor = Cursors.Hand;
+            Cashierradio.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Cashierradio.ForeColor = Color.Maroon;
+            Cashierradio.Location = new Point(123, 383);
+            Cashierradio.Name = "Cashierradio";
+            Cashierradio.RightToLeft = RightToLeft.Yes;
+            Cashierradio.Size = new Size(77, 29);
+            Cashierradio.TabIndex = 8;
+            Cashierradio.TabStop = true;
+            Cashierradio.Text = "كاشير";
+            Cashierradio.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // Adminradio
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Cursor = Cursors.Hand;
-            radioButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            radioButton1.ForeColor = Color.Maroon;
-            radioButton1.Location = new Point(240, 383);
-            radioButton1.Name = "radioButton1";
-            radioButton1.RightToLeft = RightToLeft.Yes;
-            radioButton1.Size = new Size(67, 29);
-            radioButton1.TabIndex = 7;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "أدمن";
-            radioButton1.UseVisualStyleBackColor = true;
+            Adminradio.AutoSize = true;
+            Adminradio.Cursor = Cursors.Hand;
+            Adminradio.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Adminradio.ForeColor = Color.Maroon;
+            Adminradio.Location = new Point(240, 383);
+            Adminradio.Name = "Adminradio";
+            Adminradio.RightToLeft = RightToLeft.Yes;
+            Adminradio.Size = new Size(67, 29);
+            Adminradio.TabIndex = 7;
+            Adminradio.TabStop = true;
+            Adminradio.Text = "أدمن";
+            Adminradio.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -182,34 +182,35 @@
             label2.TabIndex = 3;
             label2.Text = "مرحبا بك";
             // 
-            // button1
+            // SignInBtn
             // 
-            button1.BackColor = Color.Snow;
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.Maroon;
-            button1.Location = new Point(126, 436);
-            button1.Name = "button1";
-            button1.Size = new Size(186, 43);
-            button1.TabIndex = 2;
-            button1.Text = "تسجيل دخول";
-            button1.UseVisualStyleBackColor = false;
+            SignInBtn.BackColor = Color.Snow;
+            SignInBtn.Cursor = Cursors.Hand;
+            SignInBtn.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            SignInBtn.ForeColor = Color.Maroon;
+            SignInBtn.Location = new Point(126, 436);
+            SignInBtn.Name = "SignInBtn";
+            SignInBtn.Size = new Size(186, 43);
+            SignInBtn.TabIndex = 2;
+            SignInBtn.Text = "تسجيل دخول";
+            SignInBtn.UseVisualStyleBackColor = false;
+            SignInBtn.Click += SignInBtn_Click;
             // 
-            // textBox2
+            // PasswordBox
             // 
-            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(89, 315);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(263, 43);
-            textBox2.TabIndex = 1;
+            PasswordBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            PasswordBox.Location = new Point(89, 315);
+            PasswordBox.Name = "PasswordBox";
+            PasswordBox.Size = new Size(263, 43);
+            PasswordBox.TabIndex = 1;
             // 
-            // textBox1
+            // UserNameBox
             // 
-            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(89, 219);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(263, 43);
-            textBox1.TabIndex = 0;
+            UserNameBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            UserNameBox.Location = new Point(89, 219);
+            UserNameBox.Name = "UserNameBox";
+            UserNameBox.Size = new Size(263, 43);
+            UserNameBox.TabIndex = 0;
             // 
             // label6
             // 
@@ -282,16 +283,16 @@
         private Panel panel1;
         private Label label1;
         private Label label2;
-        private Button button1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button SignInBtn;
+        private TextBox PasswordBox;
+        private TextBox UserNameBox;
         private Label label4;
         private Label label3;
         private Label label6;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton Cashierradio;
+        private RadioButton Adminradio;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
