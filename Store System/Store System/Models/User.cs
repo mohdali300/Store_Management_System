@@ -35,7 +35,7 @@ namespace Store_System.Models
         public Role Role { get; set; }
 
         // Relationships 
-        public virtual List<Pill>? Pills { get; set; }
+        public virtual List<Order>? Orders { get; set; }
         public Branch Branch  { get; set; }
         [ForeignKey("Branch")]
         public int Branch_Id { get; set; }

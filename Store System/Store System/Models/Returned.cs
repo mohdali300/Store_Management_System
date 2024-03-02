@@ -9,6 +9,10 @@ namespace Store_System.Models
 {
     internal class Returned
     {
+        public int id { get; set; }
+        public DateTime Date { get; set; }
+        public List<ReturnedItems> ReturnedItems { get; set; }
+
 
 
     }

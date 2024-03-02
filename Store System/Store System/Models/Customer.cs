@@ -14,6 +14,6 @@ namespace Store_System.Models
         public string? Name { get; set; }
         public string? Phone { get; set; }
         public string? Email { get; set; }
-        public virtual List<Pill> Pills { get; set; }
+        public virtual List<Order> Orders { get; set; }
     }
 }

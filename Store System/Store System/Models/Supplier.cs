@@ -22,7 +22,6 @@ namespace Store_System.Models
         public DateTime?  ContractDate { get; set; }
         /// Relations
         public List<ProductsSuppliers> ProductsSuppliers { get; set; }
-        public List<Pill> Pills  { get; set; }
         public List<BranchSuppliers> branchSuppliers { get; set; }
 
 
