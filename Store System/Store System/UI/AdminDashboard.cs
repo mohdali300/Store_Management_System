@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Store_System.UI
 {
-    public partial class UserDashboard : Form
+    public partial class AdminDashboard : Form
     {
-        public UserDashboard()
+        public AdminDashboard()
         {
             InitializeComponent();
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
