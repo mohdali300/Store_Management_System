@@ -30,10 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductPage));
             barCodeLbl = new Label();
-            productsBtn = new Button();
             barCodeBox = new TextBox();
-            suppliersBtn = new Button();
-            addProductPanel = new Panel();
             saveProductBtn = new Button();
             notesLbl = new Label();
             noteBox = new TextBox();
@@ -55,46 +52,30 @@
             CatComboBox = new ComboBox();
             pNameLbl = new Label();
             productNameBox = new TextBox();
-            addSupplierPanel = new Panel();
-            saveSupplierBtn = new Button();
-            contractDateLbl = new Label();
-            contractDateBox = new DateTimePicker();
-            supCodeLbl = new Label();
-            supNameLbl = new Label();
-            supPhoneLbl = new Label();
-            supMailLbl = new Label();
-            supMailBox = new TextBox();
-            supCodeBox = new TextBox();
-            supAddressLbl = new Label();
-            supNameBox = new TextBox();
-            supAddressBox = new TextBox();
-            supPhoneBox = new TextBox();
             dataGridView1 = new DataGridView();
             existProductsLbl = new Label();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            existSupsLbl = new Label();
-            productGridViewPanel = new Panel();
-            addProductPanel.SuspendLayout();
-            addSupplierPanel.SuspendLayout();
+            searchProductBox = new TextBox();
+            searchProductLbl = new Label();
+            searchLbl = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            productGridViewPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)searchLbl).BeginInit();
             SuspendLayout();
             // 
             // barCodeLbl
             // 
             barCodeLbl.Anchor = AnchorStyles.None;
             barCodeLbl.AutoSize = true;
-            barCodeLbl.BackColor = Color.Snow;
+            barCodeLbl.BackColor = Color.FromArgb(24, 30, 46);
             barCodeLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            barCodeLbl.ForeColor = Color.Maroon;
-            barCodeLbl.Location = new Point(1115, 47);
+            barCodeLbl.ForeColor = Color.White;
+            barCodeLbl.Location = new Point(1333, 126);
             barCodeLbl.Name = "barCodeLbl";
             barCodeLbl.Padding = new Padding(0, 0, 0, 5);
             barCodeLbl.RightToLeft = RightToLeft.Yes;
@@ -102,94 +83,28 @@
             barCodeLbl.TabIndex = 14;
             barCodeLbl.Text = "الباركود";
             // 
-            // productsBtn
-            // 
-            productsBtn.Anchor = AnchorStyles.None;
-            productsBtn.BackColor = Color.Maroon;
-            productsBtn.BackgroundImageLayout = ImageLayout.Zoom;
-            productsBtn.FlatStyle = FlatStyle.Flat;
-            productsBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            productsBtn.ForeColor = Color.Snow;
-            productsBtn.ImageAlign = ContentAlignment.MiddleRight;
-            productsBtn.Location = new Point(641, 59);
-            productsBtn.Name = "productsBtn";
-            productsBtn.RightToLeft = RightToLeft.Yes;
-            productsBtn.Size = new Size(546, 66);
-            productsBtn.TabIndex = 15;
-            productsBtn.Text = "المنتجات";
-            productsBtn.UseVisualStyleBackColor = false;
-            productsBtn.Click += productsBtn_Click;
-            // 
             // barCodeBox
             // 
             barCodeBox.Anchor = AnchorStyles.None;
-            barCodeBox.BackColor = Color.Snow;
-            barCodeBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            barCodeBox.Location = new Point(945, 68);
+            barCodeBox.BackColor = Color.FromArgb(24, 30, 46);
+            barCodeBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            barCodeBox.ForeColor = Color.White;
+            barCodeBox.Location = new Point(1133, 147);
             barCodeBox.Name = "barCodeBox";
-            barCodeBox.Size = new Size(242, 38);
+            barCodeBox.Size = new Size(269, 47);
             barCodeBox.TabIndex = 16;
-            // 
-            // suppliersBtn
-            // 
-            suppliersBtn.Anchor = AnchorStyles.None;
-            suppliersBtn.BackColor = Color.Maroon;
-            suppliersBtn.FlatStyle = FlatStyle.Flat;
-            suppliersBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            suppliersBtn.ForeColor = Color.Snow;
-            suppliersBtn.Location = new Point(69, 59);
-            suppliersBtn.Name = "suppliersBtn";
-            suppliersBtn.RightToLeft = RightToLeft.Yes;
-            suppliersBtn.Size = new Size(531, 66);
-            suppliersBtn.TabIndex = 18;
-            suppliersBtn.Text = "الموردين";
-            suppliersBtn.UseVisualStyleBackColor = false;
-            suppliersBtn.Click += suppliersBtn_Click;
-            // 
-            // addProductPanel
-            // 
-            addProductPanel.Anchor = AnchorStyles.None;
-            addProductPanel.BackColor = Color.Snow;
-            addProductPanel.Controls.Add(saveProductBtn);
-            addProductPanel.Controls.Add(notesLbl);
-            addProductPanel.Controls.Add(noteBox);
-            addProductPanel.Controls.Add(stockLbl);
-            addProductPanel.Controls.Add(stockBox);
-            addProductPanel.Controls.Add(toDateLbl);
-            addProductPanel.Controls.Add(toDateBox);
-            addProductPanel.Controls.Add(fromDateLbl);
-            addProductPanel.Controls.Add(fromDateBox);
-            addProductPanel.Controls.Add(discountLbl);
-            addProductPanel.Controls.Add(discountBox);
-            addProductPanel.Controls.Add(sellingPriceLbl);
-            addProductPanel.Controls.Add(costLbl);
-            addProductPanel.Controls.Add(sellingPriceBox);
-            addProductPanel.Controls.Add(costBox);
-            addProductPanel.Controls.Add(supplierLbl);
-            addProductPanel.Controls.Add(SupplierComboBox);
-            addProductPanel.Controls.Add(categoryLbl);
-            addProductPanel.Controls.Add(CatComboBox);
-            addProductPanel.Controls.Add(pNameLbl);
-            addProductPanel.Controls.Add(productNameBox);
-            addProductPanel.Controls.Add(barCodeLbl);
-            addProductPanel.Controls.Add(barCodeBox);
-            addProductPanel.Location = new Point(3, 131);
-            addProductPanel.MinimumSize = new Size(1238, 263);
-            addProductPanel.Name = "addProductPanel";
-            addProductPanel.Size = new Size(1238, 324);
-            addProductPanel.TabIndex = 19;
             // 
             // saveProductBtn
             // 
             saveProductBtn.Anchor = AnchorStyles.None;
-            saveProductBtn.BackColor = Color.Green;
+            saveProductBtn.BackColor = Color.LimeGreen;
             saveProductBtn.FlatStyle = FlatStyle.Popup;
-            saveProductBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            saveProductBtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             saveProductBtn.ForeColor = Color.Snow;
-            saveProductBtn.Location = new Point(69, 232);
+            saveProductBtn.Location = new Point(84, 312);
             saveProductBtn.Name = "saveProductBtn";
             saveProductBtn.RightToLeft = RightToLeft.Yes;
-            saveProductBtn.Size = new Size(231, 47);
+            saveProductBtn.Size = new Size(261, 56);
             saveProductBtn.TabIndex = 21;
             saveProductBtn.Text = "حفظ";
             saveProductBtn.UseVisualStyleBackColor = false;
@@ -198,10 +113,10 @@
             // 
             notesLbl.Anchor = AnchorStyles.None;
             notesLbl.AutoSize = true;
-            notesLbl.BackColor = Color.Snow;
+            notesLbl.BackColor = Color.FromArgb(24, 30, 46);
             notesLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            notesLbl.ForeColor = Color.Maroon;
-            notesLbl.Location = new Point(212, 133);
+            notesLbl.ForeColor = Color.White;
+            notesLbl.Location = new Point(262, 213);
             notesLbl.Name = "notesLbl";
             notesLbl.Padding = new Padding(0, 0, 0, 5);
             notesLbl.RightToLeft = RightToLeft.Yes;
@@ -212,21 +127,22 @@
             // noteBox
             // 
             noteBox.Anchor = AnchorStyles.None;
-            noteBox.BackColor = Color.Snow;
-            noteBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            noteBox.Location = new Point(69, 156);
+            noteBox.BackColor = Color.FromArgb(24, 30, 46);
+            noteBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            noteBox.ForeColor = Color.White;
+            noteBox.Location = new Point(84, 236);
             noteBox.Name = "noteBox";
-            noteBox.Size = new Size(231, 38);
+            noteBox.Size = new Size(261, 47);
             noteBox.TabIndex = 36;
             // 
             // stockLbl
             // 
             stockLbl.Anchor = AnchorStyles.None;
             stockLbl.AutoSize = true;
-            stockLbl.BackColor = Color.Snow;
+            stockLbl.BackColor = Color.FromArgb(24, 30, 46);
             stockLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            stockLbl.ForeColor = Color.Maroon;
-            stockLbl.Location = new Point(510, 133);
+            stockLbl.ForeColor = Color.White;
+            stockLbl.Location = new Point(630, 213);
             stockLbl.Name = "stockLbl";
             stockLbl.Padding = new Padding(0, 0, 0, 5);
             stockLbl.RightToLeft = RightToLeft.Yes;
@@ -237,21 +153,22 @@
             // stockBox
             // 
             stockBox.Anchor = AnchorStyles.None;
-            stockBox.BackColor = Color.Snow;
-            stockBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            stockBox.Location = new Point(363, 156);
+            stockBox.BackColor = Color.FromArgb(24, 30, 46);
+            stockBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            stockBox.ForeColor = Color.White;
+            stockBox.Location = new Point(427, 236);
             stockBox.Name = "stockBox";
-            stockBox.Size = new Size(210, 38);
+            stockBox.Size = new Size(265, 47);
             stockBox.TabIndex = 34;
             // 
             // toDateLbl
             // 
             toDateLbl.Anchor = AnchorStyles.None;
             toDateLbl.AutoSize = true;
-            toDateLbl.BackColor = Color.Snow;
+            toDateLbl.BackColor = Color.FromArgb(24, 30, 46);
             toDateLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            toDateLbl.ForeColor = Color.Maroon;
-            toDateLbl.Location = new Point(519, 216);
+            toDateLbl.ForeColor = Color.White;
+            toDateLbl.Location = new Point(642, 297);
             toDateLbl.Name = "toDateLbl";
             toDateLbl.Padding = new Padding(0, 0, 0, 5);
             toDateLbl.RightToLeft = RightToLeft.Yes;
@@ -264,22 +181,22 @@
             toDateBox.Anchor = AnchorStyles.None;
             toDateBox.CalendarMonthBackground = Color.Snow;
             toDateBox.CalendarTitleBackColor = Color.Snow;
-            toDateBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            toDateBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             toDateBox.Format = DateTimePickerFormat.Short;
-            toDateBox.Location = new Point(363, 241);
+            toDateBox.Location = new Point(428, 321);
             toDateBox.Name = "toDateBox";
             toDateBox.RightToLeft = RightToLeft.Yes;
-            toDateBox.Size = new Size(210, 38);
+            toDateBox.Size = new Size(265, 47);
             toDateBox.TabIndex = 31;
             // 
             // fromDateLbl
             // 
             fromDateLbl.Anchor = AnchorStyles.None;
             fromDateLbl.AutoSize = true;
-            fromDateLbl.BackColor = Color.Snow;
+            fromDateLbl.BackColor = Color.FromArgb(24, 30, 46);
             fromDateLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            fromDateLbl.ForeColor = Color.Maroon;
-            fromDateLbl.Location = new Point(744, 220);
+            fromDateLbl.ForeColor = Color.White;
+            fromDateLbl.Location = new Point(919, 300);
             fromDateLbl.Name = "fromDateLbl";
             fromDateLbl.Padding = new Padding(0, 0, 0, 5);
             fromDateLbl.RightToLeft = RightToLeft.Yes;
@@ -292,22 +209,22 @@
             fromDateBox.Anchor = AnchorStyles.None;
             fromDateBox.CalendarMonthBackground = Color.Snow;
             fromDateBox.CalendarTitleBackColor = Color.Snow;
-            fromDateBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            fromDateBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             fromDateBox.Format = DateTimePickerFormat.Short;
-            fromDateBox.Location = new Point(638, 244);
+            fromDateBox.Location = new Point(776, 324);
             fromDateBox.Name = "fromDateBox";
             fromDateBox.RightToLeft = RightToLeft.Yes;
-            fromDateBox.Size = new Size(242, 38);
+            fromDateBox.Size = new Size(277, 47);
             fromDateBox.TabIndex = 29;
             // 
             // discountLbl
             // 
             discountLbl.Anchor = AnchorStyles.None;
             discountLbl.AutoSize = true;
-            discountLbl.BackColor = Color.Snow;
+            discountLbl.BackColor = Color.FromArgb(24, 30, 46);
             discountLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            discountLbl.ForeColor = Color.Maroon;
-            discountLbl.Location = new Point(1084, 222);
+            discountLbl.ForeColor = Color.White;
+            discountLbl.Location = new Point(1302, 301);
             discountLbl.Name = "discountLbl";
             discountLbl.Padding = new Padding(0, 0, 0, 5);
             discountLbl.RightToLeft = RightToLeft.Yes;
@@ -318,21 +235,22 @@
             // discountBox
             // 
             discountBox.Anchor = AnchorStyles.None;
-            discountBox.BackColor = Color.Snow;
-            discountBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            discountBox.Location = new Point(948, 244);
+            discountBox.BackColor = Color.FromArgb(24, 30, 46);
+            discountBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            discountBox.ForeColor = Color.White;
+            discountBox.Location = new Point(1136, 323);
             discountBox.Name = "discountBox";
-            discountBox.Size = new Size(236, 38);
+            discountBox.Size = new Size(266, 47);
             discountBox.TabIndex = 28;
             // 
             // sellingPriceLbl
             // 
             sellingPriceLbl.Anchor = AnchorStyles.None;
             sellingPriceLbl.AutoSize = true;
-            sellingPriceLbl.BackColor = Color.Snow;
+            sellingPriceLbl.BackColor = Color.FromArgb(24, 30, 46);
             sellingPriceLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            sellingPriceLbl.ForeColor = Color.Maroon;
-            sellingPriceLbl.Location = new Point(792, 133);
+            sellingPriceLbl.ForeColor = Color.White;
+            sellingPriceLbl.Location = new Point(962, 214);
             sellingPriceLbl.Name = "sellingPriceLbl";
             sellingPriceLbl.Padding = new Padding(0, 0, 0, 5);
             sellingPriceLbl.RightToLeft = RightToLeft.Yes;
@@ -344,10 +262,10 @@
             // 
             costLbl.Anchor = AnchorStyles.None;
             costLbl.AutoSize = true;
-            costLbl.BackColor = Color.Snow;
+            costLbl.BackColor = Color.FromArgb(24, 30, 46);
             costLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            costLbl.ForeColor = Color.Maroon;
-            costLbl.Location = new Point(1095, 135);
+            costLbl.ForeColor = Color.White;
+            costLbl.Location = new Point(1313, 214);
             costLbl.Name = "costLbl";
             costLbl.Padding = new Padding(0, 0, 0, 5);
             costLbl.RightToLeft = RightToLeft.Yes;
@@ -358,31 +276,33 @@
             // sellingPriceBox
             // 
             sellingPriceBox.Anchor = AnchorStyles.None;
-            sellingPriceBox.BackColor = Color.Snow;
-            sellingPriceBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            sellingPriceBox.Location = new Point(638, 156);
+            sellingPriceBox.BackColor = Color.FromArgb(24, 30, 46);
+            sellingPriceBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            sellingPriceBox.ForeColor = Color.White;
+            sellingPriceBox.Location = new Point(774, 236);
             sellingPriceBox.Name = "sellingPriceBox";
-            sellingPriceBox.Size = new Size(242, 38);
+            sellingPriceBox.Size = new Size(277, 47);
             sellingPriceBox.TabIndex = 26;
             // 
             // costBox
             // 
             costBox.Anchor = AnchorStyles.None;
-            costBox.BackColor = Color.Snow;
-            costBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            costBox.Location = new Point(945, 156);
+            costBox.BackColor = Color.FromArgb(24, 30, 46);
+            costBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            costBox.ForeColor = Color.White;
+            costBox.Location = new Point(1133, 235);
             costBox.Name = "costBox";
-            costBox.Size = new Size(239, 38);
+            costBox.Size = new Size(269, 47);
             costBox.TabIndex = 24;
             // 
             // supplierLbl
             // 
             supplierLbl.Anchor = AnchorStyles.None;
             supplierLbl.AutoSize = true;
-            supplierLbl.BackColor = Color.Snow;
+            supplierLbl.BackColor = Color.FromArgb(24, 30, 46);
             supplierLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            supplierLbl.ForeColor = Color.Maroon;
-            supplierLbl.Location = new Point(232, 46);
+            supplierLbl.ForeColor = Color.White;
+            supplierLbl.Location = new Point(282, 126);
             supplierLbl.Name = "supplierLbl";
             supplierLbl.Padding = new Padding(0, 0, 0, 5);
             supplierLbl.RightToLeft = RightToLeft.Yes;
@@ -393,23 +313,24 @@
             // SupplierComboBox
             // 
             SupplierComboBox.Anchor = AnchorStyles.None;
-            SupplierComboBox.BackColor = Color.Snow;
-            SupplierComboBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            SupplierComboBox.BackColor = Color.FromArgb(24, 30, 46);
+            SupplierComboBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            SupplierComboBox.ForeColor = Color.White;
             SupplierComboBox.FormattingEnabled = true;
-            SupplierComboBox.Location = new Point(69, 68);
+            SupplierComboBox.Location = new Point(84, 148);
             SupplierComboBox.Name = "SupplierComboBox";
             SupplierComboBox.RightToLeft = RightToLeft.Yes;
-            SupplierComboBox.Size = new Size(231, 39);
+            SupplierComboBox.Size = new Size(261, 49);
             SupplierComboBox.TabIndex = 21;
             // 
             // categoryLbl
             // 
             categoryLbl.Anchor = AnchorStyles.None;
             categoryLbl.AutoSize = true;
-            categoryLbl.BackColor = Color.Snow;
+            categoryLbl.BackColor = Color.FromArgb(24, 30, 46);
             categoryLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            categoryLbl.ForeColor = Color.Maroon;
-            categoryLbl.Location = new Point(503, 47);
+            categoryLbl.ForeColor = Color.White;
+            categoryLbl.Location = new Point(628, 127);
             categoryLbl.Name = "categoryLbl";
             categoryLbl.Padding = new Padding(0, 0, 0, 5);
             categoryLbl.RightToLeft = RightToLeft.Yes;
@@ -420,23 +341,24 @@
             // CatComboBox
             // 
             CatComboBox.Anchor = AnchorStyles.None;
-            CatComboBox.BackColor = Color.Snow;
-            CatComboBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            CatComboBox.BackColor = Color.FromArgb(24, 30, 46);
+            CatComboBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            CatComboBox.ForeColor = Color.White;
             CatComboBox.FormattingEnabled = true;
-            CatComboBox.Location = new Point(363, 68);
+            CatComboBox.Location = new Point(425, 148);
             CatComboBox.Name = "CatComboBox";
             CatComboBox.RightToLeft = RightToLeft.Yes;
-            CatComboBox.Size = new Size(216, 39);
+            CatComboBox.Size = new Size(271, 49);
             CatComboBox.TabIndex = 19;
             // 
             // pNameLbl
             // 
             pNameLbl.Anchor = AnchorStyles.None;
             pNameLbl.AutoSize = true;
-            pNameLbl.BackColor = Color.Snow;
+            pNameLbl.BackColor = Color.FromArgb(24, 30, 46);
             pNameLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            pNameLbl.ForeColor = Color.Maroon;
-            pNameLbl.Location = new Point(787, 44);
+            pNameLbl.ForeColor = Color.White;
+            pNameLbl.Location = new Point(957, 124);
             pNameLbl.Name = "pNameLbl";
             pNameLbl.Padding = new Padding(0, 0, 0, 5);
             pNameLbl.RightToLeft = RightToLeft.Yes;
@@ -447,357 +369,182 @@
             // productNameBox
             // 
             productNameBox.Anchor = AnchorStyles.None;
-            productNameBox.BackColor = Color.Snow;
-            productNameBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            productNameBox.Location = new Point(638, 67);
+            productNameBox.BackColor = Color.FromArgb(24, 30, 46);
+            productNameBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            productNameBox.ForeColor = Color.White;
+            productNameBox.Location = new Point(776, 147);
             productNameBox.Name = "productNameBox";
-            productNameBox.Size = new Size(242, 38);
+            productNameBox.Size = new Size(277, 47);
             productNameBox.TabIndex = 18;
-            // 
-            // addSupplierPanel
-            // 
-            addSupplierPanel.Anchor = AnchorStyles.None;
-            addSupplierPanel.Controls.Add(saveSupplierBtn);
-            addSupplierPanel.Controls.Add(contractDateLbl);
-            addSupplierPanel.Controls.Add(contractDateBox);
-            addSupplierPanel.Controls.Add(supCodeLbl);
-            addSupplierPanel.Controls.Add(supNameLbl);
-            addSupplierPanel.Controls.Add(supPhoneLbl);
-            addSupplierPanel.Controls.Add(supMailLbl);
-            addSupplierPanel.Controls.Add(supMailBox);
-            addSupplierPanel.Controls.Add(supCodeBox);
-            addSupplierPanel.Controls.Add(supAddressLbl);
-            addSupplierPanel.Controls.Add(supNameBox);
-            addSupplierPanel.Controls.Add(supAddressBox);
-            addSupplierPanel.Controls.Add(supPhoneBox);
-            addSupplierPanel.Location = new Point(3, 135);
-            addSupplierPanel.MinimumSize = new Size(1238, 263);
-            addSupplierPanel.Name = "addSupplierPanel";
-            addSupplierPanel.RightToLeft = RightToLeft.Yes;
-            addSupplierPanel.Size = new Size(1238, 263);
-            addSupplierPanel.TabIndex = 20;
-            // 
-            // saveSupplierBtn
-            // 
-            saveSupplierBtn.Anchor = AnchorStyles.None;
-            saveSupplierBtn.BackColor = Color.Green;
-            saveSupplierBtn.FlatStyle = FlatStyle.Popup;
-            saveSupplierBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            saveSupplierBtn.ForeColor = Color.Snow;
-            saveSupplierBtn.Location = new Point(69, 95);
-            saveSupplierBtn.Name = "saveSupplierBtn";
-            saveSupplierBtn.RightToLeft = RightToLeft.Yes;
-            saveSupplierBtn.Size = new Size(231, 60);
-            saveSupplierBtn.TabIndex = 37;
-            saveSupplierBtn.Text = "حفظ";
-            saveSupplierBtn.UseVisualStyleBackColor = false;
-            // 
-            // contractDateLbl
-            // 
-            contractDateLbl.Anchor = AnchorStyles.None;
-            contractDateLbl.AutoSize = true;
-            contractDateLbl.BackColor = Color.Snow;
-            contractDateLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            contractDateLbl.ForeColor = Color.Maroon;
-            contractDateLbl.Location = new Point(1084, 129);
-            contractDateLbl.Name = "contractDateLbl";
-            contractDateLbl.Padding = new Padding(0, 0, 0, 5);
-            contractDateLbl.RightToLeft = RightToLeft.Yes;
-            contractDateLbl.Size = new Size(97, 28);
-            contractDateLbl.TabIndex = 45;
-            contractDateLbl.Text = "تاريخ التعاقد";
-            // 
-            // contractDateBox
-            // 
-            contractDateBox.Anchor = AnchorStyles.None;
-            contractDateBox.CalendarMonthBackground = Color.Snow;
-            contractDateBox.CalendarTitleBackColor = Color.Snow;
-            contractDateBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            contractDateBox.Format = DateTimePickerFormat.Short;
-            contractDateBox.Location = new Point(945, 150);
-            contractDateBox.Name = "contractDateBox";
-            contractDateBox.RightToLeft = RightToLeft.Yes;
-            contractDateBox.Size = new Size(245, 38);
-            contractDateBox.TabIndex = 37;
-            // 
-            // supCodeLbl
-            // 
-            supCodeLbl.Anchor = AnchorStyles.None;
-            supCodeLbl.AutoSize = true;
-            supCodeLbl.BackColor = Color.Snow;
-            supCodeLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            supCodeLbl.ForeColor = Color.Maroon;
-            supCodeLbl.Location = new Point(1093, 42);
-            supCodeLbl.Name = "supCodeLbl";
-            supCodeLbl.Padding = new Padding(0, 0, 0, 5);
-            supCodeLbl.RightToLeft = RightToLeft.Yes;
-            supCodeLbl.Size = new Size(86, 28);
-            supCodeLbl.TabIndex = 37;
-            supCodeLbl.Text = "كود المورد";
-            // 
-            // supNameLbl
-            // 
-            supNameLbl.Anchor = AnchorStyles.None;
-            supNameLbl.AutoSize = true;
-            supNameLbl.BackColor = Color.Snow;
-            supNameLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            supNameLbl.ForeColor = Color.Maroon;
-            supNameLbl.Location = new Point(790, 42);
-            supNameLbl.Name = "supNameLbl";
-            supNameLbl.Padding = new Padding(0, 0, 0, 5);
-            supNameLbl.RightToLeft = RightToLeft.Yes;
-            supNameLbl.Size = new Size(87, 28);
-            supNameLbl.TabIndex = 39;
-            supNameLbl.Text = "اسم المورد";
-            // 
-            // supPhoneLbl
-            // 
-            supPhoneLbl.Anchor = AnchorStyles.None;
-            supPhoneLbl.AutoSize = true;
-            supPhoneLbl.BackColor = Color.Snow;
-            supPhoneLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            supPhoneLbl.ForeColor = Color.Maroon;
-            supPhoneLbl.Location = new Point(483, 42);
-            supPhoneLbl.Name = "supPhoneLbl";
-            supPhoneLbl.Padding = new Padding(0, 0, 0, 5);
-            supPhoneLbl.RightToLeft = RightToLeft.Yes;
-            supPhoneLbl.Size = new Size(86, 28);
-            supPhoneLbl.TabIndex = 42;
-            supPhoneLbl.Text = "رقم الهاتف";
-            // 
-            // supMailLbl
-            // 
-            supMailLbl.Anchor = AnchorStyles.None;
-            supMailLbl.AutoSize = true;
-            supMailLbl.BackColor = Color.Snow;
-            supMailLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            supMailLbl.ForeColor = Color.Maroon;
-            supMailLbl.Location = new Point(523, 127);
-            supMailLbl.Name = "supMailLbl";
-            supMailLbl.Padding = new Padding(0, 0, 0, 5);
-            supMailLbl.RightToLeft = RightToLeft.Yes;
-            supMailLbl.Size = new Size(47, 28);
-            supMailLbl.TabIndex = 47;
-            supMailLbl.Text = "ايميل";
-            // 
-            // supMailBox
-            // 
-            supMailBox.Anchor = AnchorStyles.None;
-            supMailBox.BackColor = Color.Snow;
-            supMailBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            supMailBox.Location = new Point(337, 150);
-            supMailBox.Name = "supMailBox";
-            supMailBox.Size = new Size(242, 38);
-            supMailBox.TabIndex = 48;
-            // 
-            // supCodeBox
-            // 
-            supCodeBox.Anchor = AnchorStyles.None;
-            supCodeBox.BackColor = Color.Snow;
-            supCodeBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            supCodeBox.Location = new Point(947, 62);
-            supCodeBox.Name = "supCodeBox";
-            supCodeBox.Size = new Size(243, 38);
-            supCodeBox.TabIndex = 38;
-            // 
-            // supAddressLbl
-            // 
-            supAddressLbl.Anchor = AnchorStyles.None;
-            supAddressLbl.AutoSize = true;
-            supAddressLbl.BackColor = Color.Snow;
-            supAddressLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            supAddressLbl.ForeColor = Color.Maroon;
-            supAddressLbl.Location = new Point(816, 129);
-            supAddressLbl.Name = "supAddressLbl";
-            supAddressLbl.Padding = new Padding(0, 0, 0, 5);
-            supAddressLbl.RightToLeft = RightToLeft.Yes;
-            supAddressLbl.Size = new Size(60, 28);
-            supAddressLbl.TabIndex = 43;
-            supAddressLbl.Text = "العنوان";
-            // 
-            // supNameBox
-            // 
-            supNameBox.Anchor = AnchorStyles.None;
-            supNameBox.BackColor = Color.Snow;
-            supNameBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            supNameBox.Location = new Point(642, 62);
-            supNameBox.Name = "supNameBox";
-            supNameBox.Size = new Size(242, 38);
-            supNameBox.TabIndex = 40;
-            // 
-            // supAddressBox
-            // 
-            supAddressBox.Anchor = AnchorStyles.None;
-            supAddressBox.BackColor = Color.Snow;
-            supAddressBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            supAddressBox.Location = new Point(643, 150);
-            supAddressBox.Name = "supAddressBox";
-            supAddressBox.Size = new Size(242, 38);
-            supAddressBox.TabIndex = 46;
-            // 
-            // supPhoneBox
-            // 
-            supPhoneBox.Anchor = AnchorStyles.None;
-            supPhoneBox.BackColor = Color.Snow;
-            supPhoneBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            supPhoneBox.Location = new Point(337, 62);
-            supPhoneBox.Name = "supPhoneBox";
-            supPhoneBox.Size = new Size(242, 38);
-            supPhoneBox.TabIndex = 49;
             // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.BackgroundColor = Color.Snow;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 83);
+            dataGridView1.Location = new Point(84, 477);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1244, 403);
+            dataGridView1.Size = new Size(1318, 453);
             dataGridView1.TabIndex = 21;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // existProductsLbl
             // 
             existProductsLbl.Anchor = AnchorStyles.None;
             existProductsLbl.AutoSize = true;
-            existProductsLbl.BackColor = Color.Snow;
-            existProductsLbl.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            existProductsLbl.ForeColor = Color.Maroon;
-            existProductsLbl.Location = new Point(952, 23);
+            existProductsLbl.BackColor = Color.FromArgb(27, 156, 133);
+            existProductsLbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            existProductsLbl.ForeColor = Color.White;
+            existProductsLbl.Location = new Point(1175, 425);
             existProductsLbl.Name = "existProductsLbl";
             existProductsLbl.Padding = new Padding(0, 0, 0, 5);
             existProductsLbl.RightToLeft = RightToLeft.Yes;
-            existProductsLbl.Size = new Size(228, 43);
+            existProductsLbl.Size = new Size(183, 36);
             existProductsLbl.TabIndex = 50;
-            existProductsLbl.Text = "المنتجات الموجودة";
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.Maroon;
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(25, 14);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(506, 61);
-            panel1.TabIndex = 51;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(271, 9);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(46, 44);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 53;
-            pictureBox2.TabStop = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.BackColor = Color.Snow;
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(22, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(242, 38);
-            textBox1.TabIndex = 50;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Snow;
-            label1.Location = new Point(323, 18);
-            label1.Name = "label1";
-            label1.Padding = new Padding(0, 0, 0, 5);
-            label1.RightToLeft = RightToLeft.Yes;
-            label1.Size = new Size(167, 28);
-            label1.TabIndex = 50;
-            label1.Text = "ابحث عن المراد تعديله";
+            existProductsLbl.Text = "المنتجات المضافة";
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1183, 19);
+            pictureBox1.Location = new Point(1364, 419);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(46, 44);
+            pictureBox1.Size = new Size(40, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 52;
             pictureBox1.TabStop = false;
             // 
-            // existSupsLbl
+            // label1
             // 
-            existSupsLbl.Anchor = AnchorStyles.None;
-            existSupsLbl.AutoSize = true;
-            existSupsLbl.BackColor = Color.Snow;
-            existSupsLbl.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            existSupsLbl.ForeColor = Color.Maroon;
-            existSupsLbl.Location = new Point(936, 23);
-            existSupsLbl.Name = "existSupsLbl";
-            existSupsLbl.Padding = new Padding(0, 0, 0, 5);
-            existSupsLbl.RightToLeft = RightToLeft.Yes;
-            existSupsLbl.Size = new Size(241, 43);
-            existSupsLbl.TabIndex = 53;
-            existSupsLbl.Text = "الموردين الموجودين";
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(27, 156, 133);
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(9, 8);
+            label1.Name = "label1";
+            label1.Padding = new Padding(0, 0, 0, 5);
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(145, 43);
+            label1.TabIndex = 53;
+            label1.Text = "إضافة منتج";
             // 
-            // productGridViewPanel
+            // panel1
             // 
-            productGridViewPanel.Anchor = AnchorStyles.None;
-            productGridViewPanel.Controls.Add(pictureBox1);
-            productGridViewPanel.Controls.Add(existSupsLbl);
-            productGridViewPanel.Controls.Add(panel1);
-            productGridViewPanel.Controls.Add(dataGridView1);
-            productGridViewPanel.Controls.Add(existProductsLbl);
-            productGridViewPanel.Location = new Point(0, 488);
-            productGridViewPanel.Name = "productGridViewPanel";
-            productGridViewPanel.Size = new Size(1244, 488);
-            productGridViewPanel.TabIndex = 54;
+            panel1.BackColor = Color.FromArgb(27, 156, 133);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(1238, 30);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(278, 61);
+            panel1.TabIndex = 54;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(1396, 23);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(81, 76);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 55;
+            pictureBox2.TabStop = false;
+            // 
+            // searchProductBox
+            // 
+            searchProductBox.Anchor = AnchorStyles.None;
+            searchProductBox.BackColor = Color.FromArgb(24, 30, 46);
+            searchProductBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            searchProductBox.ForeColor = Color.White;
+            searchProductBox.Location = new Point(84, 423);
+            searchProductBox.Name = "searchProductBox";
+            searchProductBox.Size = new Size(234, 38);
+            searchProductBox.TabIndex = 56;
+            // 
+            // searchProductLbl
+            // 
+            searchProductLbl.Anchor = AnchorStyles.None;
+            searchProductLbl.AutoSize = true;
+            searchProductLbl.BackColor = Color.FromArgb(24, 30, 46);
+            searchProductLbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            searchProductLbl.ForeColor = Color.White;
+            searchProductLbl.Location = new Point(225, 407);
+            searchProductLbl.Name = "searchProductLbl";
+            searchProductLbl.Padding = new Padding(0, 0, 0, 5);
+            searchProductLbl.RightToLeft = RightToLeft.Yes;
+            searchProductLbl.Size = new Size(85, 25);
+            searchProductLbl.TabIndex = 57;
+            searchProductLbl.Text = "ابحث بالاسم";
+            // 
+            // searchLbl
+            // 
+            searchLbl.Anchor = AnchorStyles.None;
+            searchLbl.Image = (Image)resources.GetObject("searchLbl.Image");
+            searchLbl.Location = new Point(324, 422);
+            searchLbl.Name = "searchLbl";
+            searchLbl.Size = new Size(40, 42);
+            searchLbl.SizeMode = PictureBoxSizeMode.Zoom;
+            searchLbl.TabIndex = 58;
+            searchLbl.TabStop = false;
             // 
             // AddProductPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Snow;
-            Controls.Add(addSupplierPanel);
-            Controls.Add(addProductPanel);
-            Controls.Add(suppliersBtn);
-            Controls.Add(productsBtn);
-            Controls.Add(productGridViewPanel);
+            BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(pictureBox2);
+            Controls.Add(searchLbl);
+            Controls.Add(searchProductLbl);
+            Controls.Add(searchProductBox);
+            Controls.Add(barCodeLbl);
+            Controls.Add(pNameLbl);
+            Controls.Add(categoryLbl);
+            Controls.Add(supplierLbl);
+            Controls.Add(costLbl);
+            Controls.Add(panel1);
+            Controls.Add(dataGridView1);
+            Controls.Add(pictureBox1);
+            Controls.Add(saveProductBtn);
+            Controls.Add(notesLbl);
+            Controls.Add(existProductsLbl);
+            Controls.Add(noteBox);
+            Controls.Add(productNameBox);
+            Controls.Add(stockLbl);
+            Controls.Add(barCodeBox);
+            Controls.Add(stockBox);
+            Controls.Add(toDateLbl);
+            Controls.Add(toDateBox);
+            Controls.Add(CatComboBox);
+            Controls.Add(fromDateLbl);
+            Controls.Add(fromDateBox);
+            Controls.Add(SupplierComboBox);
+            Controls.Add(discountLbl);
+            Controls.Add(discountBox);
+            Controls.Add(costBox);
+            Controls.Add(sellingPriceLbl);
+            Controls.Add(sellingPriceBox);
             MinimumSize = new Size(1244, 752);
             Name = "AddProductPage";
-            Size = new Size(1244, 976);
+            Size = new Size(1496, 949);
             Load += AddProductPage_Load;
-            addProductPanel.ResumeLayout(false);
-            addProductPanel.PerformLayout();
-            addSupplierPanel.ResumeLayout(false);
-            addSupplierPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            productGridViewPanel.ResumeLayout(false);
-            productGridViewPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)searchLbl).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Label barCodeLbl;
-        private Button productsBtn;
         private TextBox barCodeBox;
-        private Button suppliersBtn;
-        private Panel addProductPanel;
         private Label categoryLbl;
         private ComboBox CatComboBox;
         private Label pNameLbl;
         private TextBox productNameBox;
-        private Panel addSupplierPanel;
         private Label costLbl;
         private TextBox sellingPriceBox;
         private Label sellingPriceLbl;
@@ -815,27 +562,14 @@
         private Button saveProductBtn;
         private Label notesLbl;
         private TextBox noteBox;
-        private Label contractDateLbl;
-        private Label supCodeLbl;
-        private Label supNameLbl;
-        private Label supPhoneLbl;
-        private Label supMailLbl;
-        private TextBox supMailBox;
-        private TextBox supCodeBox;
-        private Label supAddressLbl;
-        private TextBox supNameBox;
-        private TextBox supAddressBox;
-        private DateTimePicker contractDateBox;
-        private Button saveSupplierBtn;
-        private TextBox supPhoneBox;
         private DataGridView dataGridView1;
         private Label existProductsLbl;
+        private PictureBox pictureBox1;
+        private Label label1;
         private Panel panel1;
         private PictureBox pictureBox2;
-        private TextBox textBox1;
-        private Label label1;
-        private PictureBox pictureBox1;
-        private Label existSupsLbl;
-        private Panel productGridViewPanel;
+        private TextBox searchProductBox;
+        private Label searchProductLbl;
+        private PictureBox searchLbl;
     }
 }

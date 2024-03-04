@@ -58,6 +58,9 @@
             button18 = new Button();
             label2 = new Label();
             pictureBox2 = new PictureBox();
+            addProductPage1 = new AddProductPage();
+            addUserPage1 = new AddUserPage();
+            addCategoryPage1 = new AddCategoryPage();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -168,7 +171,7 @@
             groupBox2.Controls.Add(button6);
             groupBox2.FlatStyle = FlatStyle.Flat;
             groupBox2.ForeColor = Color.White;
-            groupBox2.Location = new Point(16, 236);
+            groupBox2.Location = new Point(16, 233);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(391, 139);
             groupBox2.TabIndex = 1;
@@ -183,7 +186,7 @@
             groupBox3.Controls.Add(button8);
             groupBox3.FlatStyle = FlatStyle.Flat;
             groupBox3.ForeColor = Color.White;
-            groupBox3.Location = new Point(16, 383);
+            groupBox3.Location = new Point(16, 376);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(391, 150);
             groupBox3.TabIndex = 2;
@@ -250,7 +253,7 @@
             button13.ForeColor = Color.Black;
             button13.Location = new Point(37, 139);
             button13.Name = "button13";
-            button13.Size = new Size(335, 41);
+            button13.Size = new Size(321, 41);
             button13.TabIndex = 5;
             button13.Text = "فواتير موردين";
             button13.UseVisualStyleBackColor = false;
@@ -263,7 +266,7 @@
             button11.ForeColor = Color.Black;
             button11.Location = new Point(36, 82);
             button11.Name = "button11";
-            button11.Size = new Size(335, 41);
+            button11.Size = new Size(321, 41);
             button11.TabIndex = 4;
             button11.Text = "موردين";
             button11.UseVisualStyleBackColor = false;
@@ -275,7 +278,7 @@
             groupBox4.Controls.Add(button12);
             groupBox4.FlatStyle = FlatStyle.Flat;
             groupBox4.ForeColor = Color.White;
-            groupBox4.Location = new Point(16, 537);
+            groupBox4.Location = new Point(16, 530);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(391, 196);
             groupBox4.TabIndex = 3;
@@ -290,7 +293,7 @@
             button12.ForeColor = Color.Black;
             button12.Location = new Point(36, 25);
             button12.Name = "button12";
-            button12.Size = new Size(335, 41);
+            button12.Size = new Size(321, 41);
             button12.TabIndex = 3;
             button12.Text = "عملاء";
             button12.UseVisualStyleBackColor = false;
@@ -301,9 +304,9 @@
             button16.FlatStyle = FlatStyle.Flat;
             button16.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             button16.ForeColor = Color.Black;
-            button16.Location = new Point(37, 166);
+            button16.Location = new Point(37, 162);
             button16.Name = "button16";
-            button16.Size = new Size(335, 41);
+            button16.Size = new Size(320, 41);
             button16.TabIndex = 4;
             button16.Text = "إضافة وتعديل مورد";
             button16.UseVisualStyleBackColor = false;
@@ -316,7 +319,7 @@
             button15.ForeColor = Color.Black;
             button15.Location = new Point(37, 115);
             button15.Name = "button15";
-            button15.Size = new Size(335, 41);
+            button15.Size = new Size(320, 41);
             button15.TabIndex = 3;
             button15.Text = "إضافة وتعديل منتج";
             button15.UseVisualStyleBackColor = false;
@@ -329,7 +332,7 @@
             button14.ForeColor = Color.Black;
             button14.Location = new Point(38, 68);
             button14.Name = "button14";
-            button14.Size = new Size(335, 41);
+            button14.Size = new Size(320, 41);
             button14.TabIndex = 2;
             button14.Text = "إضافة وتعديل صنف";
             button14.UseVisualStyleBackColor = false;
@@ -342,7 +345,7 @@
             button17.ForeColor = Color.Black;
             button17.Location = new Point(38, 21);
             button17.Name = "button17";
-            button17.Size = new Size(335, 41);
+            button17.Size = new Size(320, 41);
             button17.TabIndex = 1;
             button17.Text = "إضافة وتعديل مستخدم";
             button17.UseVisualStyleBackColor = false;
@@ -355,7 +358,7 @@
             groupBox5.Controls.Add(button17);
             groupBox5.FlatStyle = FlatStyle.Flat;
             groupBox5.ForeColor = Color.White;
-            groupBox5.Location = new Point(16, 732);
+            groupBox5.Location = new Point(16, 730);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(391, 213);
             groupBox5.TabIndex = 4;
@@ -395,7 +398,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(336, 11);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(80, 62);
+            pictureBox1.Size = new Size(71, 62);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
@@ -441,6 +444,33 @@
             pictureBox2.TabIndex = 9;
             pictureBox2.TabStop = false;
             // 
+            // addProductPage1
+            // 
+            addProductPage1.BackColor = Color.FromArgb(24, 30, 46);
+            addProductPage1.Location = new Point(-6, 51);
+            addProductPage1.MinimumSize = new Size(1496, 949);
+            addProductPage1.Name = "addProductPage1";
+            addProductPage1.Size = new Size(1496, 949);
+            addProductPage1.TabIndex = 3;
+            // 
+            // addUserPage1
+            // 
+            addUserPage1.BackColor = Color.FromArgb(24, 30, 46);
+            addUserPage1.Location = new Point(-6, 52);
+            addUserPage1.MinimumSize = new Size(1496, 949);
+            addUserPage1.Name = "addUserPage1";
+            addUserPage1.Size = new Size(1496, 949);
+            addUserPage1.TabIndex = 4;
+            // 
+            // addCategoryPage1
+            // 
+            addCategoryPage1.BackColor = Color.FromArgb(24, 30, 46);
+            addCategoryPage1.Location = new Point(-6, 51);
+            addCategoryPage1.MinimumSize = new Size(1496, 949);
+            addCategoryPage1.Name = "addCategoryPage1";
+            addCategoryPage1.Size = new Size(1496, 949);
+            addCategoryPage1.TabIndex = 5;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -449,10 +479,14 @@
             ClientSize = new Size(1924, 1004);
             Controls.Add(panel1);
             Controls.Add(panel2);
-            MinimumSize = new Size(1244, 752);
+            Controls.Add(addCategoryPage1);
+            Controls.Add(addProductPage1);
+            Controls.Add(addUserPage1);
+            MinimumSize = new Size(1918, 1040);
             Name = "AdminDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
+            WindowState = FormWindowState.Maximized;
             Load += AdminDashboard_Load;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
@@ -499,5 +533,8 @@
         private Label label2;
         private PictureBox pictureBox2;
         private Button button18;
+        private AddProductPage addProductPage1;
+        private AddUserPage addUserPage1;
+        private AddCategoryPage addCategoryPage1;
     }
 }

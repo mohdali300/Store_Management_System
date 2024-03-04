@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace Store_System.UI
 {
-    public partial class AddProductPage : UserControl
+    public partial class AddCategoryPage : UserControl
     {
-        public AddProductPage()
+        public AddCategoryPage()
         {
             InitializeComponent();
-        }
-
-        private void AddProductPage_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

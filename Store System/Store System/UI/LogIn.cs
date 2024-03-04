@@ -15,15 +15,13 @@ namespace Store_System.UI
     public partial class LogIn : Form
     {
         Login Login;
-<<<<<<< HEAD
-        Home home;
-        UserDashboard userDashboard;
-=======
+
+        CashierDashboard CashierDashboard ;
         AdminDashboard home;
         CashierDashboard userDashboard;
 
 
->>>>>>> refs/remotes/origin/main
+
         public LogIn()
         {
             InitializeComponent();
