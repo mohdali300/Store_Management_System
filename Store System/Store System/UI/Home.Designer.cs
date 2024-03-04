@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             SideBarPanel = new Panel();
             ControlPanel = new Panel();
             addCategoryBtn = new Button();
@@ -56,7 +55,8 @@
             buyOrderBtn = new Button();
             saleOrderBtn = new Button();
             orderMenuBtn = new Button();
-            sideButtonsTimer = new System.Windows.Forms.Timer(components);
+            addProductPage1 = new AddProductPage();
+            addUserPage1 = new AddUserPage();
             SideBarPanel.SuspendLayout();
             ControlPanel.SuspendLayout();
             supplierCustomerPanel.SuspendLayout();
@@ -76,11 +76,11 @@
             SideBarPanel.Controls.Add(orderPanel);
             SideBarPanel.Dock = DockStyle.Right;
             SideBarPanel.ForeColor = Color.Black;
-            SideBarPanel.Location = new Point(962, 0);
+            SideBarPanel.Location = new Point(1638, 0);
             SideBarPanel.MaximumSize = new Size(264, 0);
             SideBarPanel.MinimumSize = new Size(264, 0);
             SideBarPanel.Name = "SideBarPanel";
-            SideBarPanel.Size = new Size(264, 705);
+            SideBarPanel.Size = new Size(264, 1033);
             SideBarPanel.TabIndex = 0;
             // 
             // ControlPanel
@@ -536,21 +536,39 @@
             orderMenuBtn.UseVisualStyleBackColor = false;
             orderMenuBtn.Click += orderMenuBtn_Click;
             // 
-            // sideButtonsTimer
+            // addProductPage1
             // 
-            sideButtonsTimer.Interval = 1;
+            addProductPage1.BackColor = Color.Snow;
+            addProductPage1.Location = new Point(1, 1);
+            addProductPage1.MinimumSize = new Size(1244, 752);
+            addProductPage1.Name = "addProductPage1";
+            addProductPage1.Size = new Size(1640, 1032);
+            addProductPage1.TabIndex = 1;
+            // 
+            // addUserPage1
+            // 
+            addUserPage1.BackColor = Color.Snow;
+            addUserPage1.Location = new Point(6, 3);
+            addUserPage1.MinimumSize = new Size(1634, 1031);
+            addUserPage1.Name = "addUserPage1";
+            addUserPage1.Size = new Size(1634, 1031);
+            addUserPage1.TabIndex = 2;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Snow;
-            ClientSize = new Size(1226, 705);
+            ClientSize = new Size(1902, 1033);
+            Controls.Add(addUserPage1);
+            Controls.Add(addProductPage1);
             Controls.Add(SideBarPanel);
-            MinimumSize = new Size(1244, 752);
+            MaximizeBox = false;
+            MinimumSize = new Size(1918, 1040);
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
+            WindowState = FormWindowState.Maximized;
             SideBarPanel.ResumeLayout(false);
             ControlPanel.ResumeLayout(false);
             supplierCustomerPanel.ResumeLayout(false);
@@ -568,7 +586,6 @@
         private Button buyOrderBtn;
         private Button saleOrderBtn;
         private Button orderMenuBtn;
-        private System.Windows.Forms.Timer sideButtonsTimer;
         private Panel stockPanel;
         private Button shortageBtn;
         private Button stocksBtn;
@@ -590,5 +607,7 @@
         private Button addProduct;
         private Button addUserBtn;
         private Button controlMenuBtn;
+        private AddProductPage addProductPage1;
+        private AddUserPage addUserPage1;
     }
 }
