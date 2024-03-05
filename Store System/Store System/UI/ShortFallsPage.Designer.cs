@@ -59,7 +59,7 @@
             pictureBox5.Anchor = AnchorStyles.None;
             pictureBox5.BackColor = Color.FromArgb(27, 156, 133);
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(961, 184);
+            pictureBox5.Location = new Point(961, 191);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(31, 32);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -71,7 +71,7 @@
             pictureBox6.Anchor = AnchorStyles.None;
             pictureBox6.BackColor = Color.FromArgb(27, 156, 133);
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(769, 184);
+            pictureBox6.Location = new Point(769, 191);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(31, 32);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -83,7 +83,7 @@
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.BackColor = Color.FromArgb(27, 156, 133);
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1152, 184);
+            pictureBox4.Location = new Point(1152, 191);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(31, 32);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -95,7 +95,7 @@
             pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackColor = Color.FromArgb(24, 30, 46);
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(1432, 177);
+            pictureBox3.Location = new Point(1432, 184);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(44, 36);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -109,7 +109,7 @@
             supplierOrderBtn.FlatStyle = FlatStyle.Flat;
             supplierOrderBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             supplierOrderBtn.ForeColor = Color.White;
-            supplierOrderBtn.Location = new Point(759, 173);
+            supplierOrderBtn.Location = new Point(759, 180);
             supplierOrderBtn.Name = "supplierOrderBtn";
             supplierOrderBtn.Padding = new Padding(0, 0, 0, 8);
             supplierOrderBtn.Size = new Size(128, 48);
@@ -125,7 +125,7 @@
             categoryOrderBtn.FlatStyle = FlatStyle.Flat;
             categoryOrderBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             categoryOrderBtn.ForeColor = Color.White;
-            categoryOrderBtn.Location = new Point(950, 173);
+            categoryOrderBtn.Location = new Point(950, 180);
             categoryOrderBtn.Name = "categoryOrderBtn";
             categoryOrderBtn.Padding = new Padding(0, 0, 0, 8);
             categoryOrderBtn.Size = new Size(128, 48);
@@ -140,7 +140,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1301, 177);
+            label2.Location = new Point(1301, 184);
             label2.Name = "label2";
             label2.RightToLeft = RightToLeft.Yes;
             label2.Size = new Size(132, 31);
@@ -154,7 +154,7 @@
             nameOrderBtn.FlatStyle = FlatStyle.Flat;
             nameOrderBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             nameOrderBtn.ForeColor = Color.White;
-            nameOrderBtn.Location = new Point(1141, 173);
+            nameOrderBtn.Location = new Point(1141, 180);
             nameOrderBtn.Name = "nameOrderBtn";
             nameOrderBtn.Padding = new Padding(0, 0, 0, 8);
             nameOrderBtn.Size = new Size(128, 48);
@@ -168,7 +168,7 @@
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.FromArgb(24, 30, 46);
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(318, 48);
+            pictureBox2.Location = new Point(318, 55);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(38, 38);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -181,7 +181,7 @@
             searchStockLbl.AutoSize = true;
             searchStockLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             searchStockLbl.ForeColor = Color.White;
-            searchStockLbl.Location = new Point(208, 29);
+            searchStockLbl.Location = new Point(208, 36);
             searchStockLbl.Name = "searchStockLbl";
             searchStockLbl.Size = new Size(95, 23);
             searchStockLbl.TabIndex = 42;
@@ -193,7 +193,7 @@
             searchShortageBox.BackColor = Color.FromArgb(24, 30, 46);
             searchShortageBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             searchShortageBox.ForeColor = Color.White;
-            searchShortageBox.Location = new Point(73, 43);
+            searchShortageBox.Location = new Point(73, 50);
             searchShortageBox.Name = "searchShortageBox";
             searchShortageBox.RightToLeft = RightToLeft.Yes;
             searchShortageBox.Size = new Size(239, 43);
@@ -204,7 +204,7 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.FromArgb(24, 30, 46);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1384, 12);
+            pictureBox1.Location = new Point(1384, 19);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(89, 87);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -216,7 +216,7 @@
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(27, 156, 133);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(1174, 26);
+            panel1.Location = new Point(1174, 33);
             panel1.Name = "panel1";
             panel1.Size = new Size(327, 60);
             panel1.TabIndex = 40;
