@@ -34,8 +34,8 @@
             button1 = new Button();
             groupBox1 = new GroupBox();
             button2 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            shortFallsBtn = new Button();
+            mainStockBtn = new Button();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
             button9 = new Button();
@@ -46,10 +46,10 @@
             button11 = new Button();
             groupBox4 = new GroupBox();
             button12 = new Button();
-            button16 = new Button();
-            button15 = new Button();
-            button14 = new Button();
-            button17 = new Button();
+            addSupplierBtn = new Button();
+            addProductBtn = new Button();
+            addCategoryBtn = new Button();
+            addUserBtn = new Button();
             groupBox5 = new GroupBox();
             panel1 = new Panel();
             label1 = new Label();
@@ -61,6 +61,9 @@
             addProductPage1 = new AddProductPage();
             addUserPage1 = new AddUserPage();
             addCategoryPage1 = new AddCategoryPage();
+            addSupplierPage1 = new AddSupplierPage();
+            mainStockPage1 = new MainStockPage();
+            shortFallsPage1 = new ShortFallsPage();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -78,7 +81,7 @@
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.Black;
-            button7.Location = new Point(36, 96);
+            button7.Location = new Point(36, 91);
             button7.Name = "button7";
             button7.Size = new Size(143, 41);
             button7.TabIndex = 3;
@@ -91,7 +94,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.Black;
-            button3.Location = new Point(206, 96);
+            button3.Location = new Point(206, 91);
             button3.Name = "button3";
             button3.Size = new Size(152, 41);
             button3.TabIndex = 2;
@@ -104,7 +107,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(206, 33);
+            button1.Location = new Point(206, 28);
             button1.Name = "button1";
             button1.Size = new Size(152, 41);
             button1.TabIndex = 0;
@@ -132,43 +135,45 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(36, 33);
+            button2.Location = new Point(36, 28);
             button2.Name = "button2";
             button2.Size = new Size(143, 41);
             button2.TabIndex = 1;
             button2.Text = "فاتورة شراء";
             button2.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // shortFallsBtn
             // 
-            button5.BackColor = Color.White;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.ForeColor = Color.Black;
-            button5.Location = new Point(37, 78);
-            button5.Name = "button5";
-            button5.Size = new Size(321, 41);
-            button5.TabIndex = 2;
-            button5.Text = "جدول النواقص";
-            button5.UseVisualStyleBackColor = false;
+            shortFallsBtn.BackColor = Color.White;
+            shortFallsBtn.FlatStyle = FlatStyle.Flat;
+            shortFallsBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            shortFallsBtn.ForeColor = Color.Black;
+            shortFallsBtn.Location = new Point(37, 78);
+            shortFallsBtn.Name = "shortFallsBtn";
+            shortFallsBtn.Size = new Size(321, 41);
+            shortFallsBtn.TabIndex = 2;
+            shortFallsBtn.Text = "جدول النواقص";
+            shortFallsBtn.UseVisualStyleBackColor = false;
+            shortFallsBtn.Click += shortFallsBtn_Click;
             // 
-            // button6
+            // mainStockBtn
             // 
-            button6.BackColor = Color.White;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = Color.Black;
-            button6.Location = new Point(37, 26);
-            button6.Name = "button6";
-            button6.Size = new Size(321, 41);
-            button6.TabIndex = 1;
-            button6.Text = "المخزن الرئيسى";
-            button6.UseVisualStyleBackColor = false;
+            mainStockBtn.BackColor = Color.White;
+            mainStockBtn.FlatStyle = FlatStyle.Flat;
+            mainStockBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            mainStockBtn.ForeColor = Color.Black;
+            mainStockBtn.Location = new Point(37, 26);
+            mainStockBtn.Name = "mainStockBtn";
+            mainStockBtn.Size = new Size(321, 41);
+            mainStockBtn.TabIndex = 1;
+            mainStockBtn.Text = "المخزن الرئيسى";
+            mainStockBtn.UseVisualStyleBackColor = false;
+            mainStockBtn.Click += mainStockBtn_Click;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button5);
-            groupBox2.Controls.Add(button6);
+            groupBox2.Controls.Add(shortFallsBtn);
+            groupBox2.Controls.Add(mainStockBtn);
             groupBox2.FlatStyle = FlatStyle.Flat;
             groupBox2.ForeColor = Color.White;
             groupBox2.Location = new Point(16, 233);
@@ -298,64 +303,68 @@
             button12.Text = "عملاء";
             button12.UseVisualStyleBackColor = false;
             // 
-            // button16
+            // addSupplierBtn
             // 
-            button16.BackColor = Color.White;
-            button16.FlatStyle = FlatStyle.Flat;
-            button16.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            button16.ForeColor = Color.Black;
-            button16.Location = new Point(37, 162);
-            button16.Name = "button16";
-            button16.Size = new Size(320, 41);
-            button16.TabIndex = 4;
-            button16.Text = "إضافة وتعديل مورد";
-            button16.UseVisualStyleBackColor = false;
+            addSupplierBtn.BackColor = Color.White;
+            addSupplierBtn.FlatStyle = FlatStyle.Flat;
+            addSupplierBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            addSupplierBtn.ForeColor = Color.Black;
+            addSupplierBtn.Location = new Point(39, 162);
+            addSupplierBtn.Name = "addSupplierBtn";
+            addSupplierBtn.Size = new Size(320, 41);
+            addSupplierBtn.TabIndex = 4;
+            addSupplierBtn.Text = "إضافة وتعديل مورد";
+            addSupplierBtn.UseVisualStyleBackColor = false;
+            addSupplierBtn.Click += addSupplierBtn_Click;
             // 
-            // button15
+            // addProductBtn
             // 
-            button15.BackColor = Color.White;
-            button15.FlatStyle = FlatStyle.Flat;
-            button15.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            button15.ForeColor = Color.Black;
-            button15.Location = new Point(37, 115);
-            button15.Name = "button15";
-            button15.Size = new Size(320, 41);
-            button15.TabIndex = 3;
-            button15.Text = "إضافة وتعديل منتج";
-            button15.UseVisualStyleBackColor = false;
+            addProductBtn.BackColor = Color.White;
+            addProductBtn.FlatStyle = FlatStyle.Flat;
+            addProductBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            addProductBtn.ForeColor = Color.Black;
+            addProductBtn.Location = new Point(37, 68);
+            addProductBtn.Name = "addProductBtn";
+            addProductBtn.Size = new Size(320, 41);
+            addProductBtn.TabIndex = 3;
+            addProductBtn.Text = "إضافة وتعديل منتج";
+            addProductBtn.UseVisualStyleBackColor = false;
+            addProductBtn.Click += addProductBtn_Click;
             // 
-            // button14
+            // addCategoryBtn
             // 
-            button14.BackColor = Color.White;
-            button14.FlatStyle = FlatStyle.Flat;
-            button14.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            button14.ForeColor = Color.Black;
-            button14.Location = new Point(38, 68);
-            button14.Name = "button14";
-            button14.Size = new Size(320, 41);
-            button14.TabIndex = 2;
-            button14.Text = "إضافة وتعديل صنف";
-            button14.UseVisualStyleBackColor = false;
+            addCategoryBtn.BackColor = Color.White;
+            addCategoryBtn.FlatStyle = FlatStyle.Flat;
+            addCategoryBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            addCategoryBtn.ForeColor = Color.Black;
+            addCategoryBtn.Location = new Point(39, 115);
+            addCategoryBtn.Name = "addCategoryBtn";
+            addCategoryBtn.Size = new Size(320, 41);
+            addCategoryBtn.TabIndex = 2;
+            addCategoryBtn.Text = "إضافة وتعديل صنف";
+            addCategoryBtn.UseVisualStyleBackColor = false;
+            addCategoryBtn.Click += addCategoryBtn_Click;
             // 
-            // button17
+            // addUserBtn
             // 
-            button17.BackColor = Color.White;
-            button17.FlatStyle = FlatStyle.Flat;
-            button17.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            button17.ForeColor = Color.Black;
-            button17.Location = new Point(38, 21);
-            button17.Name = "button17";
-            button17.Size = new Size(320, 41);
-            button17.TabIndex = 1;
-            button17.Text = "إضافة وتعديل مستخدم";
-            button17.UseVisualStyleBackColor = false;
+            addUserBtn.BackColor = Color.White;
+            addUserBtn.FlatStyle = FlatStyle.Flat;
+            addUserBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            addUserBtn.ForeColor = Color.Black;
+            addUserBtn.Location = new Point(38, 21);
+            addUserBtn.Name = "addUserBtn";
+            addUserBtn.Size = new Size(320, 41);
+            addUserBtn.TabIndex = 1;
+            addUserBtn.Text = "إضافة وتعديل مستخدم";
+            addUserBtn.UseVisualStyleBackColor = false;
+            addUserBtn.Click += addUserBtn_Click;
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(button16);
-            groupBox5.Controls.Add(button15);
-            groupBox5.Controls.Add(button14);
-            groupBox5.Controls.Add(button17);
+            groupBox5.Controls.Add(addSupplierBtn);
+            groupBox5.Controls.Add(addProductBtn);
+            groupBox5.Controls.Add(addCategoryBtn);
+            groupBox5.Controls.Add(addUserBtn);
             groupBox5.FlatStyle = FlatStyle.Flat;
             groupBox5.ForeColor = Color.White;
             groupBox5.Location = new Point(16, 730);
@@ -378,6 +387,8 @@
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox1);
             panel1.Location = new Point(1493, 48);
+            panel1.MaximumSize = new Size(429, 952);
+            panel1.MinimumSize = new Size(429, 952);
             panel1.Name = "panel1";
             panel1.Size = new Size(429, 952);
             panel1.TabIndex = 1;
@@ -471,12 +482,42 @@
             addCategoryPage1.Size = new Size(1496, 949);
             addCategoryPage1.TabIndex = 5;
             // 
+            // addSupplierPage1
+            // 
+            addSupplierPage1.BackColor = Color.FromArgb(24, 30, 46);
+            addSupplierPage1.Location = new Point(-6, 50);
+            addSupplierPage1.MinimumSize = new Size(1496, 949);
+            addSupplierPage1.Name = "addSupplierPage1";
+            addSupplierPage1.Size = new Size(1496, 949);
+            addSupplierPage1.TabIndex = 6;
+            // 
+            // mainStockPage1
+            // 
+            mainStockPage1.BackColor = Color.FromArgb(24, 30, 46);
+            mainStockPage1.Location = new Point(-6, 52);
+            mainStockPage1.MinimumSize = new Size(1496, 949);
+            mainStockPage1.Name = "mainStockPage1";
+            mainStockPage1.Size = new Size(1496, 949);
+            mainStockPage1.TabIndex = 11;
+            // 
+            // shortFallsPage1
+            // 
+            shortFallsPage1.BackColor = Color.FromArgb(24, 30, 46);
+            shortFallsPage1.Location = new Point(-5, 52);
+            shortFallsPage1.MinimumSize = new Size(1496, 949);
+            shortFallsPage1.Name = "shortFallsPage1";
+            shortFallsPage1.Size = new Size(1496, 949);
+            shortFallsPage1.TabIndex = 12;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
             ClientSize = new Size(1924, 1004);
+            Controls.Add(shortFallsPage1);
+            Controls.Add(mainStockPage1);
+            Controls.Add(addSupplierPage1);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(addCategoryPage1);
@@ -509,8 +550,8 @@
         private Button button1;
         private GroupBox groupBox1;
         private Button button2;
-        private Button button5;
-        private Button button6;
+        private Button shortFallsBtn;
+        private Button mainStockBtn;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private Button button9;
@@ -521,10 +562,10 @@
         private Button button11;
         private GroupBox groupBox4;
         private Button button12;
-        private Button button16;
-        private Button button15;
-        private Button button14;
-        private Button button17;
+        private Button addSupplierBtn;
+        private Button addProductBtn;
+        private Button addCategoryBtn;
+        private Button addUserBtn;
         private GroupBox groupBox5;
         private Panel panel1;
         private Panel panel2;
@@ -536,5 +577,8 @@
         private AddProductPage addProductPage1;
         private AddUserPage addUserPage1;
         private AddCategoryPage addCategoryPage1;
+        private AddSupplierPage addSupplierPage1;
+        private MainStockPage mainStockPage1;
+        private ShortFallsPage shortFallsPage1;
     }
 }

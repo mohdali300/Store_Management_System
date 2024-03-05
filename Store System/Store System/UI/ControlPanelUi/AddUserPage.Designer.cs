@@ -53,8 +53,8 @@
             existUserLbl = new Label();
             existUsrsGridView = new DataGridView();
             usersPic = new PictureBox();
-            textBox1 = new TextBox();
-            label2 = new Label();
+            searchUserBox = new TextBox();
+            saerchUserLbl = new Label();
             pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -350,29 +350,29 @@
             usersPic.TabIndex = 20;
             usersPic.TabStop = false;
             // 
-            // textBox1
+            // searchUserBox
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.BackColor = Color.FromArgb(24, 30, 46);
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(501, 427);
-            textBox1.Name = "textBox1";
-            textBox1.RightToLeft = RightToLeft.Yes;
-            textBox1.Size = new Size(213, 38);
-            textBox1.TabIndex = 21;
+            searchUserBox.Anchor = AnchorStyles.None;
+            searchUserBox.BackColor = Color.FromArgb(24, 30, 46);
+            searchUserBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            searchUserBox.ForeColor = Color.White;
+            searchUserBox.Location = new Point(501, 427);
+            searchUserBox.Name = "searchUserBox";
+            searchUserBox.RightToLeft = RightToLeft.Yes;
+            searchUserBox.Size = new Size(213, 38);
+            searchUserBox.TabIndex = 21;
             // 
-            // label2
+            // saerchUserLbl
             // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(613, 408);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 23);
-            label2.TabIndex = 22;
-            label2.Text = "ابحث بالاسم";
+            saerchUserLbl.Anchor = AnchorStyles.None;
+            saerchUserLbl.AutoSize = true;
+            saerchUserLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            saerchUserLbl.ForeColor = Color.White;
+            saerchUserLbl.Location = new Point(613, 408);
+            saerchUserLbl.Name = "saerchUserLbl";
+            saerchUserLbl.Size = new Size(95, 23);
+            saerchUserLbl.TabIndex = 22;
+            saerchUserLbl.Text = "ابحث بالاسم";
             // 
             // pictureBox2
             // 
@@ -392,8 +392,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
             Controls.Add(pictureBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(saerchUserLbl);
+            Controls.Add(searchUserBox);
             Controls.Add(usersPic);
             Controls.Add(saveUserBtn);
             Controls.Add(pictureBox1);
@@ -457,8 +457,8 @@
         private Label existUserLbl;
         private DataGridView existUsrsGridView;
         private PictureBox usersPic;
-        private TextBox textBox1;
-        private Label label2;
+        private TextBox searchUserBox;
+        private Label saerchUserLbl;
         private PictureBox pictureBox2;
     }
 }
