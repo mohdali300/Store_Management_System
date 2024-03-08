@@ -16,7 +16,7 @@ namespace Store_System.UI
     {
         Login Login;
 
-        CashierDashboard CashierDashboard ;
+        CashierDashboard CashierDashboard;
         AdminDashboard home;
         CashierDashboard userDashboard;
 
@@ -90,13 +90,14 @@ namespace Store_System.UI
 
                             }
                         }
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("هذا المستخدم غير موجود ", "System");
                     }
                 }
             }
         }
-      }
     }
+}
 

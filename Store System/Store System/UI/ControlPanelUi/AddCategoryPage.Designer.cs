@@ -46,6 +46,7 @@
             pictureBox2 = new PictureBox();
             searchCatLbl = new Label();
             searchCatBox = new TextBox();
+            deleteCategoryBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)existUsrsGridView).BeginInit();
@@ -168,9 +169,9 @@
             saveCatBtn.FlatStyle = FlatStyle.Flat;
             saveCatBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             saveCatBtn.ForeColor = Color.White;
-            saveCatBtn.Location = new Point(79, 247);
+            saveCatBtn.Location = new Point(221, 247);
             saveCatBtn.Name = "saveCatBtn";
-            saveCatBtn.Size = new Size(274, 47);
+            saveCatBtn.Size = new Size(142, 47);
             saveCatBtn.TabIndex = 20;
             saveCatBtn.Text = "حفظ";
             saveCatBtn.UseVisualStyleBackColor = false;
@@ -257,11 +258,27 @@
             searchCatBox.Size = new Size(213, 38);
             searchCatBox.TabIndex = 24;
             // 
+            // deleteCategoryBtn
+            // 
+            deleteCategoryBtn.Anchor = AnchorStyles.None;
+            deleteCategoryBtn.BackColor = Color.Firebrick;
+            deleteCategoryBtn.FlatStyle = FlatStyle.Flat;
+            deleteCategoryBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteCategoryBtn.ForeColor = Color.White;
+            deleteCategoryBtn.Location = new Point(79, 247);
+            deleteCategoryBtn.Name = "deleteCategoryBtn";
+            deleteCategoryBtn.Size = new Size(107, 47);
+            deleteCategoryBtn.TabIndex = 27;
+            deleteCategoryBtn.Text = "حذف";
+            deleteCategoryBtn.UseVisualStyleBackColor = false;
+            deleteCategoryBtn.Click += deleteCategoryBtn_Click;
+            // 
             // AddCategoryPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(deleteCategoryBtn);
             Controls.Add(pictureBox2);
             Controls.Add(searchCatLbl);
             Controls.Add(searchCatBox);
@@ -311,5 +328,6 @@
         private PictureBox pictureBox2;
         private Label searchCatLbl;
         private TextBox searchCatBox;
+        private Button deleteCategoryBtn;
     }
 }

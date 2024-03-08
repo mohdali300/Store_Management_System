@@ -17,6 +17,9 @@ namespace Store_System.UI
             InitializeComponent();
         }
 
-
+        private void deleteUserBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("هل انت متأكد من حذف هذا العنصر؟", "!انتبه", MessageBoxButtons.YesNo);
+        }
     }
 }

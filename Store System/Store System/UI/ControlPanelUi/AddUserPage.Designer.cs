@@ -56,6 +56,7 @@
             searchUserBox = new TextBox();
             saerchUserLbl = new Label();
             pictureBox2 = new PictureBox();
+            deleteUserBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -93,7 +94,7 @@
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(27, 156, 133);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(1094, 55);
+            panel1.Location = new Point(1098, 55);
             panel1.Name = "panel1";
             panel1.Size = new Size(399, 68);
             panel1.TabIndex = 2;
@@ -117,9 +118,9 @@
             saveUserBtn.FlatStyle = FlatStyle.Flat;
             saveUserBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             saveUserBtn.ForeColor = Color.White;
-            saveUserBtn.Location = new Point(85, 408);
+            saveUserBtn.Location = new Point(284, 408);
             saveUserBtn.Name = "saveUserBtn";
-            saveUserBtn.Size = new Size(393, 57);
+            saveUserBtn.Size = new Size(194, 57);
             saveUserBtn.TabIndex = 19;
             saveUserBtn.Text = "حفظ";
             saveUserBtn.UseVisualStyleBackColor = false;
@@ -386,11 +387,27 @@
             pictureBox2.TabIndex = 23;
             pictureBox2.TabStop = false;
             // 
+            // deleteUserBtn
+            // 
+            deleteUserBtn.Anchor = AnchorStyles.None;
+            deleteUserBtn.BackColor = Color.Firebrick;
+            deleteUserBtn.FlatStyle = FlatStyle.Flat;
+            deleteUserBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteUserBtn.ForeColor = Color.White;
+            deleteUserBtn.Location = new Point(85, 408);
+            deleteUserBtn.Name = "deleteUserBtn";
+            deleteUserBtn.Size = new Size(183, 57);
+            deleteUserBtn.TabIndex = 24;
+            deleteUserBtn.Text = "حذف";
+            deleteUserBtn.UseVisualStyleBackColor = false;
+            deleteUserBtn.Click += deleteUserBtn_Click;
+            // 
             // AddUserPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(deleteUserBtn);
             Controls.Add(pictureBox2);
             Controls.Add(saerchUserLbl);
             Controls.Add(searchUserBox);
@@ -460,5 +477,6 @@
         private TextBox searchUserBox;
         private Label saerchUserLbl;
         private PictureBox pictureBox2;
+        private Button deleteUserBtn;
     }
 }

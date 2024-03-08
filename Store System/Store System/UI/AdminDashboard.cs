@@ -63,5 +63,18 @@ namespace Store_System.UI
             shortFallsPage1.Visible = true;
             shortFallsPage1.BringToFront();
         }
+
+        private void backHomeBtn_Click(object sender, EventArgs e)
+        {
+            welcomePage1.Visible = true;
+            welcomePage1.BringToFront();
+        }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            LogIn login=new LogIn();
+            login.Show();
+            this.Close(); //this.Hide();
+        }
     }
 }

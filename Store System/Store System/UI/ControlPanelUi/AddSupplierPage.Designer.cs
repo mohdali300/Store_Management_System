@@ -52,6 +52,7 @@
             existUsrsGridView = new DataGridView();
             panel5 = new Panel();
             existUserLbl = new Label();
+            deleteSupplierBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -247,10 +248,10 @@
             saveSupplierBtn.FlatStyle = FlatStyle.Popup;
             saveSupplierBtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             saveSupplierBtn.ForeColor = Color.White;
-            saveSupplierBtn.Location = new Point(222, 312);
+            saveSupplierBtn.Location = new Point(298, 312);
             saveSupplierBtn.Name = "saveSupplierBtn";
             saveSupplierBtn.RightToLeft = RightToLeft.Yes;
-            saveSupplierBtn.Size = new Size(295, 47);
+            saveSupplierBtn.Size = new Size(219, 47);
             saveSupplierBtn.TabIndex = 34;
             saveSupplierBtn.Text = "حفظ";
             saveSupplierBtn.UseVisualStyleBackColor = false;
@@ -337,11 +338,29 @@
             existUserLbl.TabIndex = 0;
             existUserLbl.Text = "الموردون الموجودون";
             // 
+            // deleteSupplierBtn
+            // 
+            deleteSupplierBtn.Anchor = AnchorStyles.None;
+            deleteSupplierBtn.BackColor = Color.Firebrick;
+            deleteSupplierBtn.FlatAppearance.BorderColor = Color.White;
+            deleteSupplierBtn.FlatStyle = FlatStyle.Popup;
+            deleteSupplierBtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteSupplierBtn.ForeColor = Color.White;
+            deleteSupplierBtn.Location = new Point(87, 312);
+            deleteSupplierBtn.Name = "deleteSupplierBtn";
+            deleteSupplierBtn.RightToLeft = RightToLeft.Yes;
+            deleteSupplierBtn.Size = new Size(187, 47);
+            deleteSupplierBtn.TabIndex = 41;
+            deleteSupplierBtn.Text = "حذف";
+            deleteSupplierBtn.UseVisualStyleBackColor = false;
+            deleteSupplierBtn.Click += deleteSupplierBtn_Click;
+            // 
             // AddSupplierPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(deleteSupplierBtn);
             Controls.Add(pictureBox2);
             Controls.Add(label4);
             Controls.Add(textBox2);
@@ -403,5 +422,6 @@
         private DataGridView existUsrsGridView;
         private Panel panel5;
         private Label existUserLbl;
+        private Button deleteSupplierBtn;
     }
 }

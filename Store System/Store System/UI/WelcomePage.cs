@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Store_System.UI
 {
-    public partial class AddSupplierPage : UserControl
+    public partial class WelcomePage : UserControl
     {
-        public AddSupplierPage()
+        public WelcomePage()
         {
             InitializeComponent();
-        }
-
-        private void deleteSupplierBtn_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("هل انت متأكد من حذف هذا العنصر؟", "!انتبه", MessageBoxButtons.YesNo);
         }
     }
 }

@@ -61,6 +61,7 @@
             searchProductBox = new TextBox();
             searchProductLbl = new Label();
             searchLbl = new PictureBox();
+            deleteProductBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -101,10 +102,10 @@
             saveProductBtn.FlatStyle = FlatStyle.Popup;
             saveProductBtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             saveProductBtn.ForeColor = Color.Snow;
-            saveProductBtn.Location = new Point(84, 312);
+            saveProductBtn.Location = new Point(210, 312);
             saveProductBtn.Name = "saveProductBtn";
             saveProductBtn.RightToLeft = RightToLeft.Yes;
-            saveProductBtn.Size = new Size(261, 56);
+            saveProductBtn.Size = new Size(135, 56);
             saveProductBtn.TabIndex = 21;
             saveProductBtn.Text = "حفظ";
             saveProductBtn.UseVisualStyleBackColor = false;
@@ -488,11 +489,28 @@
             searchLbl.TabIndex = 58;
             searchLbl.TabStop = false;
             // 
+            // deleteProductBtn
+            // 
+            deleteProductBtn.Anchor = AnchorStyles.None;
+            deleteProductBtn.BackColor = Color.Firebrick;
+            deleteProductBtn.FlatStyle = FlatStyle.Popup;
+            deleteProductBtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteProductBtn.ForeColor = Color.Snow;
+            deleteProductBtn.Location = new Point(84, 312);
+            deleteProductBtn.Name = "deleteProductBtn";
+            deleteProductBtn.RightToLeft = RightToLeft.Yes;
+            deleteProductBtn.Size = new Size(100, 56);
+            deleteProductBtn.TabIndex = 59;
+            deleteProductBtn.Text = "حذف";
+            deleteProductBtn.UseVisualStyleBackColor = false;
+            deleteProductBtn.Click += deleteProductBtn_Click;
+            // 
             // AddProductPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(deleteProductBtn);
             Controls.Add(pictureBox2);
             Controls.Add(searchLbl);
             Controls.Add(searchProductLbl);
@@ -571,5 +589,6 @@
         private TextBox searchProductBox;
         private Label searchProductLbl;
         private PictureBox searchLbl;
+        private Button deleteProductBtn;
     }
 }
