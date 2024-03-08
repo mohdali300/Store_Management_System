@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuyBill));
             Items = new DataGridView();
             Printbtn = new Button();
             panel1 = new Panel();
@@ -72,8 +73,15 @@
             StockBox = new ComboBox();
             Savebtn = new Button();
             Addbtn = new Button();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            panel3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // Items
@@ -81,23 +89,23 @@
             Items.Anchor = AnchorStyles.None;
             Items.BackgroundColor = Color.Snow;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Items.Location = new Point(39, 335);
+            Items.Location = new Point(51, 335);
             Items.Name = "Items";
             Items.RowHeadersWidth = 51;
             Items.RowTemplate.Height = 29;
-            Items.Size = new Size(1397, 489);
+            Items.Size = new Size(1397, 470);
             Items.TabIndex = 36;
             // 
             // Printbtn
             // 
             Printbtn.Anchor = AnchorStyles.None;
-            Printbtn.BackColor = Color.LimeGreen;
+            Printbtn.BackColor = Color.DarkGoldenrod;
             Printbtn.FlatStyle = FlatStyle.Flat;
             Printbtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
             Printbtn.ForeColor = Color.White;
-            Printbtn.Location = new Point(39, 899);
+            Printbtn.Location = new Point(51, 881);
             Printbtn.Name = "Printbtn";
-            Printbtn.Size = new Size(131, 36);
+            Printbtn.Size = new Size(131, 45);
             Printbtn.TabIndex = 35;
             Printbtn.Text = "طباعة";
             Printbtn.UseVisualStyleBackColor = false;
@@ -107,9 +115,9 @@
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(27, 156, 133);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(1273, 9);
+            panel1.Location = new Point(1207, 33);
             panel1.Name = "panel1";
-            panel1.Size = new Size(215, 49);
+            panel1.Size = new Size(302, 68);
             panel1.TabIndex = 28;
             // 
             // label1
@@ -118,7 +126,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Snow;
-            label1.Location = new Point(38, -2);
+            label1.Location = new Point(18, 12);
             label1.Name = "label1";
             label1.Size = new Size(143, 38);
             label1.TabIndex = 0;
@@ -130,7 +138,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1108, 37);
+            label2.Location = new Point(927, 37);
             label2.Name = "label2";
             label2.Size = new Size(93, 23);
             label2.TabIndex = 42;
@@ -142,7 +150,7 @@
             BillCodeBox.BackColor = Color.FromArgb(24, 30, 46);
             BillCodeBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             BillCodeBox.ForeColor = Color.White;
-            BillCodeBox.Location = new Point(984, 55);
+            BillCodeBox.Location = new Point(803, 55);
             BillCodeBox.Name = "BillCodeBox";
             BillCodeBox.RightToLeft = RightToLeft.Yes;
             BillCodeBox.Size = new Size(225, 39);
@@ -152,10 +160,12 @@
             // 
             SupplierBox.BackColor = Color.FromArgb(24, 30, 46);
             SupplierBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            SupplierBox.ForeColor = Color.White;
             SupplierBox.FormattingEnabled = true;
-            SupplierBox.Location = new Point(612, 55);
+            SupplierBox.Location = new Point(504, 55);
             SupplierBox.Name = "SupplierBox";
-            SupplierBox.Size = new Size(356, 39);
+            SupplierBox.RightToLeft = RightToLeft.Yes;
+            SupplierBox.Size = new Size(268, 39);
             SupplierBox.TabIndex = 44;
             // 
             // label3
@@ -164,7 +174,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(858, 37);
+            label3.Location = new Point(709, 37);
             label3.Name = "label3";
             label3.Size = new Size(54, 23);
             label3.TabIndex = 45;
@@ -179,7 +189,7 @@
             SearchBox.Location = new Point(39, 55);
             SearchBox.Name = "SearchBox";
             SearchBox.RightToLeft = RightToLeft.Yes;
-            SearchBox.Size = new Size(567, 39);
+            SearchBox.Size = new Size(249, 39);
             SearchBox.TabIndex = 46;
             // 
             // label4
@@ -188,11 +198,11 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(536, 37);
+            label4.Location = new Point(233, 37);
             label4.Name = "label4";
-            label4.Size = new Size(52, 23);
+            label4.Size = new Size(46, 23);
             label4.TabIndex = 47;
-            label4.Text = "البحث";
+            label4.Text = "ابحث";
             // 
             // label5
             // 
@@ -200,7 +210,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(1335, 122);
+            label5.Location = new Point(1352, 146);
             label5.Name = "label5";
             label5.Size = new Size(84, 23);
             label5.TabIndex = 48;
@@ -212,7 +222,7 @@
             ProductCodeBox.BackColor = Color.FromArgb(24, 30, 46);
             ProductCodeBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ProductCodeBox.ForeColor = Color.White;
-            ProductCodeBox.Location = new Point(1227, 140);
+            ProductCodeBox.Location = new Point(1234, 165);
             ProductCodeBox.Name = "ProductCodeBox";
             ProductCodeBox.RightToLeft = RightToLeft.Yes;
             ProductCodeBox.Size = new Size(209, 34);
@@ -224,7 +234,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(1108, 122);
+            label6.Location = new Point(1114, 146);
             label6.Name = "label6";
             label6.Size = new Size(85, 23);
             label6.TabIndex = 50;
@@ -236,10 +246,10 @@
             ProductnameBox.BackColor = Color.FromArgb(24, 30, 46);
             ProductnameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ProductnameBox.ForeColor = Color.White;
-            ProductnameBox.Location = new Point(898, 140);
+            ProductnameBox.Location = new Point(932, 165);
             ProductnameBox.Name = "ProductnameBox";
             ProductnameBox.RightToLeft = RightToLeft.Yes;
-            ProductnameBox.Size = new Size(303, 34);
+            ProductnameBox.Size = new Size(275, 34);
             ProductnameBox.TabIndex = 51;
             // 
             // label7
@@ -248,20 +258,22 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(764, 122);
+            label7.Location = new Point(815, 147);
             label7.Name = "label7";
-            label7.Size = new Size(72, 23);
+            label7.Size = new Size(82, 23);
             label7.TabIndex = 53;
-            label7.Text = "التصنيف";
+            label7.Text = "نوع المنتج";
             // 
             // ClassificationBox
             // 
             ClassificationBox.BackColor = Color.FromArgb(24, 30, 46);
             ClassificationBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ClassificationBox.ForeColor = Color.White;
             ClassificationBox.FormattingEnabled = true;
-            ClassificationBox.Location = new Point(572, 139);
+            ClassificationBox.Location = new Point(689, 163);
             ClassificationBox.Name = "ClassificationBox";
-            ClassificationBox.Size = new Size(289, 36);
+            ClassificationBox.RightToLeft = RightToLeft.Yes;
+            ClassificationBox.Size = new Size(216, 36);
             ClassificationBox.TabIndex = 52;
             // 
             // label8
@@ -270,7 +282,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(464, 122);
+            label8.Location = new Point(381, 145);
             label8.Name = "label8";
             label8.Size = new Size(54, 23);
             label8.TabIndex = 54;
@@ -282,10 +294,10 @@
             QuantityBox.BackColor = Color.FromArgb(24, 30, 46);
             QuantityBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             QuantityBox.ForeColor = Color.White;
-            QuantityBox.Location = new Point(326, 140);
+            QuantityBox.Location = new Point(229, 163);
             QuantityBox.Name = "QuantityBox";
             QuantityBox.RightToLeft = RightToLeft.Yes;
-            QuantityBox.Size = new Size(210, 34);
+            QuantityBox.Size = new Size(214, 34);
             QuantityBox.TabIndex = 55;
             // 
             // label9
@@ -294,7 +306,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(202, 122);
+            label9.Location = new Point(1350, 237);
             label9.Name = "label9";
             label9.Size = new Size(86, 23);
             label9.TabIndex = 56;
@@ -306,10 +318,10 @@
             CostBox.BackColor = Color.FromArgb(24, 30, 46);
             CostBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             CostBox.ForeColor = Color.White;
-            CostBox.Location = new Point(39, 140);
+            CostBox.Location = new Point(1234, 255);
             CostBox.Name = "CostBox";
             CostBox.RightToLeft = RightToLeft.Yes;
-            CostBox.Size = new Size(249, 34);
+            CostBox.Size = new Size(210, 34);
             CostBox.TabIndex = 57;
             // 
             // label10
@@ -318,7 +330,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(1358, 222);
+            label10.Location = new Point(1121, 237);
             label10.Name = "label10";
             label10.Size = new Size(78, 23);
             label10.TabIndex = 58;
@@ -330,10 +342,10 @@
             PriceBox.BackColor = Color.FromArgb(24, 30, 46);
             PriceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PriceBox.ForeColor = Color.White;
-            PriceBox.Location = new Point(1227, 240);
+            PriceBox.Location = new Point(932, 255);
             PriceBox.Name = "PriceBox";
             PriceBox.RightToLeft = RightToLeft.Yes;
-            PriceBox.Size = new Size(209, 34);
+            PriceBox.Size = new Size(275, 34);
             PriceBox.TabIndex = 59;
             // 
             // label11
@@ -342,7 +354,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(1120, 222);
+            label11.Location = new Point(841, 237);
             label11.Name = "label11";
             label11.Size = new Size(57, 23);
             label11.TabIndex = 60;
@@ -354,10 +366,10 @@
             DiscountBox.BackColor = Color.FromArgb(24, 30, 46);
             DiscountBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DiscountBox.ForeColor = Color.White;
-            DiscountBox.Location = new Point(1052, 240);
+            DiscountBox.Location = new Point(689, 255);
             DiscountBox.Name = "DiscountBox";
             DiscountBox.RightToLeft = RightToLeft.Yes;
-            DiscountBox.Size = new Size(169, 34);
+            DiscountBox.Size = new Size(216, 34);
             DiscountBox.TabIndex = 61;
             // 
             // label12
@@ -366,7 +378,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(644, 222);
+            label12.Location = new Point(598, 145);
             label12.Name = "label12";
             label12.Size = new Size(53, 23);
             label12.TabIndex = 65;
@@ -376,10 +388,12 @@
             // 
             SizeBox.BackColor = Color.FromArgb(24, 30, 46);
             SizeBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SizeBox.ForeColor = Color.White;
             SizeBox.FormattingEnabled = true;
-            SizeBox.Location = new Point(442, 240);
+            SizeBox.Location = new Point(473, 163);
             SizeBox.Name = "SizeBox";
-            SizeBox.Size = new Size(290, 36);
+            SizeBox.RightToLeft = RightToLeft.Yes;
+            SizeBox.Size = new Size(184, 36);
             SizeBox.TabIndex = 64;
             // 
             // label13
@@ -388,7 +402,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(903, 222);
+            label13.Location = new Point(145, 142);
             label13.Name = "label13";
             label13.Size = new Size(46, 23);
             label13.TabIndex = 63;
@@ -398,10 +412,12 @@
             // 
             ColorBox.BackColor = Color.FromArgb(24, 30, 46);
             ColorBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ColorBox.ForeColor = Color.White;
             ColorBox.FormattingEnabled = true;
-            ColorBox.Location = new Point(747, 240);
+            ColorBox.Location = new Point(51, 161);
             ColorBox.Name = "ColorBox";
-            ColorBox.Size = new Size(290, 36);
+            ColorBox.RightToLeft = RightToLeft.Yes;
+            ColorBox.Size = new Size(147, 36);
             ColorBox.TabIndex = 62;
             // 
             // label14
@@ -410,7 +426,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(251, 222);
+            label14.Location = new Point(574, 235);
             label14.Name = "label14";
             label14.Size = new Size(74, 23);
             label14.TabIndex = 66;
@@ -422,10 +438,11 @@
             NotesBox.BackColor = Color.FromArgb(24, 30, 46);
             NotesBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             NotesBox.ForeColor = Color.White;
-            NotesBox.Location = new Point(39, 240);
+            NotesBox.Location = new Point(290, 253);
+            NotesBox.Multiline = true;
             NotesBox.Name = "NotesBox";
             NotesBox.RightToLeft = RightToLeft.Yes;
-            NotesBox.Size = new Size(397, 34);
+            NotesBox.Size = new Size(367, 36);
             NotesBox.TabIndex = 67;
             // 
             // label15
@@ -434,7 +451,7 @@
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label15.ForeColor = Color.White;
-            label15.Location = new Point(1358, 830);
+            label15.Location = new Point(1382, 814);
             label15.Name = "label15";
             label15.Size = new Size(58, 23);
             label15.TabIndex = 68;
@@ -446,7 +463,7 @@
             TotalPriceBox.BackColor = Color.FromArgb(24, 30, 46);
             TotalPriceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TotalPriceBox.ForeColor = Color.White;
-            TotalPriceBox.Location = new Point(1227, 848);
+            TotalPriceBox.Location = new Point(1239, 831);
             TotalPriceBox.Name = "TotalPriceBox";
             TotalPriceBox.RightToLeft = RightToLeft.Yes;
             TotalPriceBox.Size = new Size(209, 34);
@@ -458,7 +475,7 @@
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(677, 830);
+            label16.Location = new Point(703, 812);
             label16.Name = "label16";
             label16.Size = new Size(67, 23);
             label16.TabIndex = 70;
@@ -470,7 +487,7 @@
             PaidUp.BackColor = Color.FromArgb(24, 30, 46);
             PaidUp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PaidUp.ForeColor = Color.White;
-            PaidUp.Location = new Point(546, 848);
+            PaidUp.Location = new Point(570, 831);
             PaidUp.Name = "PaidUp";
             PaidUp.RightToLeft = RightToLeft.Yes;
             PaidUp.Size = new Size(209, 34);
@@ -482,7 +499,7 @@
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label17.ForeColor = Color.White;
-            label17.Location = new Point(906, 830);
+            label17.Location = new Point(907, 813);
             label17.Name = "label17";
             label17.Size = new Size(87, 23);
             label17.TabIndex = 72;
@@ -494,7 +511,7 @@
             AfterDiscount.BackColor = Color.FromArgb(24, 30, 46);
             AfterDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             AfterDiscount.ForeColor = Color.White;
-            AfterDiscount.Location = new Point(775, 848);
+            AfterDiscount.Location = new Point(793, 831);
             AfterDiscount.Name = "AfterDiscount";
             AfterDiscount.RightToLeft = RightToLeft.Yes;
             AfterDiscount.Size = new Size(209, 34);
@@ -506,7 +523,7 @@
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(1131, 830);
+            label18.Location = new Point(1160, 813);
             label18.Name = "label18";
             label18.Size = new Size(57, 23);
             label18.TabIndex = 74;
@@ -518,7 +535,7 @@
             FaturaDiscountBox.BackColor = Color.FromArgb(24, 30, 46);
             FaturaDiscountBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FaturaDiscountBox.ForeColor = Color.White;
-            FaturaDiscountBox.Location = new Point(1000, 848);
+            FaturaDiscountBox.Location = new Point(1016, 831);
             FaturaDiscountBox.Name = "FaturaDiscountBox";
             FaturaDiscountBox.RightToLeft = RightToLeft.Yes;
             FaturaDiscountBox.Size = new Size(209, 34);
@@ -530,7 +547,7 @@
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.White;
-            label19.Location = new Point(402, 828);
+            label19.Location = new Point(476, 811);
             label19.Name = "label19";
             label19.Size = new Size(70, 23);
             label19.TabIndex = 77;
@@ -540,9 +557,11 @@
             // 
             CustomerBox.BackColor = Color.FromArgb(24, 30, 46);
             CustomerBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CustomerBox.ForeColor = Color.White;
             CustomerBox.FormattingEnabled = true;
-            CustomerBox.Location = new Point(270, 846);
+            CustomerBox.Location = new Point(290, 829);
             CustomerBox.Name = "CustomerBox";
+            CustomerBox.RightToLeft = RightToLeft.Yes;
             CustomerBox.Size = new Size(266, 36);
             CustomerBox.TabIndex = 76;
             // 
@@ -552,7 +571,7 @@
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label20.ForeColor = Color.White;
-            label20.Location = new Point(186, 830);
+            label20.Location = new Point(216, 813);
             label20.Name = "label20";
             label20.Size = new Size(51, 23);
             label20.TabIndex = 79;
@@ -561,12 +580,16 @@
             // StockBox
             // 
             StockBox.BackColor = Color.FromArgb(24, 30, 46);
+            StockBox.Enabled = false;
             StockBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            StockBox.ForeColor = Color.White;
             StockBox.FormattingEnabled = true;
-            StockBox.Location = new Point(39, 847);
+            StockBox.Location = new Point(51, 830);
             StockBox.Name = "StockBox";
+            StockBox.RightToLeft = RightToLeft.Yes;
             StockBox.Size = new Size(225, 36);
             StockBox.TabIndex = 78;
+            StockBox.Text = "الرئيسية";
             // 
             // Savebtn
             // 
@@ -575,9 +598,9 @@
             Savebtn.FlatStyle = FlatStyle.Flat;
             Savebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
             Savebtn.ForeColor = Color.White;
-            Savebtn.Location = new Point(186, 899);
+            Savebtn.Location = new Point(198, 881);
             Savebtn.Name = "Savebtn";
-            Savebtn.Size = new Size(131, 36);
+            Savebtn.Size = new Size(183, 45);
             Savebtn.TabIndex = 80;
             Savebtn.Text = "حفظ";
             Savebtn.UseVisualStyleBackColor = false;
@@ -586,21 +609,66 @@
             // 
             Addbtn.Anchor = AnchorStyles.None;
             Addbtn.BackColor = Color.LimeGreen;
+            Addbtn.FlatAppearance.BorderSize = 0;
             Addbtn.FlatStyle = FlatStyle.Flat;
-            Addbtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Addbtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             Addbtn.ForeColor = Color.White;
-            Addbtn.Location = new Point(39, 291);
+            Addbtn.Location = new Point(51, 237);
             Addbtn.Name = "Addbtn";
-            Addbtn.Size = new Size(131, 38);
+            Addbtn.Size = new Size(198, 54);
             Addbtn.TabIndex = 81;
             Addbtn.Text = "إضافة";
             Addbtn.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.BackColor = Color.FromArgb(24, 30, 46);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(1381, 23);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(92, 85);
+            panel2.TabIndex = 29;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(5, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(83, 82);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 82;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.BackColor = Color.FromArgb(24, 30, 46);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(293, 56);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(38, 38);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 82;
+            pictureBox2.TabStop = false;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.None;
+            panel3.BackColor = Color.FromArgb(27, 156, 133);
+            panel3.Enabled = false;
+            panel3.Location = new Point(36, 322);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1432, 38);
+            panel3.TabIndex = 29;
             // 
             // BuyBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(pictureBox2);
+            Controls.Add(panel2);
             Controls.Add(Addbtn);
             Controls.Add(Savebtn);
             Controls.Add(label20);
@@ -644,12 +712,17 @@
             Controls.Add(Items);
             Controls.Add(Printbtn);
             Controls.Add(panel1);
+            Controls.Add(panel3);
+            MinimumSize = new Size(1496, 949);
             Name = "BuyBill";
             Size = new Size(1496, 949);
             Load += BuyBill_Load;
             ((System.ComponentModel.ISupportInitialize)Items).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -699,5 +772,9 @@
         private ComboBox StockBox;
         private Button Savebtn;
         private Button Addbtn;
+        private Panel panel2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Panel panel3;
     }
 }

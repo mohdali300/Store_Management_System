@@ -25,6 +25,10 @@ namespace Store_System.UI
             addSupplierPage1.Visible = false;
             mainStockPage1.Visible = false;
             shortFallsPage1.Visible = false;
+            buyBill1.Visible = false;
+            saleBill1.Visible = false;
+            returnedItems1.Visible = false;
+            shiftLock1.Visible = false;
 
         }
 
@@ -72,9 +76,33 @@ namespace Store_System.UI
 
         private void logOutBtn_Click(object sender, EventArgs e)
         {
-            LogIn login=new LogIn();
+            LogIn login = new LogIn();
             login.Show();
             this.Close(); //this.Hide();
+        }
+
+        private void buyBillBtn_Click(object sender, EventArgs e)
+        {
+            buyBill1.Visible = true;
+            buyBill1.BringToFront();
+        }
+
+        private void saleBillBtn_Click(object sender, EventArgs e)
+        {
+            saleBill1.Visible = true;
+            saleBill1.BringToFront();
+        }
+
+        private void returnedBillBtn_Click(object sender, EventArgs e)
+        {
+            returnedItems1.Visible = true;
+            returnedItems1.BringToFront();
+        }
+
+        private void shiftLockBtn_Click(object sender, EventArgs e)
+        {
+            shiftLock1.Visible = true;
+            shiftLock1.BringToFront();
         }
     }
 }
