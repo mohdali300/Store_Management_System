@@ -42,7 +42,6 @@
             button10 = new Button();
             button4 = new Button();
             button8 = new Button();
-            button13 = new Button();
             button11 = new Button();
             groupBox4 = new GroupBox();
             button12 = new Button();
@@ -242,19 +241,6 @@
             button8.Text = "تقرير مبيعات";
             button8.UseVisualStyleBackColor = false;
             // 
-            // button13
-            // 
-            button13.BackColor = Color.White;
-            button13.FlatStyle = FlatStyle.Flat;
-            button13.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            button13.ForeColor = Color.Black;
-            button13.Location = new Point(37, 139);
-            button13.Name = "button13";
-            button13.Size = new Size(335, 41);
-            button13.TabIndex = 5;
-            button13.Text = "فواتير موردين";
-            button13.UseVisualStyleBackColor = false;
-            // 
             // button11
             // 
             button11.BackColor = Color.White;
@@ -270,14 +256,13 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(button13);
             groupBox4.Controls.Add(button11);
             groupBox4.Controls.Add(button12);
             groupBox4.FlatStyle = FlatStyle.Flat;
             groupBox4.ForeColor = Color.White;
             groupBox4.Location = new Point(16, 537);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(391, 196);
+            groupBox4.Size = new Size(391, 143);
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
             groupBox4.Text = "عملاء وموردين";
@@ -355,7 +340,7 @@
             groupBox5.Controls.Add(button17);
             groupBox5.FlatStyle = FlatStyle.Flat;
             groupBox5.ForeColor = Color.White;
-            groupBox5.Location = new Point(16, 732);
+            groupBox5.Location = new Point(16, 700);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(391, 213);
             groupBox5.TabIndex = 4;
@@ -413,12 +398,14 @@
             // 
             // button18
             // 
-            button18.Location = new Point(1636, 9);
+            button18.BackColor = Color.FromArgb(192, 0, 0);
+            button18.ForeColor = Color.White;
+            button18.Location = new Point(1636, 5);
             button18.Name = "button18";
-            button18.Size = new Size(144, 29);
+            button18.Size = new Size(144, 36);
             button18.TabIndex = 10;
             button18.Text = "تسجبل الخروج";
-            button18.UseVisualStyleBackColor = true;
+            button18.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -483,7 +470,6 @@
         private Button button10;
         private Button button4;
         private Button button8;
-        private Button button13;
         private Button button11;
         private GroupBox groupBox4;
         private Button button12;

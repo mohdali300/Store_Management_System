@@ -166,11 +166,14 @@ namespace Store_System.Migrations
                     b.Property<int>("Customer_Id")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("IsSale")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime?>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ShippedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("user_id")
                         .HasColumnType("int");
@@ -192,10 +195,19 @@ namespace Store_System.Migrations
                     b.Property<int>("Order_Id")
                         .HasColumnType("int");
 
+                    b.Property<double>("Discount")
+                        .HasColumnType("float");
+
                     b.Property<int?>("OrderID")
                         .HasColumnType("int");
 
                     b.Property<int?>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalPrice")
                         .HasColumnType("int");
 
                     b.HasKey("product_Id", "Order_Id");
@@ -216,6 +228,9 @@ namespace Store_System.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<int>("Barcode")
+                        .HasColumnType("int");
 
                     b.Property<int>("Category_id")
                         .HasColumnType("int");
@@ -456,7 +471,7 @@ namespace Store_System.Migrations
                     b.HasOne("Store_System.Models.Branch", "Branch")
                         .WithMany()
                         .HasForeignKey("Branch_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Store_System.Models.Supplier", null)
@@ -466,7 +481,7 @@ namespace Store_System.Migrations
                     b.HasOne("Store_System.Models.Supplier", "Supplier")
                         .WithMany()
                         .HasForeignKey("Supplier_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Branch");
@@ -513,7 +528,7 @@ namespace Store_System.Migrations
                     b.HasOne("Store_System.Models.Order", "Order")
                         .WithMany()
                         .HasForeignKey("Order_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Store_System.Models.Product", null)
@@ -523,7 +538,7 @@ namespace Store_System.Migrations
                     b.HasOne("Store_System.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("product_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Order");
@@ -551,7 +566,7 @@ namespace Store_System.Migrations
                     b.HasOne("Store_System.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("Product_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Store_System.Models.Stock", null)
@@ -561,7 +576,7 @@ namespace Store_System.Migrations
                     b.HasOne("Store_System.Models.Stock", "Stock")
                         .WithMany()
                         .HasForeignKey("Stock_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Product");
@@ -582,13 +597,13 @@ namespace Store_System.Migrations
                     b.HasOne("Store_System.Models.Supplier", "Supplier")
                         .WithMany()
                         .HasForeignKey("Supplier_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Store_System.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("product_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Product");
@@ -605,13 +620,13 @@ namespace Store_System.Migrations
                     b.HasOne("Store_System.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("Product_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Store_System.Models.Returned", "Returned")
                         .WithMany()
                         .HasForeignKey("Returned_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Store_System.Models.Returned", null)

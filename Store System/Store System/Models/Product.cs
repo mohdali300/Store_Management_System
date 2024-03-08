@@ -23,6 +23,8 @@ namespace Store_System.Models
     {
         [Key]
         public int ID { get; set; }
+        public int Barcode { get; set; }
+
         public string? Name { get; set; }
         public string? Description { get; set; }
         public double SellingPrice { get; set; }

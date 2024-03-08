@@ -157,6 +157,7 @@ namespace Store_System.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Barcode = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SellingPrice = table.Column<double>(type: "float", nullable: false),
@@ -196,8 +197,7 @@ namespace Store_System.Migrations
                         name: "FK_BranchSuppliers_Branch_Branch_Id",
                         column: x => x.Branch_Id,
                         principalTable: "Branch",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_BranchSuppliers_Branch_BranchID",
                         column: x => x.BranchID,
@@ -207,8 +207,7 @@ namespace Store_System.Migrations
                         name: "FK_BranchSuppliers_Supplier_Supplier_Id",
                         column: x => x.Supplier_Id,
                         principalTable: "Supplier",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_BranchSuppliers_Supplier_SupplierID",
                         column: x => x.SupplierID,
@@ -222,7 +221,8 @@ namespace Store_System.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ShippedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsSale = table.Column<bool>(type: "bit", nullable: false),
                     user_id = table.Column<int>(type: "int", nullable: false),
@@ -263,8 +263,7 @@ namespace Store_System.Migrations
                         name: "FK_ProductsStocks_Product_Product_Id",
                         column: x => x.Product_Id,
                         principalTable: "Product",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_ProductsStocks_Product_ProductID",
                         column: x => x.ProductID,
@@ -274,8 +273,7 @@ namespace Store_System.Migrations
                         name: "FK_ProductsStocks_Stock_Stock_Id",
                         column: x => x.Stock_Id,
                         principalTable: "Stock",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_ProductsStocks_Stock_StockID",
                         column: x => x.StockID,
@@ -299,8 +297,7 @@ namespace Store_System.Migrations
                         name: "FK_ProductsSuppliers_Product_product_Id",
                         column: x => x.product_Id,
                         principalTable: "Product",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_ProductsSuppliers_Product_ProductID",
                         column: x => x.ProductID,
@@ -310,8 +307,7 @@ namespace Store_System.Migrations
                         name: "FK_ProductsSuppliers_Supplier_Supplier_Id",
                         column: x => x.Supplier_Id,
                         principalTable: "Supplier",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_ProductsSuppliers_Supplier_SupplierID",
                         column: x => x.SupplierID,
@@ -335,8 +331,7 @@ namespace Store_System.Migrations
                         name: "FK_ReturnedItems_Product_Product_Id",
                         column: x => x.Product_Id,
                         principalTable: "Product",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_ReturnedItems_Product_ProductID",
                         column: x => x.ProductID,
@@ -346,8 +341,7 @@ namespace Store_System.Migrations
                         name: "FK_ReturnedItems_Returned_Returned_Id",
                         column: x => x.Returned_Id,
                         principalTable: "Returned",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                     table.ForeignKey(
                         name: "FK_ReturnedItems_Returned_Returnedid",
                         column: x => x.Returnedid,
@@ -361,6 +355,9 @@ namespace Store_System.Migrations
                 {
                     product_Id = table.Column<int>(type: "int", nullable: false),
                     Order_Id = table.Column<int>(type: "int", nullable: false),
+                    TotalPrice = table.Column<int>(type: "int", nullable: false),
+                    Discount = table.Column<double>(type: "float", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     OrderID = table.Column<int>(type: "int", nullable: true),
                     ProductID = table.Column<int>(type: "int", nullable: true)
                 },
@@ -371,8 +368,7 @@ namespace Store_System.Migrations
                         name: "FK_OrderItems_Order_Order_Id",
                         column: x => x.Order_Id,
                         principalTable: "Order",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_OrderItems_Order_OrderID",
                         column: x => x.OrderID,
@@ -382,8 +378,7 @@ namespace Store_System.Migrations
                         name: "FK_OrderItems_Product_product_Id",
                         column: x => x.product_Id,
                         principalTable: "Product",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_OrderItems_Product_ProductID",
                         column: x => x.ProductID,

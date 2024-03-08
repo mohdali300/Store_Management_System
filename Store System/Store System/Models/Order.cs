@@ -12,7 +12,8 @@ namespace Store_System.Models
     {
         [Key]
         public int ID { get; set; }
-        public DateTime Date { get;set; }
+        public DateTime? OrderDate { get; set; }
+        public DateTime? ShippedDate { get; set; }
         public string? CustomerName { get; set; }
         public  bool IsSale { get; set; } //  0 for sale , 1 for buy
        

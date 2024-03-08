@@ -29,12 +29,16 @@ namespace Store_System.Data
             modelBuilder.Entity<OrderItems>()
                 .HasOne(ps => ps.Product)
                 .WithMany() 
-                .HasForeignKey(ps => ps.product_Id);
+                .HasForeignKey(ps => ps.product_Id)
+                .OnDelete(DeleteBehavior.NoAction);
+
 
             modelBuilder.Entity<OrderItems>()
                 .HasOne(ps => ps.Order)
                 .WithMany() 
-                .HasForeignKey(ps => ps.Order_Id);
+                .HasForeignKey(ps => ps.Order_Id)
+                 .OnDelete(DeleteBehavior.NoAction);
+
 
 
             /// ProductsSuppliers
@@ -44,12 +48,15 @@ namespace Store_System.Data
             modelBuilder.Entity<ProductsSuppliers>()
                 .HasOne(ps => ps.Product)
                 .WithMany()
-                .HasForeignKey(ps => ps.product_Id);
+                .HasForeignKey(ps => ps.product_Id)
+                  .OnDelete(DeleteBehavior.NoAction);
+
 
             modelBuilder.Entity<ProductsSuppliers>()
                 .HasOne(ps => ps.Supplier)
                 .WithMany()
-                .HasForeignKey(ps => ps.Supplier_Id);
+                .HasForeignKey(ps => ps.Supplier_Id).OnDelete(DeleteBehavior.NoAction);
+
 
             ///========================
             modelBuilder.Entity<BranchSuppliers>()
@@ -58,12 +65,14 @@ namespace Store_System.Data
             modelBuilder.Entity<BranchSuppliers>()
                 .HasOne(ps => ps.Branch)
                 .WithMany()
-                .HasForeignKey(ps => ps.Branch_Id);
+                .HasForeignKey(ps => ps.Branch_Id).OnDelete(DeleteBehavior.NoAction);
+
 
             modelBuilder.Entity<BranchSuppliers>()
                 .HasOne(ps => ps.Supplier)
                 .WithMany()
-                .HasForeignKey(ps => ps.Supplier_Id);
+                .HasForeignKey(ps => ps.Supplier_Id).OnDelete(DeleteBehavior.NoAction);
+
 
             //================================
             modelBuilder.Entity<ReturnedItems>()
@@ -72,12 +81,15 @@ namespace Store_System.Data
             modelBuilder.Entity<ReturnedItems>()
                 .HasOne(ps => ps.Product)
                 .WithMany()
-                .HasForeignKey(ps => ps.Product_Id);
+                .HasForeignKey(ps => ps.Product_Id)
+                .OnDelete(DeleteBehavior.NoAction);
+
 
             modelBuilder.Entity<ReturnedItems>()
                 .HasOne(ps => ps.Returned)
                 .WithMany()
-                .HasForeignKey(ps => ps.Returned_Id);
+                .HasForeignKey(ps => ps.Returned_Id).OnDelete(DeleteBehavior.NoAction);
+
             //===========================================
             modelBuilder.Entity<ProductsStocks>()
             .HasKey(ps => new { ps.Stock_Id, ps.Product_Id });
@@ -85,16 +97,18 @@ namespace Store_System.Data
             modelBuilder.Entity<ProductsStocks>()
                 .HasOne(ps => ps.Product)
                 .WithMany()
-                .HasForeignKey(ps => ps.Product_Id);
+                .HasForeignKey(ps => ps.Product_Id).OnDelete(DeleteBehavior.NoAction);
+
 
             modelBuilder.Entity<ProductsStocks>()
                 .HasOne(ps => ps.Stock)
                 .WithMany()
-                .HasForeignKey(ps => ps.Stock_Id);
+                .HasForeignKey(ps => ps.Stock_Id).OnDelete(DeleteBehavior.NoAction);
 
+            base.OnModelCreating(modelBuilder);
         }
 
-                    /// Configurations
+        /// Configurations
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

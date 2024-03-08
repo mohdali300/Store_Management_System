@@ -16,7 +16,9 @@ namespace Store_System.Models
         [ForeignKey("Order")]
 
         public int Order_Id { get; set; }
+        public int TotalPrice { get; set; }
+        public double Discount { get; set; }
+        public int Quantity { get; set; }
 
-       
     }
 }

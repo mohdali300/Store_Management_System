@@ -8,14 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Store_System.UI.ControlPanelUi
+namespace Store_System.UI
 {
-    public partial class SaleBill : UserControl
+    public partial class MainStockPage : UserControl
     {
-        public SaleBill()
+        public MainStockPage()
         {
             InitializeComponent();
         }
+
+        private void MainStockPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
