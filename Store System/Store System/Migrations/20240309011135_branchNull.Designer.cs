@@ -12,8 +12,8 @@ using Store_System.Data;
 namespace Store_System.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20240308173727_init")]
-    partial class init
+    [Migration("20240309011135_branchNull")]
+    partial class branchNull
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -426,7 +426,7 @@ namespace Store_System.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("Branch_Id")
+                    b.Property<int?>("Branch_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -644,9 +644,7 @@ namespace Store_System.Migrations
                 {
                     b.HasOne("Store_System.Models.Branch", "Branch")
                         .WithMany("Users")
-                        .HasForeignKey("Branch_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Branch_Id");
 
                     b.Navigation("Branch");
                 });

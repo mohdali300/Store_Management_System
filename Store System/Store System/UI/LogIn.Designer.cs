@@ -43,20 +43,20 @@
             PasswordBox = new TextBox();
             UserNameBox = new TextBox();
             label6 = new Label();
-            pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
+            label5 = new Label();
+            label7 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.SeaShell;
+            panel1.BackColor = Color.FromArgb(24, 30, 46);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
@@ -108,12 +108,12 @@
             // 
             Cashierradio.AutoSize = true;
             Cashierradio.Cursor = Cursors.Hand;
-            Cashierradio.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Cashierradio.ForeColor = Color.Maroon;
+            Cashierradio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Cashierradio.ForeColor = Color.White;
             Cashierradio.Location = new Point(123, 383);
             Cashierradio.Name = "Cashierradio";
             Cashierradio.RightToLeft = RightToLeft.Yes;
-            Cashierradio.Size = new Size(77, 29);
+            Cashierradio.Size = new Size(80, 32);
             Cashierradio.TabIndex = 8;
             Cashierradio.TabStop = true;
             Cashierradio.Text = "كاشير";
@@ -123,12 +123,12 @@
             // 
             Adminradio.AutoSize = true;
             Adminradio.Cursor = Cursors.Hand;
-            Adminradio.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            Adminradio.ForeColor = Color.Maroon;
+            Adminradio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Adminradio.ForeColor = Color.White;
             Adminradio.Location = new Point(240, 383);
             Adminradio.Name = "Adminradio";
             Adminradio.RightToLeft = RightToLeft.Yes;
-            Adminradio.Size = new Size(67, 29);
+            Adminradio.Size = new Size(73, 32);
             Adminradio.TabIndex = 7;
             Adminradio.TabStop = true;
             Adminradio.Text = "أدمن";
@@ -138,11 +138,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(261, 283);
+            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(27, 156, 133);
+            label4.Location = new Point(257, 286);
             label4.Name = "label4";
-            label4.Size = new Size(108, 29);
+            label4.Size = new Size(102, 25);
             label4.TabIndex = 6;
             label4.Text = ":كلمة المرور";
             // 
@@ -150,11 +150,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(238, 184);
+            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(27, 156, 133);
+            label3.Location = new Point(232, 188);
             label3.Name = "label3";
-            label3.Size = new Size(115, 29);
+            label3.Size = new Size(127, 25);
             label3.TabIndex = 5;
             label3.Text = ":اسم المستخدم";
             // 
@@ -163,8 +163,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Maroon;
-            label1.Location = new Point(72, 113);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(97, 108);
             label1.Name = "label1";
             label1.Size = new Size(255, 29);
             label1.TabIndex = 4;
@@ -174,20 +174,21 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Maroon;
-            label2.Location = new Point(141, 40);
+            label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(156, 42);
             label2.Name = "label2";
-            label2.Size = new Size(138, 42);
+            label2.Size = new Size(155, 50);
             label2.TabIndex = 3;
             label2.Text = "مرحبا بك";
             // 
             // SignInBtn
             // 
-            SignInBtn.BackColor = Color.Snow;
+            SignInBtn.BackColor = Color.FromArgb(27, 156, 133);
             SignInBtn.Cursor = Cursors.Hand;
+            SignInBtn.FlatStyle = FlatStyle.Flat;
             SignInBtn.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            SignInBtn.ForeColor = Color.Maroon;
+            SignInBtn.ForeColor = Color.White;
             SignInBtn.Location = new Point(126, 436);
             SignInBtn.Name = "SignInBtn";
             SignInBtn.Size = new Size(186, 43);
@@ -217,25 +218,13 @@
             label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(12, 559);
+            label6.Location = new Point(24, 563);
             label6.Name = "label6";
-            label6.Size = new Size(120, 22);
+            label6.Size = new Size(132, 22);
             label6.TabIndex = 7;
             label6.Text = "Developed by";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(793, 576);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(128, 120);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 12;
-            pictureBox4.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -249,6 +238,32 @@
             pictureBox5.TabIndex = 13;
             pictureBox5.TabStop = false;
             // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(788, 595);
+            label5.Name = "label5";
+            label5.Size = new Size(131, 52);
+            label5.TabIndex = 14;
+            label5.Text = "Store";
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(806, 635);
+            label7.Name = "label7";
+            label7.Size = new Size(108, 52);
+            label7.TabIndex = 15;
+            label7.Text = "logo";
+            // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -258,10 +273,12 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(975, 728);
+            Controls.Add(label5);
             Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
             Controls.Add(label6);
             Controls.Add(panel1);
+            Controls.Add(label7);
+            MaximizeBox = false;
             MinimumSize = new Size(993, 775);
             Name = "LogIn";
             RightToLeftLayout = true;
@@ -272,7 +289,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -294,7 +310,8 @@
         private RadioButton Cashierradio;
         private RadioButton Adminradio;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private Label label5;
+        private Label label7;
     }
 }

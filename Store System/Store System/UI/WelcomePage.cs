@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Store_System.UI
 {
-    public partial class CashierDashboard : Form
+    public partial class WelcomePage : UserControl
     {
-        public CashierDashboard()
+        public WelcomePage()
         {
             InitializeComponent();
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //label1.Visible = false;
-
         }
     }
 }

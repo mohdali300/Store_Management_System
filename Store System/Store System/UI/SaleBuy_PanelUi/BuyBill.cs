@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Store_System.UI.ControlPanelUi
 {
-    public partial class ReturnedItems : UserControl
+    public partial class BuyBill : UserControl
     {
-        public ReturnedItems()
+        public BuyBill()
         {
             InitializeComponent();
         }
+
+        private void BuyBill_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

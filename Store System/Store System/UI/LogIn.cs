@@ -17,7 +17,8 @@ namespace Store_System.UI
         Login Login;
 
         AdminDashboard home;
-        CashierDashboard userDashboard;
+       
+
 
 
         public LogIn()
@@ -25,7 +26,6 @@ namespace Store_System.UI
             InitializeComponent();
             Login = new Login();
             home = new AdminDashboard();
-            userDashboard = new CashierDashboard();
         }
 
         private async void SignInBtn_Click(object sender, EventArgs e)
@@ -74,8 +74,8 @@ namespace Store_System.UI
                         {
                             if (user.Role == Role.Cashier && user.Password == PasswordBox.Text)
                             {
-                                this.Hide();
-                                userDashboard.Show();
+                                this.Hide();                             
+                                home.Show();
                             }
                             else if (user.Role == Role.Admin)
                             {
@@ -88,13 +88,14 @@ namespace Store_System.UI
 
                             }
                         }
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("هذا المستخدم غير موجود ", "System");
                     }
                 }
             }
         }
-      }
     }
+}
 

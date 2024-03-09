@@ -187,8 +187,7 @@ namespace Store_System.Migrations
                 {
                     Branch_Id = table.Column<int>(type: "int", nullable: false),
                     Supplier_Id = table.Column<int>(type: "int", nullable: false),
-                    BranchID = table.Column<int>(type: "int", nullable: true),
-                    SupplierID = table.Column<int>(type: "int", nullable: true)
+                  
                 },
                 constraints: table =>
                 {
@@ -198,21 +197,13 @@ namespace Store_System.Migrations
                         column: x => x.Branch_Id,
                         principalTable: "Branch",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_BranchSuppliers_Branch_BranchID",
-                        column: x => x.BranchID,
-                        principalTable: "Branch",
-                        principalColumn: "ID");
+                    
                     table.ForeignKey(
                         name: "FK_BranchSuppliers_Supplier_Supplier_Id",
                         column: x => x.Supplier_Id,
                         principalTable: "Supplier",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_BranchSuppliers_Supplier_SupplierID",
-                        column: x => x.SupplierID,
-                        principalTable: "Supplier",
-                        principalColumn: "ID");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -253,8 +244,7 @@ namespace Store_System.Migrations
                     Stock_Id = table.Column<int>(type: "int", nullable: false),
                     QuantityInStock = table.Column<int>(type: "int", nullable: false),
                     MinQuantity = table.Column<int>(type: "int", nullable: false),
-                    ProductID = table.Column<int>(type: "int", nullable: true),
-                    StockID = table.Column<int>(type: "int", nullable: true)
+
                 },
                 constraints: table =>
                 {
@@ -264,21 +254,13 @@ namespace Store_System.Migrations
                         column: x => x.Product_Id,
                         principalTable: "Product",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_ProductsStocks_Product_ProductID",
-                        column: x => x.ProductID,
-                        principalTable: "Product",
-                        principalColumn: "ID");
+                    
                     table.ForeignKey(
                         name: "FK_ProductsStocks_Stock_Stock_Id",
                         column: x => x.Stock_Id,
                         principalTable: "Stock",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_ProductsStocks_Stock_StockID",
-                        column: x => x.StockID,
-                        principalTable: "Stock",
-                        principalColumn: "ID");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -287,8 +269,7 @@ namespace Store_System.Migrations
                 {
                     product_Id = table.Column<int>(type: "int", nullable: false),
                     Supplier_Id = table.Column<int>(type: "int", nullable: false),
-                    ProductID = table.Column<int>(type: "int", nullable: true),
-                    SupplierID = table.Column<int>(type: "int", nullable: true)
+                  
                 },
                 constraints: table =>
                 {
@@ -298,21 +279,13 @@ namespace Store_System.Migrations
                         column: x => x.product_Id,
                         principalTable: "Product",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_ProductsSuppliers_Product_ProductID",
-                        column: x => x.ProductID,
-                        principalTable: "Product",
-                        principalColumn: "ID");
+                   
                     table.ForeignKey(
                         name: "FK_ProductsSuppliers_Supplier_Supplier_Id",
                         column: x => x.Supplier_Id,
                         principalTable: "Supplier",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_ProductsSuppliers_Supplier_SupplierID",
-                        column: x => x.SupplierID,
-                        principalTable: "Supplier",
-                        principalColumn: "ID");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -321,8 +294,7 @@ namespace Store_System.Migrations
                 {
                     Returned_Id = table.Column<int>(type: "int", nullable: false),
                     Product_Id = table.Column<int>(type: "int", nullable: false),
-                    ProductID = table.Column<int>(type: "int", nullable: true),
-                    Returnedid = table.Column<int>(type: "int", nullable: true)
+                   
                 },
                 constraints: table =>
                 {
@@ -332,21 +304,13 @@ namespace Store_System.Migrations
                         column: x => x.Product_Id,
                         principalTable: "Product",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_ReturnedItems_Product_ProductID",
-                        column: x => x.ProductID,
-                        principalTable: "Product",
-                        principalColumn: "ID");
+                 
                     table.ForeignKey(
                         name: "FK_ReturnedItems_Returned_Returned_Id",
                         column: x => x.Returned_Id,
                         principalTable: "Returned",
                         principalColumn: "id");
-                    table.ForeignKey(
-                        name: "FK_ReturnedItems_Returned_Returnedid",
-                        column: x => x.Returnedid,
-                        principalTable: "Returned",
-                        principalColumn: "id");
+                  
                 });
 
             migrationBuilder.CreateTable(
@@ -358,8 +322,7 @@ namespace Store_System.Migrations
                     TotalPrice = table.Column<int>(type: "int", nullable: false),
                     Discount = table.Column<double>(type: "float", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: true),
-                    ProductID = table.Column<int>(type: "int", nullable: true)
+                  
                 },
                 constraints: table =>
                 {
@@ -369,21 +332,13 @@ namespace Store_System.Migrations
                         column: x => x.Order_Id,
                         principalTable: "Order",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_OrderItems_Order_OrderID",
-                        column: x => x.OrderID,
-                        principalTable: "Order",
-                        principalColumn: "ID");
+                   
                     table.ForeignKey(
                         name: "FK_OrderItems_Product_product_Id",
                         column: x => x.product_Id,
                         principalTable: "Product",
                         principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_OrderItems_Product_ProductID",
-                        column: x => x.ProductID,
-                        principalTable: "Product",
-                        principalColumn: "ID");
+                   
                 });
 
             migrationBuilder.CreateIndex(
@@ -391,15 +346,8 @@ namespace Store_System.Migrations
                 table: "BranchSuppliers",
                 column: "Branch_Id");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_BranchSuppliers_BranchID",
-                table: "BranchSuppliers",
-                column: "BranchID");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_BranchSuppliers_SupplierID",
-                table: "BranchSuppliers",
-                column: "SupplierID");
+
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employee_branch_ID",
@@ -421,15 +369,7 @@ namespace Store_System.Migrations
                 table: "OrderItems",
                 column: "Order_Id");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderItems_OrderID",
-                table: "OrderItems",
-                column: "OrderID");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderItems_ProductID",
-                table: "OrderItems",
-                column: "ProductID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Product_Category_id",
@@ -441,45 +381,21 @@ namespace Store_System.Migrations
                 table: "ProductsStocks",
                 column: "Product_Id");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductsStocks_ProductID",
-                table: "ProductsStocks",
-                column: "ProductID");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductsStocks_StockID",
-                table: "ProductsStocks",
-                column: "StockID");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductsSuppliers_ProductID",
-                table: "ProductsSuppliers",
-                column: "ProductID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductsSuppliers_Supplier_Id",
                 table: "ProductsSuppliers",
                 column: "Supplier_Id");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductsSuppliers_SupplierID",
-                table: "ProductsSuppliers",
-                column: "SupplierID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ReturnedItems_Product_Id",
                 table: "ReturnedItems",
                 column: "Product_Id");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_ReturnedItems_ProductID",
-                table: "ReturnedItems",
-                column: "ProductID");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_ReturnedItems_Returnedid",
-                table: "ReturnedItems",
-                column: "Returnedid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_User_Branch_Id",

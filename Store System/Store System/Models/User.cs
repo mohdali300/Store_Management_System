@@ -10,8 +10,8 @@ namespace Store_System.Models
 {
     public enum Role
     {
-        Admin,
-        Cashier,
+        Admin=0,
+        Cashier=1,
     }
 
     internal class User
@@ -28,9 +28,9 @@ namespace Store_System.Models
         [EmailAddress]
         public string? Email { get; set; }
         [Required]
-        public string? UserName { get; set; }
+        public string UserName { get; set; }
         [Required]
-        public string? Password { get; set; }
+        public string Password { get; set; }
         [Required]
         public Role Role { get; set; }
 
@@ -38,7 +38,7 @@ namespace Store_System.Models
         public virtual List<Order>? Orders { get; set; }
         public Branch Branch  { get; set; }
         [ForeignKey("Branch")]
-        public int Branch_Id { get; set; }
+        public int? Branch_Id { get; set; }
         public string MoneyStockName { get; set; }
         public double MoneyStockAmount { get; set; }
 
