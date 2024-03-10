@@ -37,9 +37,7 @@
             stockLbl = new Label();
             stockBox = new TextBox();
             toDateLbl = new Label();
-            toDateBox = new DateTimePicker();
-            fromDateLbl = new Label();
-            fromDateBox = new DateTimePicker();
+            colorlbl = new Label();
             discountLbl = new Label();
             discountBox = new TextBox();
             sellingPriceLbl = new Label();
@@ -53,6 +51,17 @@
             pNameLbl = new Label();
             productNameBox = new TextBox();
             Items = new DataGridView();
+            _Barcode = new DataGridViewTextBoxColumn();
+            _Name = new DataGridViewTextBoxColumn();
+            category = new DataGridViewTextBoxColumn();
+            Supplier = new DataGridViewTextBoxColumn();
+            _Quantity = new DataGridViewTextBoxColumn();
+            _cost = new DataGridViewTextBoxColumn();
+            _discount = new DataGridViewTextBoxColumn();
+            Sale = new DataGridViewTextBoxColumn();
+            _color = new DataGridViewTextBoxColumn();
+            _size = new DataGridViewTextBoxColumn();
+            notes = new DataGridViewTextBoxColumn();
             existProductsLbl = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -62,6 +71,9 @@
             searchProductLbl = new Label();
             searchLbl = new PictureBox();
             deleteProductBtn = new Button();
+            SizeBox = new ComboBox();
+            ColorBox = new TextBox();
+            updatebtn = new Button();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -90,9 +102,9 @@
             barCodeBox.BackColor = Color.FromArgb(24, 30, 46);
             barCodeBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             barCodeBox.ForeColor = Color.White;
-            barCodeBox.Location = new Point(1133, 147);
+            barCodeBox.Location = new Point(1084, 147);
             barCodeBox.Name = "barCodeBox";
-            barCodeBox.Size = new Size(269, 47);
+            barCodeBox.Size = new Size(342, 47);
             barCodeBox.TabIndex = 16;
             // 
             // AddProductBtn
@@ -102,7 +114,7 @@
             AddProductBtn.FlatStyle = FlatStyle.Popup;
             AddProductBtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             AddProductBtn.ForeColor = Color.Snow;
-            AddProductBtn.Location = new Point(242, 312);
+            AddProductBtn.Location = new Point(913, 405);
             AddProductBtn.Name = "AddProductBtn";
             AddProductBtn.RightToLeft = RightToLeft.Yes;
             AddProductBtn.Size = new Size(153, 56);
@@ -118,7 +130,7 @@
             notesLbl.BackColor = Color.FromArgb(24, 30, 46);
             notesLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             notesLbl.ForeColor = Color.White;
-            notesLbl.Location = new Point(262, 213);
+            notesLbl.Location = new Point(616, 313);
             notesLbl.Name = "notesLbl";
             notesLbl.Padding = new Padding(0, 0, 0, 5);
             notesLbl.RightToLeft = RightToLeft.Yes;
@@ -132,9 +144,9 @@
             noteBox.BackColor = Color.FromArgb(24, 30, 46);
             noteBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             noteBox.ForeColor = Color.White;
-            noteBox.Location = new Point(84, 236);
+            noteBox.Location = new Point(38, 329);
             noteBox.Name = "noteBox";
-            noteBox.Size = new Size(261, 47);
+            noteBox.Size = new Size(658, 47);
             noteBox.TabIndex = 36;
             // 
             // stockLbl
@@ -144,7 +156,7 @@
             stockLbl.BackColor = Color.FromArgb(24, 30, 46);
             stockLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             stockLbl.ForeColor = Color.White;
-            stockLbl.Location = new Point(630, 213);
+            stockLbl.Location = new Point(1340, 222);
             stockLbl.Name = "stockLbl";
             stockLbl.Padding = new Padding(0, 0, 0, 5);
             stockLbl.RightToLeft = RightToLeft.Yes;
@@ -158,9 +170,9 @@
             stockBox.BackColor = Color.FromArgb(24, 30, 46);
             stockBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             stockBox.ForeColor = Color.White;
-            stockBox.Location = new Point(427, 236);
+            stockBox.Location = new Point(1084, 245);
             stockBox.Name = "stockBox";
-            stockBox.Size = new Size(265, 47);
+            stockBox.Size = new Size(342, 47);
             stockBox.TabIndex = 34;
             // 
             // toDateLbl
@@ -170,54 +182,28 @@
             toDateLbl.BackColor = Color.FromArgb(24, 30, 46);
             toDateLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             toDateLbl.ForeColor = Color.White;
-            toDateLbl.Location = new Point(642, 297);
+            toDateLbl.Location = new Point(991, 307);
             toDateLbl.Name = "toDateLbl";
             toDateLbl.Padding = new Padding(0, 0, 0, 5);
             toDateLbl.RightToLeft = RightToLeft.Yes;
-            toDateLbl.Size = new Size(44, 28);
+            toDateLbl.Size = new Size(63, 28);
             toDateLbl.TabIndex = 32;
-            toDateLbl.Text = "إلى :";
+            toDateLbl.Text = "المقاس";
             // 
-            // toDateBox
+            // colorlbl
             // 
-            toDateBox.Anchor = AnchorStyles.None;
-            toDateBox.CalendarMonthBackground = Color.Snow;
-            toDateBox.CalendarTitleBackColor = Color.Snow;
-            toDateBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            toDateBox.Format = DateTimePickerFormat.Short;
-            toDateBox.Location = new Point(428, 321);
-            toDateBox.Name = "toDateBox";
-            toDateBox.RightToLeft = RightToLeft.Yes;
-            toDateBox.Size = new Size(265, 47);
-            toDateBox.TabIndex = 31;
-            // 
-            // fromDateLbl
-            // 
-            fromDateLbl.Anchor = AnchorStyles.None;
-            fromDateLbl.AutoSize = true;
-            fromDateLbl.BackColor = Color.FromArgb(24, 30, 46);
-            fromDateLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            fromDateLbl.ForeColor = Color.White;
-            fromDateLbl.Location = new Point(919, 300);
-            fromDateLbl.Name = "fromDateLbl";
-            fromDateLbl.Padding = new Padding(0, 0, 0, 5);
-            fromDateLbl.RightToLeft = RightToLeft.Yes;
-            fromDateLbl.Size = new Size(128, 28);
-            fromDateLbl.TabIndex = 30;
-            fromDateLbl.Text = "فترة الخصم من :";
-            // 
-            // fromDateBox
-            // 
-            fromDateBox.Anchor = AnchorStyles.None;
-            fromDateBox.CalendarMonthBackground = Color.Snow;
-            fromDateBox.CalendarTitleBackColor = Color.Snow;
-            fromDateBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            fromDateBox.Format = DateTimePickerFormat.Short;
-            fromDateBox.Location = new Point(776, 324);
-            fromDateBox.Name = "fromDateBox";
-            fromDateBox.RightToLeft = RightToLeft.Yes;
-            fromDateBox.Size = new Size(277, 47);
-            fromDateBox.TabIndex = 29;
+            colorlbl.Anchor = AnchorStyles.None;
+            colorlbl.AutoSize = true;
+            colorlbl.BackColor = Color.FromArgb(24, 30, 46);
+            colorlbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            colorlbl.ForeColor = Color.White;
+            colorlbl.Location = new Point(1364, 300);
+            colorlbl.Name = "colorlbl";
+            colorlbl.Padding = new Padding(0, 0, 0, 5);
+            colorlbl.RightToLeft = RightToLeft.Yes;
+            colorlbl.Size = new Size(46, 28);
+            colorlbl.TabIndex = 30;
+            colorlbl.Text = "اللون";
             // 
             // discountLbl
             // 
@@ -226,7 +212,7 @@
             discountLbl.BackColor = Color.FromArgb(24, 30, 46);
             discountLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             discountLbl.ForeColor = Color.White;
-            discountLbl.Location = new Point(1302, 301);
+            discountLbl.Location = new Point(596, 229);
             discountLbl.Name = "discountLbl";
             discountLbl.Padding = new Padding(0, 0, 0, 5);
             discountLbl.RightToLeft = RightToLeft.Yes;
@@ -240,10 +226,12 @@
             discountBox.BackColor = Color.FromArgb(24, 30, 46);
             discountBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             discountBox.ForeColor = Color.White;
-            discountBox.Location = new Point(1136, 323);
+            discountBox.Location = new Point(381, 251);
             discountBox.Name = "discountBox";
-            discountBox.Size = new Size(266, 47);
+            discountBox.Size = new Size(315, 47);
             discountBox.TabIndex = 28;
+            discountBox.Text = "0";
+            discountBox.TextChanged += discountBox_TextChanged;
             // 
             // sellingPriceLbl
             // 
@@ -252,7 +240,7 @@
             sellingPriceLbl.BackColor = Color.FromArgb(24, 30, 46);
             sellingPriceLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             sellingPriceLbl.ForeColor = Color.White;
-            sellingPriceLbl.Location = new Point(962, 214);
+            sellingPriceLbl.Location = new Point(256, 223);
             sellingPriceLbl.Name = "sellingPriceLbl";
             sellingPriceLbl.Padding = new Padding(0, 0, 0, 5);
             sellingPriceLbl.RightToLeft = RightToLeft.Yes;
@@ -267,7 +255,7 @@
             costLbl.BackColor = Color.FromArgb(24, 30, 46);
             costLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             costLbl.ForeColor = Color.White;
-            costLbl.Location = new Point(1313, 214);
+            costLbl.Location = new Point(964, 230);
             costLbl.Name = "costLbl";
             costLbl.Padding = new Padding(0, 0, 0, 5);
             costLbl.RightToLeft = RightToLeft.Yes;
@@ -281,9 +269,9 @@
             sellingPriceBox.BackColor = Color.FromArgb(24, 30, 46);
             sellingPriceBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             sellingPriceBox.ForeColor = Color.White;
-            sellingPriceBox.Location = new Point(774, 236);
+            sellingPriceBox.Location = new Point(38, 245);
             sellingPriceBox.Name = "sellingPriceBox";
-            sellingPriceBox.Size = new Size(277, 47);
+            sellingPriceBox.Size = new Size(307, 47);
             sellingPriceBox.TabIndex = 26;
             // 
             // costBox
@@ -292,9 +280,9 @@
             costBox.BackColor = Color.FromArgb(24, 30, 46);
             costBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             costBox.ForeColor = Color.White;
-            costBox.Location = new Point(1133, 235);
+            costBox.Location = new Point(716, 251);
             costBox.Name = "costBox";
-            costBox.Size = new Size(269, 47);
+            costBox.Size = new Size(337, 47);
             costBox.TabIndex = 24;
             // 
             // supplierLbl
@@ -319,10 +307,10 @@
             SupplierComboBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             SupplierComboBox.ForeColor = Color.White;
             SupplierComboBox.FormattingEnabled = true;
-            SupplierComboBox.Location = new Point(84, 148);
+            SupplierComboBox.Location = new Point(38, 148);
             SupplierComboBox.Name = "SupplierComboBox";
             SupplierComboBox.RightToLeft = RightToLeft.Yes;
-            SupplierComboBox.Size = new Size(261, 49);
+            SupplierComboBox.Size = new Size(307, 49);
             SupplierComboBox.TabIndex = 21;
             // 
             // categoryLbl
@@ -347,10 +335,10 @@
             CatComboBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             CatComboBox.ForeColor = Color.White;
             CatComboBox.FormattingEnabled = true;
-            CatComboBox.Location = new Point(425, 148);
+            CatComboBox.Location = new Point(381, 148);
             CatComboBox.Name = "CatComboBox";
             CatComboBox.RightToLeft = RightToLeft.Yes;
-            CatComboBox.Size = new Size(271, 49);
+            CatComboBox.Size = new Size(315, 49);
             CatComboBox.TabIndex = 19;
             // 
             // pNameLbl
@@ -374,22 +362,106 @@
             productNameBox.BackColor = Color.FromArgb(24, 30, 46);
             productNameBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             productNameBox.ForeColor = Color.White;
-            productNameBox.Location = new Point(776, 147);
+            productNameBox.Location = new Point(716, 147);
             productNameBox.Name = "productNameBox";
-            productNameBox.Size = new Size(277, 47);
+            productNameBox.Size = new Size(337, 47);
             productNameBox.TabIndex = 18;
             // 
             // Items
             // 
+            Items.AllowUserToAddRows = false;
+            Items.AllowUserToDeleteRows = false;
             Items.Anchor = AnchorStyles.None;
+            Items.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Items.BackgroundColor = Color.Snow;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Items.Location = new Point(84, 477);
+            Items.Columns.AddRange(new DataGridViewColumn[] { _Barcode, _Name, category, Supplier, _Quantity, _cost, _discount, Sale, _color, _size, notes });
+            Items.Location = new Point(23, 477);
             Items.Name = "Items";
+            Items.ReadOnly = true;
+            Items.RightToLeft = RightToLeft.Yes;
             Items.RowHeadersWidth = 51;
             Items.RowTemplate.Height = 29;
-            Items.Size = new Size(1318, 453);
+            Items.Size = new Size(1454, 453);
             Items.TabIndex = 21;
+            Items.RowHeaderMouseClick += Items_RowHeaderMouseClick;
+            // 
+            // _Barcode
+            // 
+            _Barcode.HeaderText = "الكود";
+            _Barcode.MinimumWidth = 6;
+            _Barcode.Name = "_Barcode";
+            _Barcode.ReadOnly = true;
+            // 
+            // _Name
+            // 
+            _Name.HeaderText = "إسم المنتج";
+            _Name.MinimumWidth = 6;
+            _Name.Name = "_Name";
+            _Name.ReadOnly = true;
+            // 
+            // category
+            // 
+            category.HeaderText = "نوع الصنف";
+            category.MinimumWidth = 6;
+            category.Name = "category";
+            category.ReadOnly = true;
+            // 
+            // Supplier
+            // 
+            Supplier.HeaderText = "المورد";
+            Supplier.MinimumWidth = 6;
+            Supplier.Name = "Supplier";
+            Supplier.ReadOnly = true;
+            // 
+            // _Quantity
+            // 
+            _Quantity.HeaderText = "الكمية";
+            _Quantity.MinimumWidth = 6;
+            _Quantity.Name = "_Quantity";
+            _Quantity.ReadOnly = true;
+            // 
+            // _cost
+            // 
+            _cost.HeaderText = "سعر الشراء";
+            _cost.MinimumWidth = 6;
+            _cost.Name = "_cost";
+            _cost.ReadOnly = true;
+            // 
+            // _discount
+            // 
+            _discount.HeaderText = "الخصم";
+            _discount.MinimumWidth = 6;
+            _discount.Name = "_discount";
+            _discount.ReadOnly = true;
+            // 
+            // Sale
+            // 
+            Sale.HeaderText = "سعر البيع";
+            Sale.MinimumWidth = 6;
+            Sale.Name = "Sale";
+            Sale.ReadOnly = true;
+            // 
+            // _color
+            // 
+            _color.HeaderText = "اللون";
+            _color.MinimumWidth = 6;
+            _color.Name = "_color";
+            _color.ReadOnly = true;
+            // 
+            // _size
+            // 
+            _size.HeaderText = "المقاس";
+            _size.MinimumWidth = 6;
+            _size.Name = "_size";
+            _size.ReadOnly = true;
+            // 
+            // notes
+            // 
+            notes.HeaderText = "ملاحظات";
+            notes.MinimumWidth = 6;
+            notes.Name = "notes";
+            notes.ReadOnly = true;
             // 
             // existProductsLbl
             // 
@@ -458,10 +530,12 @@
             searchProductBox.BackColor = Color.FromArgb(24, 30, 46);
             searchProductBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             searchProductBox.ForeColor = Color.White;
-            searchProductBox.Location = new Point(84, 429);
+            searchProductBox.Location = new Point(38, 405);
+            searchProductBox.Multiline = true;
             searchProductBox.Name = "searchProductBox";
-            searchProductBox.Size = new Size(357, 38);
+            searchProductBox.Size = new Size(403, 56);
             searchProductBox.TabIndex = 56;
+            searchProductBox.TextChanged += searchProductBox_TextChanged;
             // 
             // searchProductLbl
             // 
@@ -470,7 +544,7 @@
             searchProductLbl.BackColor = Color.FromArgb(24, 30, 46);
             searchProductLbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             searchProductLbl.ForeColor = Color.White;
-            searchProductLbl.Location = new Point(356, 419);
+            searchProductLbl.Location = new Point(356, 392);
             searchProductLbl.Name = "searchProductLbl";
             searchProductLbl.Padding = new Padding(0, 0, 0, 5);
             searchProductLbl.RightToLeft = RightToLeft.Yes;
@@ -482,9 +556,9 @@
             // 
             searchLbl.Anchor = AnchorStyles.None;
             searchLbl.Image = (Image)resources.GetObject("searchLbl.Image");
-            searchLbl.Location = new Point(447, 429);
+            searchLbl.Location = new Point(461, 405);
             searchLbl.Name = "searchLbl";
-            searchLbl.Size = new Size(40, 38);
+            searchLbl.Size = new Size(62, 56);
             searchLbl.SizeMode = PictureBoxSizeMode.Zoom;
             searchLbl.TabIndex = 58;
             searchLbl.TabStop = false;
@@ -496,7 +570,7 @@
             deleteProductBtn.FlatStyle = FlatStyle.Popup;
             deleteProductBtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             deleteProductBtn.ForeColor = Color.Snow;
-            deleteProductBtn.Location = new Point(84, 312);
+            deleteProductBtn.Location = new Point(596, 405);
             deleteProductBtn.Name = "deleteProductBtn";
             deleteProductBtn.RightToLeft = RightToLeft.Yes;
             deleteProductBtn.Size = new Size(152, 56);
@@ -505,11 +579,55 @@
             deleteProductBtn.UseVisualStyleBackColor = false;
             deleteProductBtn.Click += deleteProductBtn_Click;
             // 
+            // SizeBox
+            // 
+            SizeBox.Anchor = AnchorStyles.None;
+            SizeBox.BackColor = Color.FromArgb(24, 30, 46);
+            SizeBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            SizeBox.ForeColor = Color.White;
+            SizeBox.FormattingEnabled = true;
+            SizeBox.Items.AddRange(new object[] { "Small", "Medium", "Large", "XLarge", "XXLarge", "XXXLarge", "Custom" });
+            SizeBox.Location = new Point(716, 329);
+            SizeBox.Name = "SizeBox";
+            SizeBox.RightToLeft = RightToLeft.Yes;
+            SizeBox.Size = new Size(337, 49);
+            SizeBox.TabIndex = 61;
+            // 
+            // ColorBox
+            // 
+            ColorBox.Anchor = AnchorStyles.None;
+            ColorBox.BackColor = Color.FromArgb(24, 30, 46);
+            ColorBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            ColorBox.ForeColor = Color.White;
+            ColorBox.Location = new Point(1084, 331);
+            ColorBox.Name = "ColorBox";
+            ColorBox.Size = new Size(342, 47);
+            ColorBox.TabIndex = 62;
+            // 
+            // updatebtn
+            // 
+            updatebtn.Anchor = AnchorStyles.None;
+            updatebtn.BackColor = Color.LimeGreen;
+            updatebtn.FlatStyle = FlatStyle.Popup;
+            updatebtn.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            updatebtn.ForeColor = Color.Snow;
+            updatebtn.Location = new Point(754, 405);
+            updatebtn.Name = "updatebtn";
+            updatebtn.RightToLeft = RightToLeft.Yes;
+            updatebtn.Size = new Size(153, 56);
+            updatebtn.TabIndex = 63;
+            updatebtn.Text = "تعديل";
+            updatebtn.UseVisualStyleBackColor = false;
+            updatebtn.Click += updatebtn_Click;
+            // 
             // AddProductPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(updatebtn);
+            Controls.Add(ColorBox);
+            Controls.Add(SizeBox);
             Controls.Add(deleteProductBtn);
             Controls.Add(pictureBox2);
             Controls.Add(searchLbl);
@@ -531,17 +649,15 @@
             Controls.Add(stockLbl);
             Controls.Add(barCodeBox);
             Controls.Add(stockBox);
-            Controls.Add(toDateLbl);
-            Controls.Add(toDateBox);
             Controls.Add(CatComboBox);
-            Controls.Add(fromDateLbl);
-            Controls.Add(fromDateBox);
             Controls.Add(SupplierComboBox);
             Controls.Add(discountLbl);
             Controls.Add(discountBox);
             Controls.Add(costBox);
             Controls.Add(sellingPriceLbl);
             Controls.Add(sellingPriceBox);
+            Controls.Add(colorlbl);
+            Controls.Add(toDateLbl);
             MinimumSize = new Size(1244, 752);
             Name = "AddProductPage";
             Size = new Size(1496, 949);
@@ -572,9 +688,7 @@
         private Label stockLbl;
         private TextBox stockBox;
         private Label toDateLbl;
-        private DateTimePicker toDateBox;
-        private Label fromDateLbl;
-        private DateTimePicker fromDateBox;
+        private Label colorlbl;
         private Label discountLbl;
         private TextBox discountBox;
         private Button AddProductBtn;
@@ -590,5 +704,19 @@
         private Label searchProductLbl;
         private PictureBox searchLbl;
         private Button deleteProductBtn;
+        private ComboBox SizeBox;
+        private TextBox ColorBox;
+        private DataGridViewTextBoxColumn _Barcode;
+        private DataGridViewTextBoxColumn _Name;
+        private DataGridViewTextBoxColumn category;
+        private DataGridViewTextBoxColumn Supplier;
+        private DataGridViewTextBoxColumn _Quantity;
+        private DataGridViewTextBoxColumn _cost;
+        private DataGridViewTextBoxColumn _discount;
+        private DataGridViewTextBoxColumn Sale;
+        private DataGridViewTextBoxColumn _color;
+        private DataGridViewTextBoxColumn _size;
+        private DataGridViewTextBoxColumn notes;
+        private Button updatebtn;
     }
 }

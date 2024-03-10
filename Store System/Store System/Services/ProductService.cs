@@ -29,17 +29,67 @@ namespace Store_System.Services
             }
             
         }
-        public async Task<List<Category>> GetALlCategories()
+        public async Task<List<Product>> GetAllProducts()
         {
-            var Categories = await _context.Category.ToListAsync();
-            if (Categories != null)
+          var Products=  await _context.Product.ToListAsync();
+            if (Products!=null)
             {
-                return Categories;
+                return Products;
+            }
+            return new List<Product>();
+        }
+        public async Task<int> DeleteProduct(string Barcode)
+        {
+            var Product = await _context.Product.FirstOrDefaultAsync(u => u.Barcode == Barcode);
+            if (Product != null)
+            {
+                _context.Product.Remove(Product);
+                await _context.SaveChangesAsync();
+                return 1;
+            }
+            else
+                return 0;
+        }
+
+        public async Task<int>UpdateProduct(Product product)
+        {
+            if (product != null)
+            { 
+                return await _context.SaveChangesAsync(); 
             }
             else
             {
-                return new List<Category>();
+                return 0;
             }
         }
+        public async Task<Product> GetProductByBarcode(string Barcode)
+        {
+            var Product = await _context.Product.FirstOrDefaultAsync(p => p.Barcode == Barcode);
+            if(Product != null)
+            {
+                return Product;
+            }
+            else
+            {
+                return new Product();
+            }
+
+        }
+        public async Task<List<Product>> Search(string Name)
+        {
+            if (Name != "") { 
+                var Products = await _context.Product.Where(p => p.Name.Contains(Name)).ToListAsync();
+                if (Products != null)
+                {
+                    return Products;
+                }
+                else
+                {
+                    return new List<Product>();
+                }
+            }
+            return new List<Product>();
+        }
+
     }
 }

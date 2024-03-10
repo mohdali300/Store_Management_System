@@ -57,6 +57,7 @@ namespace Store_System.UI
                     await _userServices.AddUser(_user);
                     MessageBox.Show("تمت إضافة المستخدم بنجاح", "System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
+               
                 }
                 else
                 {

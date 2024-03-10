@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Store_System.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,20 +11,21 @@ namespace Store_System.Models
 {
     public enum Size
     {
-        S,
-        M,
-        L,
-        XL,
-        XXL,
-        XXXL,
-        Custom
+        S=0,
+        M=1,
+        L=2,
+        XL=3,
+        XXL=4,
+        XXXL=5,
+        Custom=6
     }
 
     internal class Product
     {
+
         [Key]
         public int ID { get; set; }
-        public int Barcode { get; set; }
+        public string  Barcode { get; set; }
 
         public string Name { get; set; }
         public string? Description { get; set; }
@@ -42,6 +44,17 @@ namespace Store_System.Models
         public List<ProductsSuppliers>? ProductsSuppliers  { get; set; }
         public List<ProductsStocks>? ProductsStocks { get; set; }
         public List<ReturnedItems>? ReturnedItems { get; set; }
+
+        // public Category CategoryName()
+        //{
+        //    StoreContext context = new StoreContext();
+        //   Category category = context.Category.FirstOrDefault(c => c.ID == Category_id);
+        //    if (category != null)
+        //    {
+        //        return category;
+        //    }
+        //    return new Category();
+        //}
 
 
     }
