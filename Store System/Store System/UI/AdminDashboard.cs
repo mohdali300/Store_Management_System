@@ -19,7 +19,7 @@ namespace Store_System.UI
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
-          //  addUserPage1.Visible = false;
+            addUserPage1.Visible = false;
             addProductPage1.Visible = false;
             addCategoryPage1.Visible = false;
             addSupplierPage1.Visible = false;
@@ -78,7 +78,7 @@ namespace Store_System.UI
         {
             LogIn login = new LogIn();
             login.Show();
-            this.Close(); //this.Hide();
+            this.Hide();
         }
 
         private void buyBillBtn_Click(object sender, EventArgs e)

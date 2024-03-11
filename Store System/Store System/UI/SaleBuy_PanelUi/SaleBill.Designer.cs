@@ -48,8 +48,6 @@
             label12 = new Label();
             SizeBox = new ComboBox();
             label13 = new Label();
-            label11 = new Label();
-            DiscountBox = new TextBox();
             label8 = new Label();
             QuantityBox = new TextBox();
             label7 = new Label();
@@ -64,6 +62,16 @@
             label2 = new Label();
             BillCodeBox = new TextBox();
             Items = new DataGridView();
+            _Barcode = new DataGridViewTextBoxColumn();
+            _Name = new DataGridViewTextBoxColumn();
+            _Classification = new DataGridViewTextBoxColumn();
+            _Quantity = new DataGridViewTextBoxColumn();
+            _Color = new DataGridViewTextBoxColumn();
+            _Size = new DataGridViewTextBoxColumn();
+            SalePricePerOne = new DataGridViewTextBoxColumn();
+            _Discount = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
+            _notes = new DataGridViewTextBoxColumn();
             Printbtn = new Button();
             panel1 = new Panel();
             button1 = new Button();
@@ -72,13 +80,15 @@
             label9 = new Label();
             SelingPrice = new TextBox();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             panel3 = new Panel();
             ColorBox = new TextBox();
+            Updatebtn = new Button();
+            deletebtn = new Button();
+            _discountBox = new TextBox();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // Addbtn
@@ -88,12 +98,13 @@
             Addbtn.FlatStyle = FlatStyle.Flat;
             Addbtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
             Addbtn.ForeColor = Color.White;
-            Addbtn.Location = new Point(49, 242);
+            Addbtn.Location = new Point(165, 247);
             Addbtn.Name = "Addbtn";
-            Addbtn.Size = new Size(239, 55);
+            Addbtn.Size = new Size(110, 55);
             Addbtn.TabIndex = 124;
             Addbtn.Text = "إضافة";
             Addbtn.UseVisualStyleBackColor = false;
+            Addbtn.Click += Addbtn_Click;
             // 
             // Savebtn
             // 
@@ -180,6 +191,7 @@
             FaturaDiscountBox.RightToLeft = RightToLeft.Yes;
             FaturaDiscountBox.Size = new Size(209, 34);
             FaturaDiscountBox.TabIndex = 118;
+            FaturaDiscountBox.TextChanged += FaturaDiscountBox_TextChanged;
             // 
             // label17
             // 
@@ -283,7 +295,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(138, 148);
+            label12.Location = new Point(1081, 235);
             label12.Name = "label12";
             label12.Size = new Size(53, 23);
             label12.TabIndex = 108;
@@ -296,10 +308,10 @@
             SizeBox.ForeColor = Color.White;
             SizeBox.FormattingEnabled = true;
             SizeBox.Items.AddRange(new object[] { "Small", "Medium", "Large", "XLarge", "XXLarge", "XXXLarge", "Custome" });
-            SizeBox.Location = new Point(49, 168);
+            SizeBox.Location = new Point(848, 255);
             SizeBox.Name = "SizeBox";
             SizeBox.RightToLeft = RightToLeft.Yes;
-            SizeBox.Size = new Size(151, 36);
+            SizeBox.Size = new Size(295, 36);
             SizeBox.TabIndex = 107;
             // 
             // label13
@@ -308,35 +320,11 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(333, 148);
+            label13.Location = new Point(1396, 235);
             label13.Name = "label13";
             label13.Size = new Size(46, 23);
             label13.TabIndex = 106;
             label13.Text = "اللون";
-            // 
-            // label11
-            // 
-            label11.Anchor = AnchorStyles.None;
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(1090, 239);
-            label11.Name = "label11";
-            label11.Size = new Size(57, 23);
-            label11.TabIndex = 103;
-            label11.Text = "الخصم";
-            // 
-            // DiscountBox
-            // 
-            DiscountBox.Anchor = AnchorStyles.None;
-            DiscountBox.BackColor = Color.FromArgb(24, 30, 46);
-            DiscountBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DiscountBox.ForeColor = Color.White;
-            DiscountBox.Location = new Point(848, 257);
-            DiscountBox.Name = "DiscountBox";
-            DiscountBox.RightToLeft = RightToLeft.Yes;
-            DiscountBox.Size = new Size(295, 34);
-            DiscountBox.TabIndex = 104;
             // 
             // label8
             // 
@@ -344,7 +332,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(512, 148);
+            label8.Location = new Point(522, 150);
             label8.Name = "label8";
             label8.Size = new Size(54, 23);
             label8.TabIndex = 97;
@@ -359,8 +347,9 @@
             QuantityBox.Location = new Point(402, 170);
             QuantityBox.Name = "QuantityBox";
             QuantityBox.RightToLeft = RightToLeft.Yes;
-            QuantityBox.Size = new Size(166, 34);
+            QuantityBox.Size = new Size(171, 34);
             QuantityBox.TabIndex = 98;
+            QuantityBox.Text = "1";
             // 
             // label7
             // 
@@ -468,7 +457,7 @@
             SearchBox.Location = new Point(49, 56);
             SearchBox.Name = "SearchBox";
             SearchBox.RightToLeft = RightToLeft.Yes;
-            SearchBox.Size = new Size(303, 39);
+            SearchBox.Size = new Size(330, 39);
             SearchBox.TabIndex = 89;
             // 
             // label2
@@ -498,14 +487,78 @@
             // Items
             // 
             Items.Anchor = AnchorStyles.None;
+            Items.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Items.BackgroundColor = Color.Snow;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Items.Location = new Point(49, 337);
+            Items.Columns.AddRange(new DataGridViewColumn[] { _Barcode, _Name, _Classification, _Quantity, _Color, _Size, SalePricePerOne, _Discount, Total, _notes });
+            Items.Location = new Point(26, 332);
             Items.Name = "Items";
+            Items.RightToLeft = RightToLeft.Yes;
             Items.RowHeadersWidth = 51;
             Items.RowTemplate.Height = 29;
-            Items.Size = new Size(1397, 480);
+            Items.Size = new Size(1427, 480);
             Items.TabIndex = 84;
+            Items.RowHeaderMouseClick += Items_RowHeaderMouseClick;
+            // 
+            // _Barcode
+            // 
+            _Barcode.HeaderText = "الكود";
+            _Barcode.MinimumWidth = 6;
+            _Barcode.Name = "_Barcode";
+            // 
+            // _Name
+            // 
+            _Name.HeaderText = "إسم المنتج";
+            _Name.MinimumWidth = 6;
+            _Name.Name = "_Name";
+            // 
+            // _Classification
+            // 
+            _Classification.HeaderText = "التصنيف";
+            _Classification.MinimumWidth = 6;
+            _Classification.Name = "_Classification";
+            // 
+            // _Quantity
+            // 
+            _Quantity.HeaderText = "الكمية";
+            _Quantity.MinimumWidth = 6;
+            _Quantity.Name = "_Quantity";
+            // 
+            // _Color
+            // 
+            _Color.HeaderText = "اللون";
+            _Color.MinimumWidth = 6;
+            _Color.Name = "_Color";
+            // 
+            // _Size
+            // 
+            _Size.HeaderText = "المقاس";
+            _Size.MinimumWidth = 6;
+            _Size.Name = "_Size";
+            // 
+            // SalePricePerOne
+            // 
+            SalePricePerOne.HeaderText = "سعر القطعة";
+            SalePricePerOne.MinimumWidth = 6;
+            SalePricePerOne.Name = "SalePricePerOne";
+            // 
+            // _Discount
+            // 
+            _Discount.HeaderText = "الخصم";
+            _Discount.MinimumWidth = 6;
+            _Discount.Name = "_Discount";
+            // 
+            // Total
+            // 
+            Total.HeaderText = "إجمالى";
+            Total.MinimumWidth = 6;
+            Total.Name = "Total";
+            // 
+            // _notes
+            // 
+            _notes.HeaderText = "الوصف";
+            _notes.MinimumWidth = 6;
+            _notes.Name = "_notes";
             // 
             // Printbtn
             // 
@@ -538,7 +591,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(798, 58);
+            button1.Location = new Point(798, 56);
             button1.Name = "button1";
             button1.Size = new Size(143, 38);
             button1.TabIndex = 125;
@@ -576,7 +629,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(1366, 242);
+            label9.Location = new Point(301, 150);
             label9.Name = "label9";
             label9.Size = new Size(78, 23);
             label9.TabIndex = 128;
@@ -588,10 +641,10 @@
             SelingPrice.BackColor = Color.FromArgb(24, 30, 46);
             SelingPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             SelingPrice.ForeColor = Color.White;
-            SelingPrice.Location = new Point(1157, 259);
+            SelingPrice.Location = new Point(221, 170);
             SelingPrice.Name = "SelingPrice";
             SelingPrice.RightToLeft = RightToLeft.Yes;
-            SelingPrice.Size = new Size(289, 34);
+            SelingPrice.Size = new Size(166, 34);
             SelingPrice.TabIndex = 129;
             // 
             // pictureBox1
@@ -604,26 +657,14 @@
             pictureBox1.TabIndex = 130;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackColor = Color.FromArgb(24, 30, 46);
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(358, 56);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(38, 38);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 131;
-            pictureBox2.TabStop = false;
-            // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(27, 156, 133);
             panel3.Enabled = false;
-            panel3.Location = new Point(32, 324);
+            panel3.Location = new Point(16, 316);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1432, 38);
+            panel3.Size = new Size(1448, 38);
             panel3.TabIndex = 132;
             // 
             // ColorBox
@@ -632,20 +673,77 @@
             ColorBox.BackColor = Color.FromArgb(24, 30, 46);
             ColorBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ColorBox.ForeColor = Color.White;
-            ColorBox.Location = new Point(213, 170);
+            ColorBox.Location = new Point(1157, 257);
             ColorBox.Name = "ColorBox";
             ColorBox.RightToLeft = RightToLeft.Yes;
-            ColorBox.Size = new Size(166, 34);
+            ColorBox.Size = new Size(287, 34);
             ColorBox.TabIndex = 133;
+            // 
+            // Updatebtn
+            // 
+            Updatebtn.Anchor = AnchorStyles.None;
+            Updatebtn.BackColor = Color.LimeGreen;
+            Updatebtn.FlatStyle = FlatStyle.Flat;
+            Updatebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Updatebtn.ForeColor = Color.White;
+            Updatebtn.Location = new Point(47, 247);
+            Updatebtn.Name = "Updatebtn";
+            Updatebtn.Size = new Size(110, 55);
+            Updatebtn.TabIndex = 134;
+            Updatebtn.Text = "تعديل";
+            Updatebtn.UseVisualStyleBackColor = false;
+            Updatebtn.Click += Updatebtn_Click;
+            // 
+            // deletebtn
+            // 
+            deletebtn.Anchor = AnchorStyles.None;
+            deletebtn.BackColor = Color.LimeGreen;
+            deletebtn.FlatStyle = FlatStyle.Flat;
+            deletebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
+            deletebtn.ForeColor = Color.White;
+            deletebtn.Location = new Point(361, 888);
+            deletebtn.Name = "deletebtn";
+            deletebtn.Size = new Size(150, 46);
+            deletebtn.TabIndex = 135;
+            deletebtn.Text = "حذف";
+            deletebtn.UseVisualStyleBackColor = false;
+            // 
+            // _discountBox
+            // 
+            _discountBox.Anchor = AnchorStyles.None;
+            _discountBox.BackColor = Color.FromArgb(24, 30, 46);
+            _discountBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            _discountBox.ForeColor = Color.White;
+            _discountBox.Location = new Point(49, 170);
+            _discountBox.Name = "_discountBox";
+            _discountBox.RightToLeft = RightToLeft.Yes;
+            _discountBox.Size = new Size(158, 34);
+            _discountBox.TabIndex = 136;
+            _discountBox.Text = "0";
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.None;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(150, 150);
+            label10.Name = "label10";
+            label10.Size = new Size(57, 23);
+            label10.TabIndex = 137;
+            label10.Text = "الخصم";
             // 
             // SaleBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(label10);
+            Controls.Add(_discountBox);
+            Controls.Add(deletebtn);
+            Controls.Add(Updatebtn);
             Controls.Add(label13);
             Controls.Add(ColorBox);
-            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(label9);
             Controls.Add(SelingPrice);
@@ -670,8 +768,6 @@
             Controls.Add(NotesBox);
             Controls.Add(label12);
             Controls.Add(SizeBox);
-            Controls.Add(label11);
-            Controls.Add(DiscountBox);
             Controls.Add(label8);
             Controls.Add(QuantityBox);
             Controls.Add(label7);
@@ -696,7 +792,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -722,8 +817,6 @@
         private Label label12;
         private ComboBox SizeBox;
         private Label label13;
-        private Label label11;
-        private TextBox DiscountBox;
         private Label label8;
         private TextBox QuantityBox;
         private Label label7;
@@ -746,8 +839,21 @@
         private Label label9;
         private TextBox SelingPrice;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Panel panel3;
         private TextBox ColorBox;
+        private Button Updatebtn;
+        private Button deletebtn;
+        private TextBox _discountBox;
+        private Label label10;
+        private DataGridViewTextBoxColumn _Barcode;
+        private DataGridViewTextBoxColumn _Name;
+        private DataGridViewTextBoxColumn _Classification;
+        private DataGridViewTextBoxColumn _Quantity;
+        private DataGridViewTextBoxColumn _Color;
+        private DataGridViewTextBoxColumn _Size;
+        private DataGridViewTextBoxColumn SalePricePerOne;
+        private DataGridViewTextBoxColumn _Discount;
+        private DataGridViewTextBoxColumn Total;
+        private DataGridViewTextBoxColumn _notes;
     }
 }

@@ -28,5 +28,11 @@ namespace Store_System.Services
             }
 
         }
+        public async Task<List<User>> GetAllUser()
+        {
+           var Users= await _context.User.ToListAsync();
+            return Users;
+
+        }
     }
 }
