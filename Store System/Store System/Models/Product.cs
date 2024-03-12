@@ -45,17 +45,7 @@ namespace Store_System.Models
         public List<ProductsStocks>? ProductsStocks { get; set; }
         public List<ReturnedItems>? ReturnedItems { get; set; }
 
-        // public Category CategoryName()
-        //{
-        //    StoreContext context = new StoreContext();
-        //   Category category = context.Category.FirstOrDefault(c => c.ID == Category_id);
-        //    if (category != null)
-        //    {
-        //        return category;
-        //    }
-        //    return new Category();
-        //}
-
+  
 
     }
 }

@@ -34,5 +34,35 @@ namespace Store_System.Services
             return Users;
 
         }
+        public  int AddOrderItem(OrderItems OrderItem)
+        {
+            if (OrderItem != null)
+            {
+                 _context.OrderItems.Add(OrderItem);
+                int row =  _context.SaveChanges();
+                return row;
+            }
+            else
+            return 0;
+        }
+        public async Task<int> AddOrder(Order order)
+        {
+            if (order != null)
+            {
+                await _context.Order.AddAsync(order);
+                int row = await _context.SaveChangesAsync();
+                return row;
+            }
+            else
+            return 0;
+
+        }
+        public async Task<Order> GetLastOrderID()
+        {
+
+         Order id= await _context.Order.OrderByDescending(o=>o.ID).FirstOrDefaultAsync();
+            return id;
+        }
+
     }
 }

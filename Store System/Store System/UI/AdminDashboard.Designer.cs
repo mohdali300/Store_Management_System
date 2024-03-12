@@ -56,15 +56,11 @@
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             logOutBtn = new Button();
-            addProductPage1 = new AddProductPage();
-            addUserPage1 = new AddUserPage();
-            addCategoryPage1 = new AddCategoryPage();
             addSupplierPage1 = new AddSupplierPage();
             mainStockPage1 = new MainStockPage();
             shortFallsPage1 = new ShortFallsPage();
             welcomePage1 = new WelcomePage();
             buyBill1 = new ControlPanelUi.BuyBill();
-            saleBill1 = new ControlPanelUi.SaleBill();
             returnedItems1 = new ControlPanelUi.ReturnedItems();
             shiftLock1 = new ControlPanelUi.ShiftLock();
             groupBox1.SuspendLayout();
@@ -424,7 +420,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(14, 3);
+            pictureBox3.Location = new Point(21, 3);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(37, 42);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -444,33 +440,6 @@
             logOutBtn.Text = "تسجيل الخروج";
             logOutBtn.UseVisualStyleBackColor = false;
             logOutBtn.Click += logOutBtn_Click;
-            // 
-            // addProductPage1
-            // 
-            addProductPage1.BackColor = Color.FromArgb(24, 30, 46);
-            addProductPage1.Location = new Point(-5, 51);
-            addProductPage1.MinimumSize = new Size(1496, 949);
-            addProductPage1.Name = "addProductPage1";
-            addProductPage1.Size = new Size(1496, 949);
-            addProductPage1.TabIndex = 3;
-            // 
-            // addUserPage1
-            // 
-            addUserPage1.BackColor = Color.FromArgb(24, 30, 46);
-            addUserPage1.Location = new Point(-5, 51);
-            addUserPage1.MinimumSize = new Size(1496, 949);
-            addUserPage1.Name = "addUserPage1";
-            addUserPage1.Size = new Size(1496, 949);
-            addUserPage1.TabIndex = 4;
-            // 
-            // addCategoryPage1
-            // 
-            addCategoryPage1.BackColor = Color.FromArgb(24, 30, 46);
-            addCategoryPage1.Location = new Point(-5, 51);
-            addCategoryPage1.MinimumSize = new Size(1496, 949);
-            addCategoryPage1.Name = "addCategoryPage1";
-            addCategoryPage1.Size = new Size(1496, 949);
-            addCategoryPage1.TabIndex = 5;
             // 
             // addSupplierPage1
             // 
@@ -493,7 +462,7 @@
             // shortFallsPage1
             // 
             shortFallsPage1.BackColor = Color.FromArgb(24, 30, 46);
-            shortFallsPage1.Location = new Point(-5, 52);
+            shortFallsPage1.Location = new Point(-5, 54);
             shortFallsPage1.MinimumSize = new Size(1496, 949);
             shortFallsPage1.Name = "shortFallsPage1";
             shortFallsPage1.Size = new Size(1496, 949);
@@ -516,15 +485,6 @@
             buyBill1.Name = "buyBill1";
             buyBill1.Size = new Size(1496, 949);
             buyBill1.TabIndex = 14;
-            // 
-            // saleBill1
-            // 
-            saleBill1.BackColor = Color.FromArgb(24, 30, 46);
-            saleBill1.Location = new Point(-5, 51);
-            saleBill1.MinimumSize = new Size(1496, 949);
-            saleBill1.Name = "saleBill1";
-            saleBill1.Size = new Size(1496, 949);
-            saleBill1.TabIndex = 15;
             // 
             // returnedItems1
             // 
@@ -552,17 +512,13 @@
             ClientSize = new Size(1924, 1004);
             Controls.Add(shiftLock1);
             Controls.Add(returnedItems1);
-            Controls.Add(saleBill1);
             Controls.Add(buyBill1);
             Controls.Add(welcomePage1);
             Controls.Add(panel1);
             Controls.Add(panel2);
-            Controls.Add(addUserPage1);
             Controls.Add(shortFallsPage1);
             Controls.Add(mainStockPage1);
             Controls.Add(addSupplierPage1);
-            Controls.Add(addCategoryPage1);
-            Controls.Add(addProductPage1);
             MinimumSize = new Size(1918, 1028);
             Name = "AdminDashboard";
             StartPosition = FormStartPosition.CenterScreen;

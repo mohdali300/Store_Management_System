@@ -34,7 +34,6 @@
             label20 = new Label();
             StockBox = new ComboBox();
             label19 = new Label();
-            CustomerBox = new ComboBox();
             label18 = new Label();
             FaturaDiscountBox = new TextBox();
             label17 = new Label();
@@ -72,6 +71,7 @@
             _Discount = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
             _notes = new DataGridViewTextBoxColumn();
+            product_id = new DataGridViewTextBoxColumn();
             Printbtn = new Button();
             panel1 = new Panel();
             button1 = new Button();
@@ -86,6 +86,9 @@
             deletebtn = new Button();
             _discountBox = new TextBox();
             label10 = new Label();
+            productID = new TextBox();
+            Date = new Label();
+            Customername = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -119,6 +122,7 @@
             Savebtn.TabIndex = 123;
             Savebtn.Text = "حفظ";
             Savebtn.UseVisualStyleBackColor = false;
+            Savebtn.Click += Savebtn_Click;
             // 
             // label20
             // 
@@ -155,18 +159,6 @@
             label19.Size = new Size(70, 23);
             label19.TabIndex = 120;
             label19.Text = "الموظف";
-            // 
-            // CustomerBox
-            // 
-            CustomerBox.BackColor = Color.FromArgb(24, 30, 46);
-            CustomerBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CustomerBox.ForeColor = Color.White;
-            CustomerBox.FormattingEnabled = true;
-            CustomerBox.Location = new Point(288, 838);
-            CustomerBox.Name = "CustomerBox";
-            CustomerBox.RightToLeft = RightToLeft.Yes;
-            CustomerBox.Size = new Size(266, 36);
-            CustomerBox.TabIndex = 119;
             // 
             // label18
             // 
@@ -264,6 +256,7 @@
             TotalPriceBox.RightToLeft = RightToLeft.Yes;
             TotalPriceBox.Size = new Size(209, 34);
             TotalPriceBox.TabIndex = 112;
+            TotalPriceBox.TextChanged += TotalPriceBox_TextChanged;
             // 
             // label14
             // 
@@ -490,7 +483,7 @@
             Items.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Items.BackgroundColor = Color.Snow;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Items.Columns.AddRange(new DataGridViewColumn[] { _Barcode, _Name, _Classification, _Quantity, _Color, _Size, SalePricePerOne, _Discount, Total, _notes });
+            Items.Columns.AddRange(new DataGridViewColumn[] { _Barcode, _Name, _Classification, _Quantity, _Color, _Size, SalePricePerOne, _Discount, Total, _notes, product_id });
             Items.Location = new Point(26, 332);
             Items.Name = "Items";
             Items.RightToLeft = RightToLeft.Yes;
@@ -559,6 +552,13 @@
             _notes.HeaderText = "الوصف";
             _notes.MinimumWidth = 6;
             _notes.Name = "_notes";
+            // 
+            // product_id
+            // 
+            product_id.HeaderText = "رقم المنتج";
+            product_id.MinimumWidth = 6;
+            product_id.Name = "product_id";
+            product_id.Visible = false;
             // 
             // Printbtn
             // 
@@ -707,6 +707,7 @@
             deletebtn.TabIndex = 135;
             deletebtn.Text = "حذف";
             deletebtn.UseVisualStyleBackColor = false;
+            deletebtn.Click += deletebtn_Click;
             // 
             // _discountBox
             // 
@@ -733,11 +734,51 @@
             label10.TabIndex = 137;
             label10.Text = "الخصم";
             // 
+            // productID
+            // 
+            productID.Anchor = AnchorStyles.None;
+            productID.BackColor = Color.FromArgb(24, 30, 46);
+            productID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            productID.ForeColor = Color.White;
+            productID.Location = new Point(947, 12);
+            productID.Name = "productID";
+            productID.RightToLeft = RightToLeft.Yes;
+            productID.Size = new Size(154, 34);
+            productID.TabIndex = 138;
+            productID.Visible = false;
+            // 
+            // Date
+            // 
+            Date.Anchor = AnchorStyles.None;
+            Date.AutoSize = true;
+            Date.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Date.ForeColor = Color.White;
+            Date.Location = new Point(1199, 896);
+            Date.Name = "Date";
+            Date.Size = new Size(153, 38);
+            Date.TabIndex = 139;
+            Date.Text = "3/11/2024";
+            // 
+            // Customername
+            // 
+            Customername.Anchor = AnchorStyles.None;
+            Customername.BackColor = Color.FromArgb(24, 30, 46);
+            Customername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Customername.ForeColor = Color.White;
+            Customername.Location = new Point(285, 841);
+            Customername.Name = "Customername";
+            Customername.RightToLeft = RightToLeft.Yes;
+            Customername.Size = new Size(266, 34);
+            Customername.TabIndex = 140;
+            // 
             // SaleBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(Customername);
+            Controls.Add(Date);
+            Controls.Add(productID);
             Controls.Add(label10);
             Controls.Add(_discountBox);
             Controls.Add(deletebtn);
@@ -755,7 +796,6 @@
             Controls.Add(label20);
             Controls.Add(StockBox);
             Controls.Add(label19);
-            Controls.Add(CustomerBox);
             Controls.Add(label18);
             Controls.Add(FaturaDiscountBox);
             Controls.Add(label17);
@@ -803,7 +843,6 @@
         private Label label20;
         private ComboBox StockBox;
         private Label label19;
-        private ComboBox CustomerBox;
         private Label label18;
         private TextBox FaturaDiscountBox;
         private Label label17;
@@ -845,6 +884,9 @@
         private Button deletebtn;
         private TextBox _discountBox;
         private Label label10;
+        private TextBox productID;
+        private Label Date;
+        private TextBox Customername;
         private DataGridViewTextBoxColumn _Barcode;
         private DataGridViewTextBoxColumn _Name;
         private DataGridViewTextBoxColumn _Classification;
@@ -855,5 +897,6 @@
         private DataGridViewTextBoxColumn _Discount;
         private DataGridViewTextBoxColumn Total;
         private DataGridViewTextBoxColumn _notes;
+        private DataGridViewTextBoxColumn product_id;
     }
 }

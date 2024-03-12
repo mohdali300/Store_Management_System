@@ -167,7 +167,7 @@ namespace Store_System.Migrations
                     b.Property<string>("CustomerName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Customer_Id")
+                    b.Property<int>("Customer_Id")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsSale")
@@ -179,7 +179,7 @@ namespace Store_System.Migrations
                     b.Property<DateTime?>("ShippedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("user_id")
+                    b.Property<int>("user_id")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -194,19 +194,23 @@ namespace Store_System.Migrations
             modelBuilder.Entity("Store_System.Models.OrderItems", b =>
                 {
                     b.Property<int>("product_Id")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("ProductID");
 
                     b.Property<int>("Order_Id")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("OrderID");
 
                     b.Property<double>("Discount")
                         .HasColumnType("float");
 
                     b.Property<int?>("OrderID")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("OrderID1");
 
                     b.Property<int?>("ProductID")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("ProductID1");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -510,11 +514,15 @@ namespace Store_System.Migrations
                 {
                     b.HasOne("Store_System.Models.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("Customer_Id");
+                        .HasForeignKey("Customer_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Store_System.Models.User", "user")
                         .WithMany("Orders")
-                        .HasForeignKey("user_id");
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
 

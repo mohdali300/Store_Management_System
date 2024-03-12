@@ -9,14 +9,20 @@ namespace Store_System.Models
 {
     internal class OrderItems
     {
+
+
         public virtual Product Product { get; set; }
         public virtual Order Order { get; set; }
+        //[Column("ProductID")] 
+
         [ForeignKey("Product")]
         public int product_Id { get; set; }
+       // [Column("OrderID")]  
+
         [ForeignKey("Order")]
 
         public int Order_Id { get; set; }
-        public int TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
         public double Discount { get; set; }
         public int Quantity { get; set; }
 

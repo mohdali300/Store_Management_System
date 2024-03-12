@@ -17,7 +17,7 @@ namespace Store_System.UI
         Login Login;
 
         AdminDashboard home;
-       
+
 
 
 
@@ -57,6 +57,7 @@ namespace Store_System.UI
                         {
                             if (user.Role == Role.Admin && user.Password == PasswordBox.Text)
                             {
+                                home.UserName = UserNameBox.Text;
                                 this.Hide();
                                 home.Show();
                             }
@@ -74,7 +75,8 @@ namespace Store_System.UI
                         {
                             if (user.Role == Role.Cashier && user.Password == PasswordBox.Text)
                             {
-                                this.Hide();                             
+                                home.UserName = UserNameBox.Text;
+                                this.Hide();
                                 home.Show();
                             }
                             else if (user.Role == Role.Admin)
@@ -95,6 +97,11 @@ namespace Store_System.UI
                     }
                 }
             }
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

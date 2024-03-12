@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Store_System.Data;
 
@@ -11,9 +12,10 @@ using Store_System.Data;
 namespace Store_System.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20240312002824_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,7 +169,7 @@ namespace Store_System.Migrations
                     b.Property<string>("CustomerName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Customer_Id")
+                    b.Property<int>("Customer_Id")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsSale")
@@ -179,7 +181,7 @@ namespace Store_System.Migrations
                     b.Property<DateTime?>("ShippedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("user_id")
+                    b.Property<int>("user_id")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -510,11 +512,15 @@ namespace Store_System.Migrations
                 {
                     b.HasOne("Store_System.Models.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("Customer_Id");
+                        .HasForeignKey("Customer_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Store_System.Models.User", "user")
                         .WithMany("Orders")
-                        .HasForeignKey("user_id");
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
 

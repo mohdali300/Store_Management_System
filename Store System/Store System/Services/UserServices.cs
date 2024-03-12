@@ -34,6 +34,17 @@ namespace Store_System.Services
                 return new List<User>(); 
             }
         }
+
+        public async Task<User> GetUserByUserName(string username)
+        {
+            User user = await _context.User.FirstOrDefaultAsync(U => U.UserName == username);
+            if (user != null)
+            {
+                return user;
+            }
+            else
+            return new User();
+        }
         public async Task<int> DeleteUser(string username)
         {
             var user = await _context.User.FirstOrDefaultAsync(u => u.UserName == username);

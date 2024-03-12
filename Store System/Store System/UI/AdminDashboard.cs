@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Store_System.Models;
+using Store_System.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +14,53 @@ namespace Store_System.UI
 {
     public partial class AdminDashboard : Form
     {
+        public string? UserName { get; set; }
+        UserServices _userServices;
+
         public AdminDashboard()
         {
             InitializeComponent();
+            _userServices = new UserServices();
+            addUserPage1 = new AddUserPage();
+            addProductPage1 = new AddProductPage();
+            addSupplierPage1 = new AddSupplierPage();
+            mainStockPage1 = new MainStockPage();
+            shortFallsPage1 = new ShortFallsPage();
+            buyBill1 = new ControlPanelUi.BuyBill();
+            saleBill1 = new ControlPanelUi.SaleBill();
+            returnedItems1 = new ControlPanelUi.ReturnedItems();
+            shiftLock1 = new ControlPanelUi.ShiftLock();
+            addCategoryPage1 = new AddCategoryPage();
+            Controls.Add(addUserPage1);
+            Controls.Add(addProductPage1);
+            Controls.Add(addSupplierPage1);
+            Controls.Add(mainStockPage1);
+            Controls.Add(shortFallsPage1);
+            Controls.Add(buyBill1);
+            Controls.Add(saleBill1);
+            Controls.Add(returnedItems1);
+            Controls.Add(shiftLock1);
+            Controls.Add(addCategoryPage1);
+
+
         }
 
-        private void AdminDashboard_Load(object sender, EventArgs e)
+        private async void AdminDashboard_Load(object sender, EventArgs e)
         {
+            label1.Text = UserName;   //  ||  < assign to username label to check if username has admin role or no > || \\
+            var user = await _userServices.GetUserByUserName(label1.Text);
+            if (user != null)
+            {
+                if (user.Role == Role.Cashier)
+                {
+                    ControlAdminGr.Visible = false;
+                }
+                else
+                {
+                    ControlAdminGr.Visible = true;
+
+                }
+            }
             addUserPage1.Visible = false;
             addProductPage1.Visible = false;
             addCategoryPage1.Visible = false;
@@ -104,5 +146,7 @@ namespace Store_System.UI
             shiftLock1.Visible = true;
             shiftLock1.BringToFront();
         }
+
+
     }
 }

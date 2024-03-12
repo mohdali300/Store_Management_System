@@ -20,10 +20,10 @@ namespace Store_System.Models
         /// one user to many Pills
         public virtual User user { get; set; }
         [ForeignKey("user")]
-        public int user_id { get; set; }
-        public virtual List<OrderItems> OrderItems { get; set; }
+        public int? user_id { get; set; }
+        public virtual List<OrderItems>? OrderItems { get; set; }
         public virtual Customer Customer { get; set; }
         [ForeignKey("Customer")]
-        public int Customer_Id { get; set; }
+        public int? Customer_Id { get; set; }
     }
 }
