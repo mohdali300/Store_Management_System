@@ -131,9 +131,11 @@ namespace Store_System.UI
 
         private void saleBillBtn_Click(object sender, EventArgs e)
         {
+            saleBill1.Username = label1.Text;
             saleBill1.Visible = true;
             saleBill1.BringToFront();
         }
+
 
         private void returnedBillBtn_Click(object sender, EventArgs e)
         {

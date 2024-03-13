@@ -75,6 +75,19 @@ namespace Store_System.Services
             }
 
         }
+        public async Task<Product> GetProductByID(int ID)
+        {
+            var Product = await _context.Product.FirstOrDefaultAsync(p => p.ID == ID);
+            if (Product != null)
+            {
+                return Product;
+            }
+            else
+            {
+                return new Product();
+            }
+
+        }
         public async Task<List<Product>> Search(string Name)
         {
             if (Name != "") { 

@@ -538,4 +538,7 @@
         rScuVbz2yPnilx4oKnx+wZbsZ+75nfcwgCCK5pZb/n8XeGnMUsn1tgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="Name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

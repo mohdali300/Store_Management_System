@@ -88,10 +88,13 @@
             label10 = new Label();
             productID = new TextBox();
             Date = new Label();
-            Customername = new TextBox();
+            UserName = new TextBox();
+            result = new DataGridView();
+            Name = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)result).BeginInit();
             SuspendLayout();
             // 
             // Addbtn
@@ -759,24 +762,53 @@
             Date.TabIndex = 139;
             Date.Text = "3/11/2024";
             // 
-            // Customername
+            // UserName
             // 
-            Customername.Anchor = AnchorStyles.None;
-            Customername.BackColor = Color.FromArgb(24, 30, 46);
-            Customername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Customername.ForeColor = Color.White;
-            Customername.Location = new Point(285, 841);
-            Customername.Name = "Customername";
-            Customername.RightToLeft = RightToLeft.Yes;
-            Customername.Size = new Size(266, 34);
-            Customername.TabIndex = 140;
+            UserName.Anchor = AnchorStyles.None;
+            UserName.BackColor = Color.FromArgb(24, 30, 46);
+            UserName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            UserName.ForeColor = Color.White;
+            UserName.Location = new Point(285, 841);
+            UserName.Name = "UserName";
+            UserName.RightToLeft = RightToLeft.Yes;
+            UserName.Size = new Size(266, 34);
+            UserName.TabIndex = 140;
+            // 
+            // result
+            // 
+            result.AllowUserToAddRows = false;
+            result.AllowUserToDeleteRows = false;
+            result.AllowUserToResizeColumns = false;
+            result.AllowUserToResizeRows = false;
+            result.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            result.BackgroundColor = Color.FromArgb(224, 224, 224);
+            result.BorderStyle = BorderStyle.None;
+            result.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            result.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            result.Columns.AddRange(new DataGridViewColumn[] { Name });
+            result.Location = new Point(49, 103);
+            result.Name = "result";
+            result.RowHeadersVisible = false;
+            result.RowHeadersWidth = 51;
+            result.RowTemplate.Height = 29;
+            result.Size = new Size(330, 188);
+            result.TabIndex = 141;
+            // 
+            // Name
+            // 
+            Name.DataPropertyName = "Name";
+            Name.HeaderText = "Name";
+            Name.MinimumWidth = 6;
+            Name.Name = "Name";
+            Name.ReadOnly = true;
             // 
             // SaleBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
-            Controls.Add(Customername);
+            Controls.Add(result);
+            Controls.Add(UserName);
             Controls.Add(Date);
             Controls.Add(productID);
             Controls.Add(label10);
@@ -832,6 +864,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)result).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -886,7 +919,7 @@
         private Label label10;
         private TextBox productID;
         private Label Date;
-        private TextBox Customername;
+        private TextBox UserName;
         private DataGridViewTextBoxColumn _Barcode;
         private DataGridViewTextBoxColumn _Name;
         private DataGridViewTextBoxColumn _Classification;
@@ -898,5 +931,7 @@
         private DataGridViewTextBoxColumn Total;
         private DataGridViewTextBoxColumn _notes;
         private DataGridViewTextBoxColumn product_id;
+        private DataGridView result;
+        private DataGridViewTextBoxColumn Name;
     }
 }
