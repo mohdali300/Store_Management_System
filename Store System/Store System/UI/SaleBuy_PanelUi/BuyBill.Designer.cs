@@ -30,6 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuyBill));
             Items = new DataGridView();
+            ProductID = new DataGridViewTextBoxColumn();
+            ProductName = new DataGridViewTextBoxColumn();
+            ProductCategory = new DataGridViewTextBoxColumn();
+            ProductAmount = new DataGridViewTextBoxColumn();
+            ProductColor = new DataGridViewTextBoxColumn();
+            ProductSize = new DataGridViewTextBoxColumn();
+            ProductPrice = new DataGridViewTextBoxColumn();
+            ProductDiscount = new DataGridViewTextBoxColumn();
+            TotalPrice = new DataGridViewTextBoxColumn();
+            ProductDiscription = new DataGridViewTextBoxColumn();
+            Product_id = new DataGridViewTextBoxColumn();
             Printbtn = new Button();
             panel1 = new Panel();
             label1 = new Label();
@@ -68,7 +79,6 @@
             label18 = new Label();
             FaturaDiscountBox = new TextBox();
             label19 = new Label();
-            CustomerBox = new ComboBox();
             label20 = new Label();
             StockBox = new ComboBox();
             Savebtn = new Button();
@@ -77,6 +87,11 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
+            Date = new Label();
+            deletebtn = new Button();
+            ProductIDBox = new TextBox();
+            editBtn = new Button();
+            cashierNameBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -89,12 +104,93 @@
             Items.Anchor = AnchorStyles.None;
             Items.BackgroundColor = Color.Snow;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Items.Columns.AddRange(new DataGridViewColumn[] { ProductID, ProductName, ProductCategory, ProductAmount, ProductColor, ProductSize, ProductPrice, ProductDiscount, TotalPrice, ProductDiscription, Product_id });
             Items.Location = new Point(51, 335);
             Items.Name = "Items";
+            Items.RightToLeft = RightToLeft.Yes;
             Items.RowHeadersWidth = 51;
             Items.RowTemplate.Height = 29;
             Items.Size = new Size(1397, 470);
             Items.TabIndex = 36;
+            Items.RowHeaderMouseClick += Items_RowHeaderMouseClick;
+            // 
+            // ProductID
+            // 
+            ProductID.HeaderText = "كود المنتج";
+            ProductID.MinimumWidth = 6;
+            ProductID.Name = "ProductID";
+            ProductID.Width = 150;
+            // 
+            // ProductName
+            // 
+            ProductName.HeaderText = "اسم المنتج";
+            ProductName.MinimumWidth = 6;
+            ProductName.Name = "ProductName";
+            ProductName.Width = 200;
+            // 
+            // ProductCategory
+            // 
+            ProductCategory.HeaderText = "نوع المنتج";
+            ProductCategory.MinimumWidth = 6;
+            ProductCategory.Name = "ProductCategory";
+            ProductCategory.Width = 125;
+            // 
+            // ProductAmount
+            // 
+            ProductAmount.HeaderText = "الكمية";
+            ProductAmount.MinimumWidth = 6;
+            ProductAmount.Name = "ProductAmount";
+            ProductAmount.Width = 125;
+            // 
+            // ProductColor
+            // 
+            ProductColor.HeaderText = "اللون";
+            ProductColor.MinimumWidth = 6;
+            ProductColor.Name = "ProductColor";
+            ProductColor.Width = 125;
+            // 
+            // ProductSize
+            // 
+            ProductSize.HeaderText = "المقاس";
+            ProductSize.MinimumWidth = 6;
+            ProductSize.Name = "ProductSize";
+            ProductSize.Width = 125;
+            // 
+            // ProductPrice
+            // 
+            ProductPrice.HeaderText = "سعر القطعة";
+            ProductPrice.MinimumWidth = 6;
+            ProductPrice.Name = "ProductPrice";
+            ProductPrice.Width = 125;
+            // 
+            // ProductDiscount
+            // 
+            ProductDiscount.HeaderText = "الخصم";
+            ProductDiscount.MinimumWidth = 6;
+            ProductDiscount.Name = "ProductDiscount";
+            ProductDiscount.Width = 125;
+            // 
+            // TotalPrice
+            // 
+            TotalPrice.HeaderText = "الإجمالي";
+            TotalPrice.MinimumWidth = 6;
+            TotalPrice.Name = "TotalPrice";
+            TotalPrice.Width = 125;
+            // 
+            // ProductDiscription
+            // 
+            ProductDiscription.HeaderText = "الوصف";
+            ProductDiscription.MinimumWidth = 6;
+            ProductDiscription.Name = "ProductDiscription";
+            ProductDiscription.Width = 125;
+            // 
+            // Product_id
+            // 
+            Product_id.HeaderText = "رقم المنتج";
+            Product_id.MinimumWidth = 6;
+            Product_id.Name = "Product_id";
+            Product_id.Visible = false;
+            Product_id.Width = 125;
             // 
             // Printbtn
             // 
@@ -138,7 +234,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(927, 37);
+            label2.Location = new Point(993, 37);
             label2.Name = "label2";
             label2.Size = new Size(93, 23);
             label2.TabIndex = 42;
@@ -153,7 +249,7 @@
             BillCodeBox.Location = new Point(803, 55);
             BillCodeBox.Name = "BillCodeBox";
             BillCodeBox.RightToLeft = RightToLeft.Yes;
-            BillCodeBox.Size = new Size(225, 39);
+            BillCodeBox.Size = new Size(293, 39);
             BillCodeBox.TabIndex = 43;
             // 
             // SupplierBox
@@ -227,6 +323,7 @@
             ProductCodeBox.RightToLeft = RightToLeft.Yes;
             ProductCodeBox.Size = new Size(209, 34);
             ProductCodeBox.TabIndex = 49;
+            ProductCodeBox.TextChanged += ProductCodeBox_TextChanged;
             // 
             // label6
             // 
@@ -414,10 +511,10 @@
             ColorBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ColorBox.ForeColor = Color.White;
             ColorBox.FormattingEnabled = true;
-            ColorBox.Location = new Point(51, 161);
+            ColorBox.Location = new Point(39, 161);
             ColorBox.Name = "ColorBox";
             ColorBox.RightToLeft = RightToLeft.Yes;
-            ColorBox.Size = new Size(147, 36);
+            ColorBox.Size = new Size(159, 36);
             ColorBox.TabIndex = 62;
             // 
             // label14
@@ -438,11 +535,11 @@
             NotesBox.BackColor = Color.FromArgb(24, 30, 46);
             NotesBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             NotesBox.ForeColor = Color.White;
-            NotesBox.Location = new Point(290, 253);
+            NotesBox.Location = new Point(381, 253);
             NotesBox.Multiline = true;
             NotesBox.Name = "NotesBox";
             NotesBox.RightToLeft = RightToLeft.Yes;
-            NotesBox.Size = new Size(367, 36);
+            NotesBox.Size = new Size(276, 36);
             NotesBox.TabIndex = 67;
             // 
             // label15
@@ -461,6 +558,7 @@
             // 
             TotalPriceBox.Anchor = AnchorStyles.None;
             TotalPriceBox.BackColor = Color.FromArgb(24, 30, 46);
+            TotalPriceBox.Enabled = false;
             TotalPriceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TotalPriceBox.ForeColor = Color.White;
             TotalPriceBox.Location = new Point(1239, 831);
@@ -468,6 +566,7 @@
             TotalPriceBox.RightToLeft = RightToLeft.Yes;
             TotalPriceBox.Size = new Size(209, 34);
             TotalPriceBox.TabIndex = 69;
+            TotalPriceBox.TextChanged += TotalPriceBox_TextChanged;
             // 
             // label16
             // 
@@ -485,6 +584,7 @@
             // 
             PaidUp.Anchor = AnchorStyles.None;
             PaidUp.BackColor = Color.FromArgb(24, 30, 46);
+            PaidUp.Enabled = false;
             PaidUp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PaidUp.ForeColor = Color.White;
             PaidUp.Location = new Point(570, 831);
@@ -509,6 +609,7 @@
             // 
             AfterDiscount.Anchor = AnchorStyles.None;
             AfterDiscount.BackColor = Color.FromArgb(24, 30, 46);
+            AfterDiscount.Enabled = false;
             AfterDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             AfterDiscount.ForeColor = Color.White;
             AfterDiscount.Location = new Point(793, 831);
@@ -516,6 +617,7 @@
             AfterDiscount.RightToLeft = RightToLeft.Yes;
             AfterDiscount.Size = new Size(209, 34);
             AfterDiscount.TabIndex = 73;
+            AfterDiscount.TextChanged += AfterDiscount_TextChanged;
             // 
             // label18
             // 
@@ -540,6 +642,7 @@
             FaturaDiscountBox.RightToLeft = RightToLeft.Yes;
             FaturaDiscountBox.Size = new Size(209, 34);
             FaturaDiscountBox.TabIndex = 75;
+            FaturaDiscountBox.TextChanged += FaturaDiscountBox_TextChanged;
             // 
             // label19
             // 
@@ -547,23 +650,11 @@
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.White;
-            label19.Location = new Point(476, 811);
+            label19.Location = new Point(478, 812);
             label19.Name = "label19";
             label19.Size = new Size(70, 23);
             label19.TabIndex = 77;
             label19.Text = "الموظف";
-            // 
-            // CustomerBox
-            // 
-            CustomerBox.BackColor = Color.FromArgb(24, 30, 46);
-            CustomerBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CustomerBox.ForeColor = Color.White;
-            CustomerBox.FormattingEnabled = true;
-            CustomerBox.Location = new Point(290, 829);
-            CustomerBox.Name = "CustomerBox";
-            CustomerBox.RightToLeft = RightToLeft.Yes;
-            CustomerBox.Size = new Size(266, 36);
-            CustomerBox.TabIndex = 76;
             // 
             // label20
             // 
@@ -604,6 +695,7 @@
             Savebtn.TabIndex = 80;
             Savebtn.Text = "حفظ";
             Savebtn.UseVisualStyleBackColor = false;
+            Savebtn.Click += Savebtn_ClickAsync;
             // 
             // Addbtn
             // 
@@ -613,12 +705,13 @@
             Addbtn.FlatStyle = FlatStyle.Flat;
             Addbtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             Addbtn.ForeColor = Color.White;
-            Addbtn.Location = new Point(51, 237);
+            Addbtn.Location = new Point(198, 237);
             Addbtn.Name = "Addbtn";
-            Addbtn.Size = new Size(198, 54);
+            Addbtn.Size = new Size(159, 54);
             Addbtn.TabIndex = 81;
             Addbtn.Text = "إضافة";
             Addbtn.UseVisualStyleBackColor = false;
+            Addbtn.Click += Addbtn_Click;
             // 
             // panel2
             // 
@@ -662,11 +755,83 @@
             panel3.Size = new Size(1432, 38);
             panel3.TabIndex = 29;
             // 
+            // Date
+            // 
+            Date.Anchor = AnchorStyles.None;
+            Date.AutoSize = true;
+            Date.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Date.ForeColor = Color.White;
+            Date.Location = new Point(1106, 891);
+            Date.Name = "Date";
+            Date.Size = new Size(153, 38);
+            Date.TabIndex = 140;
+            Date.Text = "3/11/2024";
+            // 
+            // deletebtn
+            // 
+            deletebtn.Anchor = AnchorStyles.None;
+            deletebtn.BackColor = Color.Firebrick;
+            deletebtn.FlatStyle = FlatStyle.Flat;
+            deletebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
+            deletebtn.ForeColor = Color.White;
+            deletebtn.Location = new Point(396, 880);
+            deletebtn.Name = "deletebtn";
+            deletebtn.Size = new Size(150, 46);
+            deletebtn.TabIndex = 141;
+            deletebtn.Text = "حذف";
+            deletebtn.UseVisualStyleBackColor = false;
+            deletebtn.Click += deletebtn_Click;
+            // 
+            // ProductIDBox
+            // 
+            ProductIDBox.Anchor = AnchorStyles.None;
+            ProductIDBox.BackColor = Color.FromArgb(24, 30, 46);
+            ProductIDBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            ProductIDBox.ForeColor = Color.White;
+            ProductIDBox.Location = new Point(803, 19);
+            ProductIDBox.Name = "ProductIDBox";
+            ProductIDBox.RightToLeft = RightToLeft.Yes;
+            ProductIDBox.Size = new Size(112, 27);
+            ProductIDBox.TabIndex = 142;
+            // 
+            // editBtn
+            // 
+            editBtn.Anchor = AnchorStyles.None;
+            editBtn.BackColor = Color.DarkGoldenrod;
+            editBtn.FlatAppearance.BorderSize = 0;
+            editBtn.FlatStyle = FlatStyle.Flat;
+            editBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            editBtn.ForeColor = Color.White;
+            editBtn.Location = new Point(32, 237);
+            editBtn.Name = "editBtn";
+            editBtn.Size = new Size(150, 54);
+            editBtn.TabIndex = 143;
+            editBtn.Text = "تعديل";
+            editBtn.UseVisualStyleBackColor = false;
+            editBtn.Click += editBtn_Click;
+            // 
+            // cashierNameBox
+            // 
+            cashierNameBox.Anchor = AnchorStyles.None;
+            cashierNameBox.BackColor = Color.FromArgb(24, 30, 46);
+            cashierNameBox.Enabled = false;
+            cashierNameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cashierNameBox.ForeColor = Color.White;
+            cashierNameBox.Location = new Point(291, 830);
+            cashierNameBox.Name = "cashierNameBox";
+            cashierNameBox.RightToLeft = RightToLeft.Yes;
+            cashierNameBox.Size = new Size(265, 34);
+            cashierNameBox.TabIndex = 144;
+            // 
             // BuyBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(editBtn);
+            Controls.Add(ProductIDBox);
+            Controls.Add(deletebtn);
+            Controls.Add(Date);
             Controls.Add(pictureBox2);
             Controls.Add(panel2);
             Controls.Add(Addbtn);
@@ -674,7 +839,6 @@
             Controls.Add(label20);
             Controls.Add(StockBox);
             Controls.Add(label19);
-            Controls.Add(CustomerBox);
             Controls.Add(label18);
             Controls.Add(FaturaDiscountBox);
             Controls.Add(label17);
@@ -713,6 +877,8 @@
             Controls.Add(Printbtn);
             Controls.Add(panel1);
             Controls.Add(panel3);
+            Controls.Add(cashierNameBox);
+            MaximumSize = new Size(1496, 949);
             MinimumSize = new Size(1496, 949);
             Name = "BuyBill";
             Size = new Size(1496, 949);
@@ -767,7 +933,6 @@
         private Label label18;
         private TextBox FaturaDiscountBox;
         private Label label19;
-        private ComboBox CustomerBox;
         private Label label20;
         private ComboBox StockBox;
         private Button Savebtn;
@@ -776,5 +941,21 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Panel panel3;
+        private Label Date;
+        private Button deletebtn;
+        private TextBox ProductIDBox;
+        private DataGridViewTextBoxColumn ProductID;
+        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn ProductCategory;
+        private DataGridViewTextBoxColumn ProductAmount;
+        private DataGridViewTextBoxColumn ProductColor;
+        private DataGridViewTextBoxColumn ProductSize;
+        private DataGridViewTextBoxColumn ProductPrice;
+        private DataGridViewTextBoxColumn ProductDiscount;
+        private DataGridViewTextBoxColumn TotalPrice;
+        private DataGridViewTextBoxColumn ProductDiscription;
+        private DataGridViewTextBoxColumn Product_id;
+        private Button editBtn;
+        public TextBox cashierNameBox;
     }
 }

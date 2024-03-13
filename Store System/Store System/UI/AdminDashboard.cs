@@ -15,32 +15,53 @@ namespace Store_System.UI
     public partial class AdminDashboard : Form
     {
         public string? UserName { get; set; }
+        public string? CashierName { get; set; }
+        public string? StockMoneyName { get; set; }
+        public int UserID { get; set; }
+
         UserServices _userServices;
 
         public AdminDashboard()
         {
             InitializeComponent();
             _userServices = new UserServices();
-            addUserPage1 = new AddUserPage();
-            addProductPage1 = new AddProductPage();
-            addSupplierPage1 = new AddSupplierPage();
-            mainStockPage1 = new MainStockPage();
-            shortFallsPage1 = new ShortFallsPage();
-            buyBill1 = new ControlPanelUi.BuyBill();
-            saleBill1 = new ControlPanelUi.SaleBill();
-            returnedItems1 = new ControlPanelUi.ReturnedItems();
-            shiftLock1 = new ControlPanelUi.ShiftLock();
-            addCategoryPage1 = new AddCategoryPage();
-            Controls.Add(addUserPage1);
-            Controls.Add(addProductPage1);
-            Controls.Add(addSupplierPage1);
-            Controls.Add(mainStockPage1);
-            Controls.Add(shortFallsPage1);
-            Controls.Add(buyBill1);
-            Controls.Add(saleBill1);
-            Controls.Add(returnedItems1);
-            Controls.Add(shiftLock1);
-            Controls.Add(addCategoryPage1);
+
+            {
+                addUserPage1 = new AddUserPage();
+                addProductPage1 = new AddProductPage();
+                addSupplierPage1 = new AddSupplierPage();
+                mainStockPage1 = new MainStockPage();
+                shortFallsPage1 = new ShortFallsPage();
+                buyBill1 = new ControlPanelUi.BuyBill();
+                saleBill1 = new ControlPanelUi.SaleBill();
+                returnedItems1 = new ControlPanelUi.ReturnedItems();
+                shiftLock1 = new ControlPanelUi.ShiftLock();
+                addCategoryPage1 = new AddCategoryPage();
+                Controls.Add(addUserPage1);
+                Controls.Add(addProductPage1);
+                Controls.Add(addSupplierPage1);
+                Controls.Add(mainStockPage1);
+                Controls.Add(shortFallsPage1);
+                Controls.Add(buyBill1);
+                Controls.Add(saleBill1);
+                Controls.Add(returnedItems1);
+                Controls.Add(shiftLock1);
+                Controls.Add(addCategoryPage1);
+
+                saleBill1.Location = new System.Drawing.Point(-5, 50);
+                buyBill1.Location = new System.Drawing.Point(-5, 50);
+                addUserPage1.Location = new System.Drawing.Point(-5, 50);
+                addProductPage1.Location = new System.Drawing.Point(-5, 50);
+                addSupplierPage1.Location = new System.Drawing.Point(-5, 50);
+                addCategoryPage1.Location = new System.Drawing.Point(-5, 50);
+                shiftLock1.Location = new System.Drawing.Point(-5, 50);
+                mainStockPage1.Location = new System.Drawing.Point(-5, 50);
+                shortFallsPage1.Location = new System.Drawing.Point(-5, 50);
+                returnedItems1.Location = new System.Drawing.Point(-5, 50);
+
+
+
+            }
 
 
         }
@@ -72,6 +93,10 @@ namespace Store_System.UI
             returnedItems1.Visible = false;
             shiftLock1.Visible = false;
 
+            buyBill1.cashierNameBox.Text= CashierName;
+            saleBill1.cashierNameBox.Text = CashierName;
+            saleBill1.StockBox.Text = StockMoneyName;
+            saleBill1.UserIDBox.Text = UserID.ToString();
         }
 
         private void addUserBtn_Click(object sender, EventArgs e)

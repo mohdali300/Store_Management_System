@@ -78,7 +78,7 @@
             _CustomerNameBox = new TextBox();
             label3 = new Label();
             label9 = new Label();
-            SelingPrice = new TextBox();
+            SellingPrice = new TextBox();
             pictureBox1 = new PictureBox();
             panel3 = new Panel();
             ColorBox = new TextBox();
@@ -88,7 +88,9 @@
             label10 = new Label();
             productID = new TextBox();
             Date = new Label();
-            Customername = new TextBox();
+            cashierNameBox = new TextBox();
+            UserIDBox = new TextBox();
+            customerIDBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -201,6 +203,7 @@
             // 
             AfterDiscount.Anchor = AnchorStyles.None;
             AfterDiscount.BackColor = Color.FromArgb(24, 30, 46);
+            AfterDiscount.Enabled = false;
             AfterDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             AfterDiscount.ForeColor = Color.White;
             AfterDiscount.Location = new Point(791, 840);
@@ -225,6 +228,7 @@
             // 
             PaidUp.Anchor = AnchorStyles.None;
             PaidUp.BackColor = Color.FromArgb(24, 30, 46);
+            PaidUp.Enabled = false;
             PaidUp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PaidUp.ForeColor = Color.White;
             PaidUp.Location = new Point(568, 840);
@@ -249,6 +253,7 @@
             // 
             TotalPriceBox.Anchor = AnchorStyles.None;
             TotalPriceBox.BackColor = Color.FromArgb(24, 30, 46);
+            TotalPriceBox.Enabled = false;
             TotalPriceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TotalPriceBox.ForeColor = Color.White;
             TotalPriceBox.Location = new Point(1237, 840);
@@ -264,7 +269,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(674, 231);
+            label14.Location = new Point(741, 238);
             label14.Name = "label14";
             label14.Size = new Size(74, 23);
             label14.TabIndex = 109;
@@ -313,7 +318,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(1396, 235);
+            label13.Location = new Point(1391, 237);
             label13.Name = "label13";
             label13.Size = new Size(46, 23);
             label13.TabIndex = 106;
@@ -325,7 +330,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(522, 150);
+            label8.Location = new Point(512, 150);
             label8.Name = "label8";
             label8.Size = new Size(54, 23);
             label8.TabIndex = 97;
@@ -350,11 +355,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(756, 148);
+            label7.Location = new Point(737, 152);
             label7.Name = "label7";
-            label7.Size = new Size(72, 23);
+            label7.Size = new Size(82, 23);
             label7.TabIndex = 96;
-            label7.Text = "التصنيف";
+            label7.Text = "نوع المنتج";
             // 
             // ClassificationBox
             // 
@@ -374,7 +379,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(1058, 152);
+            label6.Location = new Point(1050, 152);
             label6.Name = "label6";
             label6.Size = new Size(85, 23);
             label6.TabIndex = 93;
@@ -398,7 +403,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(1353, 152);
+            label5.Location = new Point(1352, 152);
             label5.Name = "label5";
             label5.Size = new Size(84, 23);
             label5.TabIndex = 91;
@@ -435,7 +440,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(300, 38);
+            label4.Location = new Point(318, 38);
             label4.Name = "label4";
             label4.Size = new Size(52, 23);
             label4.TabIndex = 90;
@@ -459,7 +464,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1144, 37);
+            label2.Location = new Point(1137, 37);
             label2.Name = "label2";
             label2.Size = new Size(93, 23);
             label2.TabIndex = 85;
@@ -617,7 +622,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(694, 38);
+            label3.Location = new Point(688, 38);
             label3.Name = "label3";
             label3.Size = new Size(90, 23);
             label3.TabIndex = 127;
@@ -635,17 +640,17 @@
             label9.TabIndex = 128;
             label9.Text = "سعر البيع";
             // 
-            // SelingPrice
+            // SellingPrice
             // 
-            SelingPrice.Anchor = AnchorStyles.None;
-            SelingPrice.BackColor = Color.FromArgb(24, 30, 46);
-            SelingPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SelingPrice.ForeColor = Color.White;
-            SelingPrice.Location = new Point(221, 170);
-            SelingPrice.Name = "SelingPrice";
-            SelingPrice.RightToLeft = RightToLeft.Yes;
-            SelingPrice.Size = new Size(166, 34);
-            SelingPrice.TabIndex = 129;
+            SellingPrice.Anchor = AnchorStyles.None;
+            SellingPrice.BackColor = Color.FromArgb(24, 30, 46);
+            SellingPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SellingPrice.ForeColor = Color.White;
+            SellingPrice.Location = new Point(221, 170);
+            SellingPrice.Name = "SellingPrice";
+            SellingPrice.RightToLeft = RightToLeft.Yes;
+            SellingPrice.Size = new Size(166, 34);
+            SellingPrice.TabIndex = 129;
             // 
             // pictureBox1
             // 
@@ -697,7 +702,7 @@
             // deletebtn
             // 
             deletebtn.Anchor = AnchorStyles.None;
-            deletebtn.BackColor = Color.LimeGreen;
+            deletebtn.BackColor = Color.Firebrick;
             deletebtn.FlatStyle = FlatStyle.Flat;
             deletebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
             deletebtn.ForeColor = Color.White;
@@ -728,7 +733,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(150, 150);
+            label10.Location = new Point(142, 150);
             label10.Name = "label10";
             label10.Size = new Size(57, 23);
             label10.TabIndex = 137;
@@ -753,41 +758,73 @@
             Date.AutoSize = true;
             Date.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             Date.ForeColor = Color.White;
-            Date.Location = new Point(1199, 896);
+            Date.Location = new Point(1155, 896);
             Date.Name = "Date";
             Date.Size = new Size(153, 38);
             Date.TabIndex = 139;
             Date.Text = "3/11/2024";
             // 
-            // Customername
+            // cashierNameBox
             // 
-            Customername.Anchor = AnchorStyles.None;
-            Customername.BackColor = Color.FromArgb(24, 30, 46);
-            Customername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Customername.ForeColor = Color.White;
-            Customername.Location = new Point(285, 841);
-            Customername.Name = "Customername";
-            Customername.RightToLeft = RightToLeft.Yes;
-            Customername.Size = new Size(266, 34);
-            Customername.TabIndex = 140;
+            cashierNameBox.Anchor = AnchorStyles.None;
+            cashierNameBox.BackColor = Color.FromArgb(24, 30, 46);
+            cashierNameBox.Enabled = false;
+            cashierNameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cashierNameBox.ForeColor = Color.White;
+            cashierNameBox.Location = new Point(288, 838);
+            cashierNameBox.Name = "cashierNameBox";
+            cashierNameBox.RightToLeft = RightToLeft.Yes;
+            cashierNameBox.Size = new Size(266, 34);
+            cashierNameBox.TabIndex = 140;
+            // 
+            // UserIDBox
+            // 
+            UserIDBox.Anchor = AnchorStyles.None;
+            UserIDBox.BackColor = Color.FromArgb(24, 30, 46);
+            UserIDBox.Enabled = false;
+            UserIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            UserIDBox.ForeColor = Color.White;
+            UserIDBox.Location = new Point(568, 896);
+            UserIDBox.Name = "UserIDBox";
+            UserIDBox.RightToLeft = RightToLeft.Yes;
+            UserIDBox.Size = new Size(140, 34);
+            UserIDBox.TabIndex = 141;
+            UserIDBox.Visible = false;
+            // 
+            // customerIDBox
+            // 
+            customerIDBox.Anchor = AnchorStyles.None;
+            customerIDBox.BackColor = Color.FromArgb(24, 30, 46);
+            customerIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            customerIDBox.ForeColor = Color.White;
+            customerIDBox.Location = new Point(402, 15);
+            customerIDBox.Name = "customerIDBox";
+            customerIDBox.RightToLeft = RightToLeft.Yes;
+            customerIDBox.Size = new Size(109, 34);
+            customerIDBox.TabIndex = 142;
+            customerIDBox.Visible = false;
             // 
             // SaleBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
-            Controls.Add(Customername);
+            Controls.Add(customerIDBox);
+            Controls.Add(UserIDBox);
+            Controls.Add(label19);
+            Controls.Add(label13);
+            Controls.Add(label7);
+            Controls.Add(cashierNameBox);
             Controls.Add(Date);
             Controls.Add(productID);
             Controls.Add(label10);
             Controls.Add(_discountBox);
             Controls.Add(deletebtn);
             Controls.Add(Updatebtn);
-            Controls.Add(label13);
             Controls.Add(ColorBox);
             Controls.Add(pictureBox1);
             Controls.Add(label9);
-            Controls.Add(SelingPrice);
+            Controls.Add(SellingPrice);
             Controls.Add(label3);
             Controls.Add(_CustomerNameBox);
             Controls.Add(button1);
@@ -795,7 +832,6 @@
             Controls.Add(Savebtn);
             Controls.Add(label20);
             Controls.Add(StockBox);
-            Controls.Add(label19);
             Controls.Add(label18);
             Controls.Add(FaturaDiscountBox);
             Controls.Add(label17);
@@ -810,7 +846,6 @@
             Controls.Add(SizeBox);
             Controls.Add(label8);
             Controls.Add(QuantityBox);
-            Controls.Add(label7);
             Controls.Add(ClassificationBox);
             Controls.Add(label6);
             Controls.Add(ProductnameBox);
@@ -841,7 +876,6 @@
         private Button Addbtn;
         private Button Savebtn;
         private Label label20;
-        private ComboBox StockBox;
         private Label label19;
         private Label label18;
         private TextBox FaturaDiscountBox;
@@ -876,7 +910,7 @@
         private TextBox _CustomerNameBox;
         private Label label3;
         private Label label9;
-        private TextBox SelingPrice;
+        private TextBox SellingPrice;
         private PictureBox pictureBox1;
         private Panel panel3;
         private TextBox ColorBox;
@@ -886,7 +920,6 @@
         private Label label10;
         private TextBox productID;
         private Label Date;
-        private TextBox Customername;
         private DataGridViewTextBoxColumn _Barcode;
         private DataGridViewTextBoxColumn _Name;
         private DataGridViewTextBoxColumn _Classification;
@@ -898,5 +931,9 @@
         private DataGridViewTextBoxColumn Total;
         private DataGridViewTextBoxColumn _notes;
         private DataGridViewTextBoxColumn product_id;
+        public TextBox cashierNameBox;
+        public ComboBox StockBox;
+        public TextBox UserIDBox;
+        private TextBox customerIDBox;
     }
 }

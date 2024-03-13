@@ -73,11 +73,11 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(1088, 204);
+            label11.Location = new Point(1040, 204);
             label11.Name = "label11";
-            label11.Size = new Size(105, 23);
+            label11.Size = new Size(154, 23);
             label11.TabIndex = 64;
-            label11.Text = "خزنة مستخدم";
+            label11.Text = "إجمالي خزنة الشيفت";
             // 
             // DiscountBox
             // 
@@ -107,6 +107,7 @@
             // 
             PriceBox.Anchor = AnchorStyles.None;
             PriceBox.BackColor = Color.FromArgb(24, 30, 46);
+            PriceBox.Enabled = false;
             PriceBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             PriceBox.ForeColor = Color.White;
             PriceBox.Location = new Point(910, 223);
@@ -155,16 +156,17 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(475, 204);
+            label2.Location = new Point(419, 204);
             label2.Name = "label2";
-            label2.Size = new Size(58, 23);
+            label2.Size = new Size(114, 23);
             label2.TabIndex = 84;
-            label2.Text = "إجمالي";
+            label2.Text = "صافي الشيفت";
             // 
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.None;
             textBox1.BackColor = Color.FromArgb(24, 30, 46);
+            textBox1.Enabled = false;
             textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.ForeColor = Color.White;
             textBox1.Location = new Point(264, 223);

@@ -3,6 +3,7 @@ using Store_System.Data;
 using Store_System.Models;
 using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,6 +76,23 @@ namespace Store_System.Services
             }
 
         }
+
+
+        public async Task<Product> GetProductByID(int id)
+        {
+            var Product = await _context.Product.FirstOrDefaultAsync(p => p.ID == id);
+            if (Product != null)
+            {
+                return Product;
+            }
+            else
+            {
+                return new Product();
+            }
+
+        }
+
+
         public async Task<List<Product>> Search(string Name)
         {
             if (Name != "") { 

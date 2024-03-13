@@ -470,7 +470,7 @@
             existProductsLbl.BackColor = Color.FromArgb(27, 156, 133);
             existProductsLbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             existProductsLbl.ForeColor = Color.White;
-            existProductsLbl.Location = new Point(1175, 425);
+            existProductsLbl.Location = new Point(1197, 419);
             existProductsLbl.Name = "existProductsLbl";
             existProductsLbl.Padding = new Padding(0, 0, 0, 5);
             existProductsLbl.RightToLeft = RightToLeft.Yes;
@@ -482,7 +482,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1364, 419);
+            pictureBox1.Location = new Point(1386, 413);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(40, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

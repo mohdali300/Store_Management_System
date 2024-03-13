@@ -16,6 +16,7 @@ namespace Store_System.UI.ControlPanelUi
     {
         private readonly ClientService _clientService;
         private readonly Customer _customer;
+        public int CustomerID { get; set; }
 
         public AddCustomer()
         {
@@ -32,6 +33,7 @@ namespace Store_System.UI.ControlPanelUi
                 _customer.Name = _NameBox.Text;
                 _customer.Phone = _PhoneBox.Text;
                 await _clientService.AddCustomer(_customer);
+                CustomerID = _customer.ID;
                 MessageBox.Show("تمت إضافة العميل بنجاح", "System", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

@@ -35,12 +35,11 @@
             SupMailLbl = new Label();
             SupPhoneLbl = new Label();
             SupNameLbl = new Label();
-            nameUserBox = new TextBox();
+            supplierNameBox = new TextBox();
             SupCodeLbl = new Label();
             SupCodeBox = new TextBox();
             SupMailBox = new TextBox();
             SupPhoneBox = new TextBox();
-            contractDateBox = new DateTimePicker();
             contractDate = new Label();
             SupAddressLbl = new Label();
             SupAddressBox = new TextBox();
@@ -49,15 +48,24 @@
             label4 = new Label();
             textBox2 = new TextBox();
             usersPic = new PictureBox();
-            existUsrsGridView = new DataGridView();
+            existSuppliersGridView = new DataGridView();
+            Name = new DataGridViewTextBoxColumn();
+            Phone = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             panel5 = new Panel();
             existUserLbl = new Label();
             deleteSupplierBtn = new Button();
+            nameError = new Label();
+            phoneError = new Label();
+            dateError = new Label();
+            contractDateBox = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usersPic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)existUsrsGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)existSuppliersGridView).BeginInit();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
@@ -131,17 +139,17 @@
             SupNameLbl.TabIndex = 20;
             SupNameLbl.Text = "اسم المورد";
             // 
-            // nameUserBox
+            // supplierNameBox
             // 
-            nameUserBox.Anchor = AnchorStyles.None;
-            nameUserBox.BackColor = Color.FromArgb(24, 30, 46);
-            nameUserBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            nameUserBox.ForeColor = Color.White;
-            nameUserBox.Location = new Point(773, 218);
-            nameUserBox.Name = "nameUserBox";
-            nameUserBox.RightToLeft = RightToLeft.Yes;
-            nameUserBox.Size = new Size(297, 47);
-            nameUserBox.TabIndex = 17;
+            supplierNameBox.Anchor = AnchorStyles.None;
+            supplierNameBox.BackColor = Color.FromArgb(24, 30, 46);
+            supplierNameBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            supplierNameBox.ForeColor = Color.White;
+            supplierNameBox.Location = new Point(773, 218);
+            supplierNameBox.Name = "supplierNameBox";
+            supplierNameBox.RightToLeft = RightToLeft.Yes;
+            supplierNameBox.Size = new Size(297, 47);
+            supplierNameBox.TabIndex = 17;
             // 
             // SupCodeLbl
             // 
@@ -159,6 +167,7 @@
             // 
             SupCodeBox.Anchor = AnchorStyles.None;
             SupCodeBox.BackColor = Color.FromArgb(24, 30, 46);
+            SupCodeBox.Enabled = false;
             SupCodeBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             SupCodeBox.ForeColor = Color.White;
             SupCodeBox.Location = new Point(1124, 218);
@@ -191,26 +200,13 @@
             SupPhoneBox.Size = new Size(283, 47);
             SupPhoneBox.TabIndex = 18;
             // 
-            // contractDateBox
-            // 
-            contractDateBox.Anchor = AnchorStyles.None;
-            contractDateBox.CalendarMonthBackground = Color.Snow;
-            contractDateBox.CalendarTitleBackColor = Color.Snow;
-            contractDateBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            contractDateBox.Format = DateTimePickerFormat.Short;
-            contractDateBox.Location = new Point(612, 310);
-            contractDateBox.Name = "contractDateBox";
-            contractDateBox.RightToLeft = RightToLeft.Yes;
-            contractDateBox.Size = new Size(277, 47);
-            contractDateBox.TabIndex = 30;
-            // 
             // contractDate
             // 
             contractDate.Anchor = AnchorStyles.None;
             contractDate.AutoSize = true;
             contractDate.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             contractDate.ForeColor = Color.White;
-            contractDate.Location = new Point(783, 291);
+            contractDate.Location = new Point(807, 295);
             contractDate.Name = "contractDate";
             contractDate.Size = new Size(97, 23);
             contractDate.TabIndex = 31;
@@ -255,6 +251,7 @@
             saveSupplierBtn.TabIndex = 34;
             saveSupplierBtn.Text = "حفظ";
             saveSupplierBtn.UseVisualStyleBackColor = false;
+            saveSupplierBtn.Click += saveSupplierBtn_Click;
             // 
             // pictureBox2
             // 
@@ -304,17 +301,55 @@
             usersPic.TabIndex = 37;
             usersPic.TabStop = false;
             // 
-            // existUsrsGridView
+            // existSuppliersGridView
             // 
-            existUsrsGridView.Anchor = AnchorStyles.None;
-            existUsrsGridView.BackgroundColor = Color.Snow;
-            existUsrsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            existUsrsGridView.Location = new Point(87, 481);
-            existUsrsGridView.Name = "existUsrsGridView";
-            existUsrsGridView.RowHeadersWidth = 51;
-            existUsrsGridView.RowTemplate.Height = 29;
-            existUsrsGridView.Size = new Size(1333, 452);
-            existUsrsGridView.TabIndex = 36;
+            existSuppliersGridView.Anchor = AnchorStyles.None;
+            existSuppliersGridView.BackgroundColor = Color.Snow;
+            existSuppliersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            existSuppliersGridView.Columns.AddRange(new DataGridViewColumn[] { Name, Phone, Email, Address, dataGridViewTextBoxColumn1 });
+            existSuppliersGridView.Location = new Point(87, 481);
+            existSuppliersGridView.Name = "existSuppliersGridView";
+            existSuppliersGridView.RightToLeft = RightToLeft.Yes;
+            existSuppliersGridView.RowHeadersWidth = 51;
+            existSuppliersGridView.RowTemplate.Height = 29;
+            existSuppliersGridView.Size = new Size(1333, 452);
+            existSuppliersGridView.TabIndex = 36;
+            existSuppliersGridView.RowHeaderMouseClick += existSuppliersGridView_RowHeaderMouseClick;
+            // 
+            // Name
+            // 
+            Name.HeaderText = "الاسم";
+            Name.MinimumWidth = 10;
+            Name.Name = "Name";
+            Name.Width = 220;
+            // 
+            // Phone
+            // 
+            Phone.HeaderText = "رقم الهاتف";
+            Phone.MinimumWidth = 10;
+            Phone.Name = "Phone";
+            Phone.Width = 220;
+            // 
+            // Email
+            // 
+            Email.HeaderText = "الايميل";
+            Email.MinimumWidth = 10;
+            Email.Name = "Email";
+            Email.Width = 220;
+            // 
+            // Address
+            // 
+            Address.HeaderText = "العنوان";
+            Address.MinimumWidth = 10;
+            Address.Name = "Address";
+            Address.Width = 220;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "تاريخ التعاقد";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 125;
             // 
             // panel5
             // 
@@ -353,29 +388,80 @@
             deleteSupplierBtn.TabIndex = 41;
             deleteSupplierBtn.Text = "حذف";
             deleteSupplierBtn.UseVisualStyleBackColor = false;
-            deleteSupplierBtn.Click += deleteSupplierBtn_Click;
+            deleteSupplierBtn.Click += deleteSupplierBtn_ClickAsync;
+            // 
+            // nameError
+            // 
+            nameError.Anchor = AnchorStyles.None;
+            nameError.AutoSize = true;
+            nameError.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            nameError.ForeColor = Color.Red;
+            nameError.Location = new Point(909, 268);
+            nameError.Name = "nameError";
+            nameError.Size = new Size(161, 17);
+            nameError.TabIndex = 43;
+            nameError.Text = "لا يمكنك ترك هذا الحقل فارغ";
+            nameError.Visible = false;
+            // 
+            // phoneError
+            // 
+            phoneError.Anchor = AnchorStyles.None;
+            phoneError.AutoSize = true;
+            phoneError.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            phoneError.ForeColor = Color.Red;
+            phoneError.Location = new Point(558, 268);
+            phoneError.Name = "phoneError";
+            phoneError.Size = new Size(161, 17);
+            phoneError.TabIndex = 44;
+            phoneError.Text = "لا يمكنك ترك هذا الحقل فارغ";
+            phoneError.Visible = false;
+            // 
+            // dateError
+            // 
+            dateError.Anchor = AnchorStyles.None;
+            dateError.AutoSize = true;
+            dateError.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dateError.ForeColor = Color.Red;
+            dateError.Location = new Point(749, 362);
+            dateError.Name = "dateError";
+            dateError.Size = new Size(161, 17);
+            dateError.TabIndex = 46;
+            dateError.Text = "لا يمكنك ترك هذا الحقل فارغ";
+            dateError.Visible = false;
+            // 
+            // contractDateBox
+            // 
+            contractDateBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            contractDateBox.Format = DateTimePickerFormat.Short;
+            contractDateBox.Location = new Point(638, 317);
+            contractDateBox.Name = "contractDateBox";
+            contractDateBox.Size = new Size(272, 38);
+            contractDateBox.TabIndex = 47;
             // 
             // AddSupplierPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
+            Controls.Add(contractDateBox);
+            Controls.Add(dateError);
+            Controls.Add(contractDate);
+            Controls.Add(phoneError);
+            Controls.Add(nameError);
             Controls.Add(deleteSupplierBtn);
             Controls.Add(pictureBox2);
             Controls.Add(label4);
             Controls.Add(textBox2);
             Controls.Add(usersPic);
-            Controls.Add(existUsrsGridView);
+            Controls.Add(existSuppliersGridView);
             Controls.Add(panel5);
             Controls.Add(saveSupplierBtn);
             Controls.Add(SupAddressLbl);
             Controls.Add(SupAddressBox);
-            Controls.Add(contractDate);
-            Controls.Add(contractDateBox);
             Controls.Add(SupMailLbl);
             Controls.Add(SupPhoneLbl);
             Controls.Add(SupNameLbl);
-            Controls.Add(nameUserBox);
+            Controls.Add(supplierNameBox);
             Controls.Add(SupCodeLbl);
             Controls.Add(SupCodeBox);
             Controls.Add(SupMailBox);
@@ -383,14 +469,15 @@
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             MinimumSize = new Size(1496, 949);
-            Name = "AddSupplierPage";
+            //Name = "AddSupplierPage";
             Size = new Size(1496, 949);
+            Load += AddSupplierPage_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)usersPic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)existUsrsGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)existSuppliersGridView).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ResumeLayout(false);
@@ -405,12 +492,11 @@
         private Label SupMailLbl;
         private Label SupPhoneLbl;
         private Label SupNameLbl;
-        private TextBox nameUserBox;
+        private TextBox supplierNameBox;
         private Label SupCodeLbl;
         private TextBox SupCodeBox;
         private TextBox SupMailBox;
         private TextBox SupPhoneBox;
-        private DateTimePicker contractDateBox;
         private Label contractDate;
         private Label SupAddressLbl;
         private TextBox SupAddressBox;
@@ -419,9 +505,18 @@
         private Label label4;
         private TextBox textBox2;
         private PictureBox usersPic;
-        private DataGridView existUsrsGridView;
+        private DataGridView existSuppliersGridView;
         private Panel panel5;
         private Label existUserLbl;
         private Button deleteSupplierBtn;
+        private Label nameError;
+        private Label phoneError;
+        private Label dateError;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn Phone;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DateTimePicker contractDateBox;
     }
 }

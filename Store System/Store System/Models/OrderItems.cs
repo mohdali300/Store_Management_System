@@ -26,5 +26,7 @@ namespace Store_System.Models
         public double Discount { get; set; }
         public int Quantity { get; set; }
 
+        public int FaturaPaidPrice { get; set; }
+
     }
 }

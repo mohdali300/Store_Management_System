@@ -51,6 +51,7 @@ namespace Store_System.UI
                 else
                 {
                     User user = await Login.AdminLogIn(UserNameBox.Text);
+
                     if (user != null)
                     {
                         if (Adminradio.Checked)
@@ -58,6 +59,9 @@ namespace Store_System.UI
                             if (user.Role == Role.Admin && user.Password == PasswordBox.Text)
                             {
                                 home.UserName = UserNameBox.Text;
+                                home.CashierName= user.Name;
+                                home.StockMoneyName= user.MoneyStockName;
+                                home.UserID = user.ID;
                                 this.Hide();
                                 home.Show();
                             }

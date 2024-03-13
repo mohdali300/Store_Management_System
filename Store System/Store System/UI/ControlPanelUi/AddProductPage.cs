@@ -77,6 +77,7 @@ namespace Store_System.UI
 
             }
         }
+
         private async void deleteProductBtn_Click(object sender, EventArgs e)
         {
             if (barCodeBox.Text != "")
@@ -148,7 +149,7 @@ namespace Store_System.UI
         {
             barCodeBox.Text = Items.CurrentRow.Cells[0].Value.ToString();
             productNameBox.Text = Items.CurrentRow.Cells[1].Value.ToString();
-         //   CatComboBox.Text = Items.CurrentRow.Cells[2].Value.ToString();
+            //   CatComboBox.Text = Items.CurrentRow.Cells[2].Value.ToString();
             stockBox.Text = Items.CurrentRow.Cells[4].Value.ToString();
             costBox.Text = Items.CurrentRow.Cells[5].Value.ToString();
             discountBox.Text = Items.CurrentRow.Cells[6].Value.ToString();
@@ -157,7 +158,7 @@ namespace Store_System.UI
             SizeBox.Text = Items.CurrentRow.Cells[9].Value.ToString();
             noteBox.Text = Items.CurrentRow.Cells[10].Value.ToString();
 
-        }   
+        }
 
         private async void BindingToGridView()
         {
