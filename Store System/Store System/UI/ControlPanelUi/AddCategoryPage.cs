@@ -28,21 +28,25 @@ namespace Store_System.UI
         private async void deleteCategoryBtn_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("هل انت متأكد من حذف هذا العنصر؟", "!انتبه", MessageBoxButtons.YesNo);
-            if (categoryCodeBox.Text != "")
+            DialogResult result = MessageBox.Show("هل انت متأكد من حذف هذا العنصر؟", "!انتبه", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-              
-                 int isDeleted=   await _categoryService.DeleteCategory(int.Parse(categoryCodeBox.Text));
+                if (categoryCodeBox.Text != "")
+                {
+
+                    int isDeleted = await _categoryService.DeleteCategory(int.Parse(categoryCodeBox.Text));
                     if (isDeleted == 1)
                     {
                         MessageBox.Show("تم حذف التصنيف بنجاح", "system", MessageBoxButtons.OK);
-                    Clear();
-                    existCategoriesGridView.ClearSelection();
+                        Clear();
+                        existCategoriesGridView.ClearSelection();
+                        await RefreshGridView();
 
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("يرجى تحديي كود التصنيف لحذفه", "!system", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("قم بتحديد تصنيف لحذفه اولا", "system", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
                 }
             }
@@ -60,10 +64,8 @@ namespace Store_System.UI
                     await _categoryService.AddCategory(_category);
                     MessageBox.Show("تمت إضافة التصنيف بنجاح", "System", MessageBoxButtons.YesNo);
                     Clear();
+                    await RefreshGridView();
                     existCategoriesGridView.ClearSelection();
-
-                    //existCategoriesGridView.Rows.Add(catDescriptionBox.Text, catNameBox.Text, categoryCodeBox.Text);
-
                 }
                 else
                 {
@@ -72,7 +74,7 @@ namespace Store_System.UI
             }
             else
             {
-                MessageBox.Show("يرجى إدخال جميع البيانات المطلوبة", "System", MessageBoxButtons.YesNo);
+                MessageBox.Show("يرجى إدخال جميع البيانات المطلوبة", "System", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
 
         }
@@ -85,10 +87,16 @@ namespace Store_System.UI
             catDescriptionBox.Text = existCategoriesGridView.CurrentRow.Cells[2].Value.ToString();
 
         }
+        private async Task RefreshGridView()
+        {
+            List<Category> Suppliers = await _categoryService.GetALlCategories();
+
+            existCategoriesGridView.DataSource = Suppliers;
+        }
 
         private async void AddCategoryPage_Load(object sender, EventArgs e)
         {
-            var Categories =await _categoryService.GetALlCategories();
+            var Categories = await _categoryService.GetALlCategories();
             existCategoriesGridView.AutoGenerateColumns = false;
             existCategoriesGridView.DataSource = Categories;
             existCategoriesGridView.Columns["_name"].DataPropertyName = "Name";
@@ -101,6 +109,19 @@ namespace Store_System.UI
             categoryCodeBox.Clear();
             catNameBox.Clear();
             catDescriptionBox.Clear();
+        }
+
+        private async void searchCatBox_TextChanged(object sender, EventArgs e)
+        {
+            if (searchCatBox.Text == "")
+            {
+              await  RefreshGridView();
+            }
+            else
+            {
+                var Products = await _categoryService.Search(searchCatBox.Text);
+                existCategoriesGridView.DataSource = Products;
+            }
         }
     }
 }

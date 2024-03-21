@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Store_System.Data;
 
@@ -11,9 +12,10 @@ using Store_System.Data;
 namespace Store_System.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20240320122228_updateOrderItems")]
+    partial class updateOrderItems
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -217,8 +219,8 @@ namespace Store_System.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Size")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Size")
+                        .HasColumnType("int");
 
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
@@ -320,10 +322,10 @@ namespace Store_System.Migrations
 
             modelBuilder.Entity("Store_System.Models.ProductsSuppliers", b =>
                 {
-                    b.Property<int?>("product_Id")
+                    b.Property<int>("product_Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Supplier_Id")
+                    b.Property<int>("Supplier_Id")
                         .HasColumnType("int");
 
                     b.Property<int?>("ProductID")
@@ -372,16 +374,7 @@ namespace Store_System.Migrations
                     b.Property<int>("Product_Id")
                         .HasColumnType("int");
 
-                    b.Property<string>("Notes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("OrderID")
-                        .HasColumnType("int");
-
                     b.Property<int?>("ProductID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ReturnedQuantity")
                         .HasColumnType("int");
 
                     b.Property<int?>("Returnedid")

@@ -19,6 +19,7 @@ namespace Store_System.UI
 
         AdminDashboard home;
         SaleBill _saleBill;
+        BuyBill _buyBill;
 
 
 
@@ -29,6 +30,7 @@ namespace Store_System.UI
             Login = new Login();
             home = new AdminDashboard();
             _saleBill = new SaleBill();
+            _buyBill=new BuyBill();
         }
 
         private async void SignInBtn_Click(object sender, EventArgs e)
@@ -54,6 +56,7 @@ namespace Store_System.UI
                 else
                 {
                     User user = await Login.AdminLogIn(UserNameBox.Text);
+
                     if (user != null)
                     {
                         if (Adminradio.Checked)
@@ -61,7 +64,9 @@ namespace Store_System.UI
                             if (user.Role == Role.Admin && user.Password == PasswordBox.Text)
                             {
                                 home.UserName = UserNameBox.Text;
-                                _saleBill.Username = UserNameBox.Text;
+                                home.CashierName= user.Name;
+                                home.StockMoneyName= user.MoneyStockName;
+                                home.UserID = user.ID;
                                 this.Hide();
                                 home.Show();
                             }
@@ -79,8 +84,13 @@ namespace Store_System.UI
                         {
                             if (user.Role == Role.Cashier && user.Password == PasswordBox.Text)
                             {
+                                //home.UserName = UserNameBox.Text;
+                                //_saleBill.Username = UserNameBox.Text;
+
                                 home.UserName = UserNameBox.Text;
-                                _saleBill.Username = UserNameBox.Text;
+                                home.CashierName = user.Name;
+                                home.StockMoneyName = user.MoneyStockName;
+                                home.UserID = user.ID;
 
                                 this.Hide();
                                 home.Show();

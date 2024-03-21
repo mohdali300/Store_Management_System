@@ -54,16 +54,41 @@ namespace Store_System.Services
         }
         public async Task<int> DeleteCategory(int code)
         {
+            
             var category = await _context.Category.FirstOrDefaultAsync(u => u.Code == code);
             if (category != null)
             {
-                _context.Category.Remove(category);
-                await _context.SaveChangesAsync();
-                return 1;
+                try
+                {
+                    _context.Category.Remove(category);
+                    await _context.SaveChangesAsync();
+                    return 1;
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("لا يمكن حذف هذا التصنيف لانه مربوط بمنتجات فى السيستم", "System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return 0;
+                }
             }
             else
                 return 0;
         }
-       
+        public async Task<List<Category>> Search(string Name)
+        {
+            if (Name != "")
+            {
+                var Categories = await _context.Category.Where(p => p.Name.Contains(Name)).ToListAsync();
+                if (Categories != null)
+                {
+                    return Categories;
+                }
+                else
+                {
+                    return new List<Category>();
+                }
+            }
+            return new List<Category>();
+        }
+
+
     }
 }

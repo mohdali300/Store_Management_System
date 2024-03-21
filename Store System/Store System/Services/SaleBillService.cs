@@ -60,8 +60,8 @@ namespace Store_System.Services
         public async Task<Order> GetLastOrderID()
         {
 
-         Order id= await _context.Order.OrderByDescending(o=>o.ID).FirstOrDefaultAsync();
-            return id;
+             Order id= await _context.Order.OrderByDescending(o=>o.ID).FirstOrDefaultAsync();
+             return id;
         }
 
     }

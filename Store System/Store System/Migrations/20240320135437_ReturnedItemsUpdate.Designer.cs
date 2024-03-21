@@ -12,8 +12,8 @@ using Store_System.Data;
 namespace Store_System.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20240312002824_init")]
-    partial class init
+    [Migration("20240320135437_ReturnedItemsUpdate")]
+    partial class ReturnedItemsUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -169,7 +169,7 @@ namespace Store_System.Migrations
                     b.Property<string>("CustomerName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Customer_Id")
+                    b.Property<int?>("Customer_Id")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsSale")
@@ -181,7 +181,7 @@ namespace Store_System.Migrations
                     b.Property<DateTime?>("ShippedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("user_id")
+                    b.Property<int?>("user_id")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -201,6 +201,12 @@ namespace Store_System.Migrations
                     b.Property<int>("Order_Id")
                         .HasColumnType("int");
 
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Discount")
                         .HasColumnType("float");
 
@@ -212,6 +218,9 @@ namespace Store_System.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("Size")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
@@ -347,7 +356,12 @@ namespace Store_System.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("OrderID")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
+
+                    b.HasIndex("OrderID");
 
                     b.ToTable("Returned");
                 });
@@ -360,7 +374,16 @@ namespace Store_System.Migrations
                     b.Property<int>("Product_Id")
                         .HasColumnType("int");
 
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OrderID")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ReturnedQuantity")
                         .HasColumnType("int");
 
                     b.Property<int?>("Returnedid")
@@ -414,9 +437,11 @@ namespace Store_System.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -512,15 +537,11 @@ namespace Store_System.Migrations
                 {
                     b.HasOne("Store_System.Models.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("Customer_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Customer_Id");
 
                     b.HasOne("Store_System.Models.User", "user")
                         .WithMany("Orders")
-                        .HasForeignKey("user_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("user_id");
 
                     b.Navigation("Customer");
 
@@ -619,6 +640,13 @@ namespace Store_System.Migrations
                     b.Navigation("Supplier");
                 });
 
+            modelBuilder.Entity("Store_System.Models.Returned", b =>
+                {
+                    b.HasOne("Store_System.Models.Order", null)
+                        .WithMany("Returneds")
+                        .HasForeignKey("OrderID");
+                });
+
             modelBuilder.Entity("Store_System.Models.ReturnedItems", b =>
                 {
                     b.HasOne("Store_System.Models.Product", null)
@@ -677,6 +705,8 @@ namespace Store_System.Migrations
             modelBuilder.Entity("Store_System.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
+
+                    b.Navigation("Returneds");
                 });
 
             modelBuilder.Entity("Store_System.Models.Product", b =>

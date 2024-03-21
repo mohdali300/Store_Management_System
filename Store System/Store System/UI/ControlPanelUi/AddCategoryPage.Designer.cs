@@ -98,7 +98,7 @@
             catDiscriptionLbl.AutoSize = true;
             catDiscriptionLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             catDiscriptionLbl.ForeColor = Color.White;
-            catDiscriptionLbl.Location = new Point(636, 229);
+            catDiscriptionLbl.Location = new Point(521, 189);
             catDiscriptionLbl.Name = "catDiscriptionLbl";
             catDiscriptionLbl.Size = new Size(53, 23);
             catDiscriptionLbl.TabIndex = 19;
@@ -110,7 +110,7 @@
             catNameLbl.AutoSize = true;
             catNameLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             catNameLbl.ForeColor = Color.White;
-            catNameLbl.Location = new Point(953, 229);
+            catNameLbl.Location = new Point(981, 189);
             catNameLbl.Name = "catNameLbl";
             catNameLbl.Size = new Size(93, 23);
             catNameLbl.TabIndex = 18;
@@ -122,10 +122,10 @@
             catNameBox.BackColor = Color.FromArgb(24, 30, 46);
             catNameBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             catNameBox.ForeColor = Color.White;
-            catNameBox.Location = new Point(756, 247);
+            catNameBox.Location = new Point(625, 207);
             catNameBox.Name = "catNameBox";
             catNameBox.RightToLeft = RightToLeft.Yes;
-            catNameBox.Size = new Size(297, 47);
+            catNameBox.Size = new Size(449, 47);
             catNameBox.TabIndex = 16;
             // 
             // categoryCodeLbl
@@ -134,7 +134,7 @@
             categoryCodeLbl.AutoSize = true;
             categoryCodeLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             categoryCodeLbl.ForeColor = Color.White;
-            categoryCodeLbl.Location = new Point(1308, 229);
+            categoryCodeLbl.Location = new Point(1306, 189);
             categoryCodeLbl.Name = "categoryCodeLbl";
             categoryCodeLbl.Size = new Size(92, 23);
             categoryCodeLbl.TabIndex = 14;
@@ -146,7 +146,7 @@
             categoryCodeBox.BackColor = Color.FromArgb(24, 30, 46);
             categoryCodeBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             categoryCodeBox.ForeColor = Color.White;
-            categoryCodeBox.Location = new Point(1113, 247);
+            categoryCodeBox.Location = new Point(1111, 207);
             categoryCodeBox.Name = "categoryCodeBox";
             categoryCodeBox.RightToLeft = RightToLeft.Yes;
             categoryCodeBox.Size = new Size(296, 47);
@@ -158,11 +158,11 @@
             catDescriptionBox.BackColor = Color.FromArgb(24, 30, 46);
             catDescriptionBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             catDescriptionBox.ForeColor = Color.White;
-            catDescriptionBox.Location = new Point(413, 247);
+            catDescriptionBox.Location = new Point(79, 207);
             catDescriptionBox.Multiline = true;
             catDescriptionBox.Name = "catDescriptionBox";
             catDescriptionBox.RightToLeft = RightToLeft.Yes;
-            catDescriptionBox.Size = new Size(283, 47);
+            catDescriptionBox.Size = new Size(502, 47);
             catDescriptionBox.TabIndex = 17;
             // 
             // AddCatBtn
@@ -172,9 +172,9 @@
             AddCatBtn.FlatStyle = FlatStyle.Flat;
             AddCatBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             AddCatBtn.ForeColor = Color.White;
-            AddCatBtn.Location = new Point(221, 247);
+            AddCatBtn.Location = new Point(818, 313);
             AddCatBtn.Name = "AddCatBtn";
-            AddCatBtn.Size = new Size(142, 47);
+            AddCatBtn.Size = new Size(125, 47);
             AddCatBtn.TabIndex = 20;
             AddCatBtn.Text = "إضافة";
             AddCatBtn.UseVisualStyleBackColor = false;
@@ -189,6 +189,7 @@
             existCategoriesGridView.Columns.AddRange(new DataGridViewColumn[] { _name, Code, Discription });
             existCategoriesGridView.Location = new Point(79, 432);
             existCategoriesGridView.Name = "existCategoriesGridView";
+            existCategoriesGridView.RightToLeft = RightToLeft.Yes;
             existCategoriesGridView.RowHeadersWidth = 51;
             existCategoriesGridView.RowTemplate.Height = 29;
             existCategoriesGridView.Size = new Size(1330, 489);
@@ -252,7 +253,7 @@
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.FromArgb(24, 30, 46);
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(297, 371);
+            pictureBox2.Location = new Point(465, 371);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(38, 38);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -265,7 +266,7 @@
             searchCatLbl.AutoSize = true;
             searchCatLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             searchCatLbl.ForeColor = Color.White;
-            searchCatLbl.Location = new Point(191, 352);
+            searchCatLbl.Location = new Point(364, 352);
             searchCatLbl.Name = "searchCatLbl";
             searchCatLbl.Size = new Size(95, 23);
             searchCatLbl.TabIndex = 25;
@@ -280,8 +281,9 @@
             searchCatBox.Location = new Point(79, 371);
             searchCatBox.Name = "searchCatBox";
             searchCatBox.RightToLeft = RightToLeft.Yes;
-            searchCatBox.Size = new Size(213, 38);
+            searchCatBox.Size = new Size(380, 38);
             searchCatBox.TabIndex = 24;
+            searchCatBox.TextChanged += searchCatBox_TextChanged;
             // 
             // deleteCategoryBtn
             // 
@@ -290,7 +292,7 @@
             deleteCategoryBtn.FlatStyle = FlatStyle.Flat;
             deleteCategoryBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             deleteCategoryBtn.ForeColor = Color.White;
-            deleteCategoryBtn.Location = new Point(79, 247);
+            deleteCategoryBtn.Location = new Point(679, 312);
             deleteCategoryBtn.Name = "deleteCategoryBtn";
             deleteCategoryBtn.Size = new Size(125, 47);
             deleteCategoryBtn.TabIndex = 27;

@@ -20,6 +20,9 @@ namespace Store_System.UI
     {
         ProductService _productService;
         CategoryService _categoryService;
+        SupplierService _supplierService;
+        ProductsSuppliers _productsSuppliers;
+        SuppliersProductsService _suppliersProductsService;
 
         Product _product;
         public AddProductPage()
@@ -29,11 +32,19 @@ namespace Store_System.UI
             _categoryService = new CategoryService();
 
             _product = new Product();
+            _supplierService = new SupplierService();
+            _productsSuppliers= new ProductsSuppliers();
+            _suppliersProductsService = new SuppliersProductsService();
         }
 
 
         private async void AddProductPage_Load(object sender, EventArgs e)
         {
+            var Suppliers=await _supplierService.GetAllSuppliers();
+            SupplierComboBox.DataSource= Suppliers;
+            SupplierComboBox.DisplayMember = "Name";
+            SupplierComboBox.ValueMember = "ID";
+            SupplierComboBox.SelectedIndex = -1;
             var Categories = await _categoryService.GetALlCategories();
             CatComboBox.DataSource = Categories;
             CatComboBox.DisplayMember = "Name";
@@ -65,6 +76,9 @@ namespace Store_System.UI
                 _product.Size = (Models.Size)Convert.ToInt32(SizeBox.SelectedIndex);
                 _product.Discount = double.Parse(discountBox.Text);
                 await _productService.AddProduct(_product);
+                _productsSuppliers.Supplier_Id = (int)SupplierComboBox.SelectedValue;
+                _productsSuppliers.product_Id = _product.ID;
+               await _suppliersProductsService.addSuppliersforProducts(_productsSuppliers);
                 MessageBox.Show("تمت إضافة العنصر بنجاح", "system", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RefreshGridView();
                 Clear();
@@ -77,6 +91,7 @@ namespace Store_System.UI
 
             }
         }
+
         private async void deleteProductBtn_Click(object sender, EventArgs e)
         {
             if (barCodeBox.Text != "")
@@ -102,8 +117,7 @@ namespace Store_System.UI
 
         private async void updatebtn_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                 Product product = await _productService.GetProductByBarcode(barCodeBox.Text);
 
                 if (product != null)
@@ -114,6 +128,7 @@ namespace Store_System.UI
                     product.SellingPrice = double.Parse(sellingPriceBox.Text);
                     product.StockAmount = int.Parse(stockBox.Text);
                     product.Description = noteBox.Text;
+                    product.Category_id = int.Parse(CatComboBox.SelectedValue.ToString());
                     product.Color = ColorBox.Text;
                     if (SizeBox.SelectedIndex >= 0 && SizeBox.SelectedIndex <= (int)Models.Size.Custom)
                     {
@@ -136,11 +151,6 @@ namespace Store_System.UI
                     MessageBox.Show("يرجى تحديد باركود المنتج المراد تعديله من أسفل الجدول ", "System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
 
@@ -148,7 +158,7 @@ namespace Store_System.UI
         {
             barCodeBox.Text = Items.CurrentRow.Cells[0].Value.ToString();
             productNameBox.Text = Items.CurrentRow.Cells[1].Value.ToString();
-         //   CatComboBox.Text = Items.CurrentRow.Cells[2].Value.ToString();
+            //   CatComboBox.Text = Items.CurrentRow.Cells[2].Value.ToString();
             stockBox.Text = Items.CurrentRow.Cells[4].Value.ToString();
             costBox.Text = Items.CurrentRow.Cells[5].Value.ToString();
             discountBox.Text = Items.CurrentRow.Cells[6].Value.ToString();
@@ -157,7 +167,9 @@ namespace Store_System.UI
             SizeBox.Text = Items.CurrentRow.Cells[9].Value.ToString();
             noteBox.Text = Items.CurrentRow.Cells[10].Value.ToString();
 
-        }   
+        }
+
+
 
         private async void BindingToGridView()
         {
@@ -166,7 +178,7 @@ namespace Store_System.UI
             Items.DataSource = Products;
             Items.Columns["_Barcode"].DataPropertyName = "Barcode";
             Items.Columns["_Name"].DataPropertyName = "Name";
-            Items.Columns["category"].DataPropertyName = "Category.Name";
+            Items.Columns["category"].DataPropertyName = "CategoryName";
             Items.Columns["Supplier"].DataPropertyName = "ProductsSuppliers";
             Items.Columns["_Quantity"].DataPropertyName = "StockAmount";
             Items.Columns["_cost"].DataPropertyName = "Cost";

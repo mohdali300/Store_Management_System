@@ -3,6 +3,7 @@ using Store_System.Data;
 using Store_System.Models;
 using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace Store_System.Services
         }
         public async Task<List<Product>> GetAllProducts()
         {
-          var Products=  await _context.Product.ToListAsync();
+          var Products=  await _context.Product.Include(P=>P.Category).ToListAsync();
             if (Products!=null)
             {
                 return Products;
@@ -55,7 +56,7 @@ namespace Store_System.Services
         {
             if (product != null)
             { 
-                return await _context.SaveChangesAsync(); 
+                return await _context.SaveChangesAsync();
             }
             else
             {
@@ -75,9 +76,11 @@ namespace Store_System.Services
             }
 
         }
-        public async Task<Product> GetProductByID(int ID)
+
+
+        public async Task<Product> GetProductByID(int id)
         {
-            var Product = await _context.Product.FirstOrDefaultAsync(p => p.ID == ID);
+            var Product = await _context.Product.FirstOrDefaultAsync(p => p.ID == id);
             if (Product != null)
             {
                 return Product;
@@ -88,6 +91,8 @@ namespace Store_System.Services
             }
 
         }
+
+
         public async Task<List<Product>> Search(string Name)
         {
             if (Name != "") { 

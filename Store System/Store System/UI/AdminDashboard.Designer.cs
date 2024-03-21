@@ -54,13 +54,11 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            pictureBox3 = new PictureBox();
             logOutBtn = new Button();
-            addSupplierPage1 = new AddSupplierPage();
+            pictureBox3 = new PictureBox();
             mainStockPage1 = new MainStockPage();
             shortFallsPage1 = new ShortFallsPage();
             welcomePage1 = new WelcomePage();
-            buyBill1 = new ControlPanelUi.BuyBill();
             returnedItems1 = new ControlPanelUi.ReturnedItems();
             shiftLock1 = new ControlPanelUi.ShiftLock();
             groupBox1.SuspendLayout();
@@ -410,22 +408,12 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(27, 156, 133);
-            panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(logOutBtn);
+            panel2.Controls.Add(pictureBox3);
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(1919, 45);
             panel2.TabIndex = 2;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(21, 3);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(37, 42);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 10;
-            pictureBox3.TabStop = false;
             // 
             // logOutBtn
             // 
@@ -433,7 +421,7 @@
             logOutBtn.FlatStyle = FlatStyle.Flat;
             logOutBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             logOutBtn.ForeColor = Color.White;
-            logOutBtn.Location = new Point(64, 6);
+            logOutBtn.Location = new Point(1736, 6);
             logOutBtn.Name = "logOutBtn";
             logOutBtn.Size = new Size(119, 35);
             logOutBtn.TabIndex = 10;
@@ -441,14 +429,15 @@
             logOutBtn.UseVisualStyleBackColor = false;
             logOutBtn.Click += logOutBtn_Click;
             // 
-            // addSupplierPage1
+            // pictureBox3
             // 
-            addSupplierPage1.BackColor = Color.FromArgb(24, 30, 46);
-            addSupplierPage1.Location = new Point(-5, 50);
-            addSupplierPage1.MinimumSize = new Size(1496, 949);
-            addSupplierPage1.Name = "addSupplierPage1";
-            addSupplierPage1.Size = new Size(1496, 949);
-            addSupplierPage1.TabIndex = 6;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(1861, 2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(37, 42);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 10;
+            pictureBox3.TabStop = false;
             // 
             // mainStockPage1
             // 
@@ -477,15 +466,6 @@
             welcomePage1.Size = new Size(1496, 949);
             welcomePage1.TabIndex = 13;
             // 
-            // buyBill1
-            // 
-            buyBill1.BackColor = Color.FromArgb(24, 30, 46);
-            buyBill1.Location = new Point(-5, 51);
-            buyBill1.MinimumSize = new Size(1496, 949);
-            buyBill1.Name = "buyBill1";
-            buyBill1.Size = new Size(1496, 949);
-            buyBill1.TabIndex = 14;
-            // 
             // returnedItems1
             // 
             returnedItems1.BackColor = Color.FromArgb(24, 30, 46);
@@ -510,15 +490,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
             ClientSize = new Size(1924, 1004);
-            Controls.Add(shiftLock1);
-            Controls.Add(returnedItems1);
-            Controls.Add(buyBill1);
-            Controls.Add(welcomePage1);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            Controls.Add(shiftLock1);
+            Controls.Add(returnedItems1);
+            Controls.Add(welcomePage1);
             Controls.Add(shortFallsPage1);
             Controls.Add(mainStockPage1);
-            Controls.Add(addSupplierPage1);
             MinimumSize = new Size(1918, 1028);
             Name = "AdminDashboard";
             StartPosition = FormStartPosition.CenterScreen;

@@ -61,6 +61,25 @@
             label2 = new Label();
             BillCodeBox = new TextBox();
             Items = new DataGridView();
+            Printbtn = new Button();
+            panel1 = new Panel();
+            button1 = new Button();
+            _CustomerNameBox = new TextBox();
+            label3 = new Label();
+            label9 = new Label();
+            SellingPrice = new TextBox();
+            pictureBox1 = new PictureBox();
+            panel3 = new Panel();
+            ColorBox = new TextBox();
+            Updatebtn = new Button();
+            deletebtn = new Button();
+            _discountBox = new TextBox();
+            label10 = new Label();
+            productID = new TextBox();
+            Date = new Label();
+            cashierNameBox = new TextBox();
+            UserIDBox = new TextBox();
+            customerIDBox = new TextBox();
             _Barcode = new DataGridViewTextBoxColumn();
             _Name = new DataGridViewTextBoxColumn();
             _Classification = new DataGridViewTextBoxColumn();
@@ -72,29 +91,10 @@
             Total = new DataGridViewTextBoxColumn();
             _notes = new DataGridViewTextBoxColumn();
             product_id = new DataGridViewTextBoxColumn();
-            Printbtn = new Button();
-            panel1 = new Panel();
-            button1 = new Button();
-            _CustomerNameBox = new TextBox();
-            label3 = new Label();
-            label9 = new Label();
-            SelingPrice = new TextBox();
-            pictureBox1 = new PictureBox();
-            panel3 = new Panel();
-            ColorBox = new TextBox();
-            Updatebtn = new Button();
-            deletebtn = new Button();
-            _discountBox = new TextBox();
-            label10 = new Label();
-            productID = new TextBox();
-            Date = new Label();
-            UserName = new TextBox();
-            result = new DataGridView();
-            Name = new DataGridViewTextBoxColumn();
+            OrderID = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)result).BeginInit();
             SuspendLayout();
             // 
             // Addbtn
@@ -204,6 +204,7 @@
             // 
             AfterDiscount.Anchor = AnchorStyles.None;
             AfterDiscount.BackColor = Color.FromArgb(24, 30, 46);
+            AfterDiscount.Enabled = false;
             AfterDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             AfterDiscount.ForeColor = Color.White;
             AfterDiscount.Location = new Point(791, 840);
@@ -228,6 +229,7 @@
             // 
             PaidUp.Anchor = AnchorStyles.None;
             PaidUp.BackColor = Color.FromArgb(24, 30, 46);
+            PaidUp.Enabled = false;
             PaidUp.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             PaidUp.ForeColor = Color.White;
             PaidUp.Location = new Point(568, 840);
@@ -252,6 +254,7 @@
             // 
             TotalPriceBox.Anchor = AnchorStyles.None;
             TotalPriceBox.BackColor = Color.FromArgb(24, 30, 46);
+            TotalPriceBox.Enabled = false;
             TotalPriceBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TotalPriceBox.ForeColor = Color.White;
             TotalPriceBox.Location = new Point(1237, 840);
@@ -267,7 +270,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(674, 231);
+            label14.Location = new Point(741, 238);
             label14.Name = "label14";
             label14.Size = new Size(74, 23);
             label14.TabIndex = 109;
@@ -316,7 +319,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(1396, 235);
+            label13.Location = new Point(1391, 237);
             label13.Name = "label13";
             label13.Size = new Size(46, 23);
             label13.TabIndex = 106;
@@ -328,7 +331,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(522, 150);
+            label8.Location = new Point(512, 150);
             label8.Name = "label8";
             label8.Size = new Size(54, 23);
             label8.TabIndex = 97;
@@ -353,11 +356,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(756, 148);
+            label7.Location = new Point(737, 152);
             label7.Name = "label7";
-            label7.Size = new Size(72, 23);
+            label7.Size = new Size(82, 23);
             label7.TabIndex = 96;
-            label7.Text = "التصنيف";
+            label7.Text = "نوع المنتج";
             // 
             // ClassificationBox
             // 
@@ -377,7 +380,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(1058, 152);
+            label6.Location = new Point(1050, 152);
             label6.Name = "label6";
             label6.Size = new Size(85, 23);
             label6.TabIndex = 93;
@@ -401,7 +404,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(1353, 152);
+            label5.Location = new Point(1352, 152);
             label5.Name = "label5";
             label5.Size = new Size(84, 23);
             label5.TabIndex = 91;
@@ -438,7 +441,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(300, 38);
+            label4.Location = new Point(318, 38);
             label4.Name = "label4";
             label4.Size = new Size(52, 23);
             label4.TabIndex = 90;
@@ -462,7 +465,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1144, 37);
+            label2.Location = new Point(1137, 37);
             label2.Name = "label2";
             label2.Size = new Size(93, 23);
             label2.TabIndex = 85;
@@ -486,7 +489,7 @@
             Items.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Items.BackgroundColor = Color.Snow;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Items.Columns.AddRange(new DataGridViewColumn[] { _Barcode, _Name, _Classification, _Quantity, _Color, _Size, SalePricePerOne, _Discount, Total, _notes, product_id });
+            Items.Columns.AddRange(new DataGridViewColumn[] { _Barcode, _Name, _Classification, _Quantity, _Color, _Size, SalePricePerOne, _Discount, Total, _notes, product_id, OrderID });
             Items.Location = new Point(26, 332);
             Items.Name = "Items";
             Items.RightToLeft = RightToLeft.Yes;
@@ -495,6 +498,245 @@
             Items.Size = new Size(1427, 480);
             Items.TabIndex = 84;
             Items.RowHeaderMouseClick += Items_RowHeaderMouseClick;
+            // 
+            // Printbtn
+            // 
+            Printbtn.Anchor = AnchorStyles.None;
+            Printbtn.BackColor = Color.DarkGoldenrod;
+            Printbtn.FlatStyle = FlatStyle.Flat;
+            Printbtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Printbtn.ForeColor = Color.White;
+            Printbtn.Location = new Point(49, 888);
+            Printbtn.Name = "Printbtn";
+            Printbtn.Size = new Size(131, 46);
+            Printbtn.TabIndex = 83;
+            Printbtn.Text = "طباعة";
+            Printbtn.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.None;
+            panel1.BackColor = Color.FromArgb(27, 156, 133);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(1253, 37);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(245, 59);
+            panel1.TabIndex = 82;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.DarkGoldenrod;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(798, 56);
+            button1.Name = "button1";
+            button1.Size = new Size(143, 38);
+            button1.TabIndex = 125;
+            button1.Text = "إضافة عميل ";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // _CustomerNameBox
+            // 
+            _CustomerNameBox.Anchor = AnchorStyles.None;
+            _CustomerNameBox.BackColor = Color.FromArgb(24, 30, 46);
+            _CustomerNameBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            _CustomerNameBox.ForeColor = Color.White;
+            _CustomerNameBox.Location = new Point(402, 57);
+            _CustomerNameBox.Name = "_CustomerNameBox";
+            _CustomerNameBox.RightToLeft = RightToLeft.Yes;
+            _CustomerNameBox.Size = new Size(385, 39);
+            _CustomerNameBox.TabIndex = 126;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(688, 38);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 23);
+            label3.TabIndex = 127;
+            label3.Text = "إسم العميل";
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.None;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(301, 150);
+            label9.Name = "label9";
+            label9.Size = new Size(78, 23);
+            label9.TabIndex = 128;
+            label9.Text = "سعر البيع";
+            // 
+            // SellingPrice
+            // 
+            SellingPrice.Anchor = AnchorStyles.None;
+            SellingPrice.BackColor = Color.FromArgb(24, 30, 46);
+            SellingPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SellingPrice.ForeColor = Color.White;
+            SellingPrice.Location = new Point(221, 170);
+            SellingPrice.Name = "SellingPrice";
+            SellingPrice.RightToLeft = RightToLeft.Yes;
+            SellingPrice.Size = new Size(166, 34);
+            SellingPrice.TabIndex = 129;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1396, 26);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(83, 82);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 130;
+            pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.None;
+            panel3.BackColor = Color.FromArgb(27, 156, 133);
+            panel3.Enabled = false;
+            panel3.Location = new Point(16, 316);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1448, 38);
+            panel3.TabIndex = 132;
+            // 
+            // ColorBox
+            // 
+            ColorBox.Anchor = AnchorStyles.None;
+            ColorBox.BackColor = Color.FromArgb(24, 30, 46);
+            ColorBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ColorBox.ForeColor = Color.White;
+            ColorBox.Location = new Point(1157, 257);
+            ColorBox.Name = "ColorBox";
+            ColorBox.RightToLeft = RightToLeft.Yes;
+            ColorBox.Size = new Size(287, 34);
+            ColorBox.TabIndex = 133;
+            // 
+            // Updatebtn
+            // 
+            Updatebtn.Anchor = AnchorStyles.None;
+            Updatebtn.BackColor = Color.LimeGreen;
+            Updatebtn.FlatStyle = FlatStyle.Flat;
+            Updatebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Updatebtn.ForeColor = Color.White;
+            Updatebtn.Location = new Point(47, 247);
+            Updatebtn.Name = "Updatebtn";
+            Updatebtn.Size = new Size(110, 55);
+            Updatebtn.TabIndex = 134;
+            Updatebtn.Text = "تعديل";
+            Updatebtn.UseVisualStyleBackColor = false;
+            Updatebtn.Click += Updatebtn_Click;
+            // 
+            // deletebtn
+            // 
+            deletebtn.Anchor = AnchorStyles.None;
+            deletebtn.BackColor = Color.Firebrick;
+            deletebtn.FlatStyle = FlatStyle.Flat;
+            deletebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
+            deletebtn.ForeColor = Color.White;
+            deletebtn.Location = new Point(361, 888);
+            deletebtn.Name = "deletebtn";
+            deletebtn.Size = new Size(150, 46);
+            deletebtn.TabIndex = 135;
+            deletebtn.Text = "حذف";
+            deletebtn.UseVisualStyleBackColor = false;
+            deletebtn.Click += deletebtn_Click;
+            // 
+            // _discountBox
+            // 
+            _discountBox.Anchor = AnchorStyles.None;
+            _discountBox.BackColor = Color.FromArgb(24, 30, 46);
+            _discountBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            _discountBox.ForeColor = Color.White;
+            _discountBox.Location = new Point(49, 170);
+            _discountBox.Name = "_discountBox";
+            _discountBox.RightToLeft = RightToLeft.Yes;
+            _discountBox.Size = new Size(158, 34);
+            _discountBox.TabIndex = 136;
+            _discountBox.Text = "0";
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.None;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(142, 150);
+            label10.Name = "label10";
+            label10.Size = new Size(57, 23);
+            label10.TabIndex = 137;
+            label10.Text = "الخصم";
+            // 
+            // productID
+            // 
+            productID.Anchor = AnchorStyles.None;
+            productID.BackColor = Color.FromArgb(24, 30, 46);
+            productID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            productID.ForeColor = Color.White;
+            productID.Location = new Point(947, 12);
+            productID.Name = "productID";
+            productID.RightToLeft = RightToLeft.Yes;
+            productID.Size = new Size(154, 34);
+            productID.TabIndex = 138;
+            productID.Visible = false;
+            // 
+            // Date
+            // 
+            Date.Anchor = AnchorStyles.None;
+            Date.AutoSize = true;
+            Date.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Date.ForeColor = Color.White;
+            Date.Location = new Point(1155, 896);
+            Date.Name = "Date";
+            Date.Size = new Size(153, 38);
+            Date.TabIndex = 139;
+            Date.Text = "3/11/2024";
+            // 
+            // cashierNameBox
+            // 
+            cashierNameBox.Anchor = AnchorStyles.None;
+            cashierNameBox.BackColor = Color.FromArgb(24, 30, 46);
+            cashierNameBox.Enabled = false;
+            cashierNameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cashierNameBox.ForeColor = Color.White;
+            cashierNameBox.Location = new Point(288, 838);
+            cashierNameBox.Name = "cashierNameBox";
+            cashierNameBox.RightToLeft = RightToLeft.Yes;
+            cashierNameBox.Size = new Size(266, 34);
+            cashierNameBox.TabIndex = 140;
+            // 
+            // UserIDBox
+            // 
+            UserIDBox.Anchor = AnchorStyles.None;
+            UserIDBox.BackColor = Color.FromArgb(24, 30, 46);
+            UserIDBox.Enabled = false;
+            UserIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            UserIDBox.ForeColor = Color.White;
+            UserIDBox.Location = new Point(568, 896);
+            UserIDBox.Name = "UserIDBox";
+            UserIDBox.RightToLeft = RightToLeft.Yes;
+            UserIDBox.Size = new Size(140, 34);
+            UserIDBox.TabIndex = 141;
+            UserIDBox.Visible = false;
+            // 
+            // customerIDBox
+            // 
+            customerIDBox.Anchor = AnchorStyles.None;
+            customerIDBox.BackColor = Color.FromArgb(24, 30, 46);
+            customerIDBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            customerIDBox.ForeColor = Color.White;
+            customerIDBox.Location = new Point(402, 15);
+            customerIDBox.Name = "customerIDBox";
+            customerIDBox.RightToLeft = RightToLeft.Yes;
+            customerIDBox.Size = new Size(109, 34);
+            customerIDBox.TabIndex = 142;
+            customerIDBox.Visible = false;
             // 
             // _Barcode
             // 
@@ -563,263 +805,34 @@
             product_id.Name = "product_id";
             product_id.Visible = false;
             // 
-            // Printbtn
+            // OrderID
             // 
-            Printbtn.Anchor = AnchorStyles.None;
-            Printbtn.BackColor = Color.DarkGoldenrod;
-            Printbtn.FlatStyle = FlatStyle.Flat;
-            Printbtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
-            Printbtn.ForeColor = Color.White;
-            Printbtn.Location = new Point(49, 888);
-            Printbtn.Name = "Printbtn";
-            Printbtn.Size = new Size(131, 46);
-            Printbtn.TabIndex = 83;
-            Printbtn.Text = "طباعة";
-            Printbtn.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.FromArgb(27, 156, 133);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(1253, 37);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(245, 59);
-            panel1.TabIndex = 82;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.DarkGoldenrod;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(798, 56);
-            button1.Name = "button1";
-            button1.Size = new Size(143, 38);
-            button1.TabIndex = 125;
-            button1.Text = "إضافة عميل ";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // _CustomerNameBox
-            // 
-            _CustomerNameBox.Anchor = AnchorStyles.None;
-            _CustomerNameBox.BackColor = Color.FromArgb(24, 30, 46);
-            _CustomerNameBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            _CustomerNameBox.ForeColor = Color.White;
-            _CustomerNameBox.Location = new Point(402, 57);
-            _CustomerNameBox.Name = "_CustomerNameBox";
-            _CustomerNameBox.RightToLeft = RightToLeft.Yes;
-            _CustomerNameBox.Size = new Size(385, 39);
-            _CustomerNameBox.TabIndex = 126;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(694, 38);
-            label3.Name = "label3";
-            label3.Size = new Size(90, 23);
-            label3.TabIndex = 127;
-            label3.Text = "إسم العميل";
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.None;
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(301, 150);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 23);
-            label9.TabIndex = 128;
-            label9.Text = "سعر البيع";
-            // 
-            // SelingPrice
-            // 
-            SelingPrice.Anchor = AnchorStyles.None;
-            SelingPrice.BackColor = Color.FromArgb(24, 30, 46);
-            SelingPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SelingPrice.ForeColor = Color.White;
-            SelingPrice.Location = new Point(221, 170);
-            SelingPrice.Name = "SelingPrice";
-            SelingPrice.RightToLeft = RightToLeft.Yes;
-            SelingPrice.Size = new Size(166, 34);
-            SelingPrice.TabIndex = 129;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1396, 26);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(83, 82);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 130;
-            pictureBox1.TabStop = false;
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.None;
-            panel3.BackColor = Color.FromArgb(27, 156, 133);
-            panel3.Enabled = false;
-            panel3.Location = new Point(16, 316);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1448, 38);
-            panel3.TabIndex = 132;
-            // 
-            // ColorBox
-            // 
-            ColorBox.Anchor = AnchorStyles.None;
-            ColorBox.BackColor = Color.FromArgb(24, 30, 46);
-            ColorBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ColorBox.ForeColor = Color.White;
-            ColorBox.Location = new Point(1157, 257);
-            ColorBox.Name = "ColorBox";
-            ColorBox.RightToLeft = RightToLeft.Yes;
-            ColorBox.Size = new Size(287, 34);
-            ColorBox.TabIndex = 133;
-            // 
-            // Updatebtn
-            // 
-            Updatebtn.Anchor = AnchorStyles.None;
-            Updatebtn.BackColor = Color.LimeGreen;
-            Updatebtn.FlatStyle = FlatStyle.Flat;
-            Updatebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
-            Updatebtn.ForeColor = Color.White;
-            Updatebtn.Location = new Point(47, 247);
-            Updatebtn.Name = "Updatebtn";
-            Updatebtn.Size = new Size(110, 55);
-            Updatebtn.TabIndex = 134;
-            Updatebtn.Text = "تعديل";
-            Updatebtn.UseVisualStyleBackColor = false;
-            Updatebtn.Click += Updatebtn_Click;
-            // 
-            // deletebtn
-            // 
-            deletebtn.Anchor = AnchorStyles.None;
-            deletebtn.BackColor = Color.LimeGreen;
-            deletebtn.FlatStyle = FlatStyle.Flat;
-            deletebtn.Font = new Font("Segoe UI", 12.2F, FontStyle.Bold, GraphicsUnit.Point);
-            deletebtn.ForeColor = Color.White;
-            deletebtn.Location = new Point(361, 888);
-            deletebtn.Name = "deletebtn";
-            deletebtn.Size = new Size(150, 46);
-            deletebtn.TabIndex = 135;
-            deletebtn.Text = "حذف";
-            deletebtn.UseVisualStyleBackColor = false;
-            deletebtn.Click += deletebtn_Click;
-            // 
-            // _discountBox
-            // 
-            _discountBox.Anchor = AnchorStyles.None;
-            _discountBox.BackColor = Color.FromArgb(24, 30, 46);
-            _discountBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            _discountBox.ForeColor = Color.White;
-            _discountBox.Location = new Point(49, 170);
-            _discountBox.Name = "_discountBox";
-            _discountBox.RightToLeft = RightToLeft.Yes;
-            _discountBox.Size = new Size(158, 34);
-            _discountBox.TabIndex = 136;
-            _discountBox.Text = "0";
-            // 
-            // label10
-            // 
-            label10.Anchor = AnchorStyles.None;
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(150, 150);
-            label10.Name = "label10";
-            label10.Size = new Size(57, 23);
-            label10.TabIndex = 137;
-            label10.Text = "الخصم";
-            // 
-            // productID
-            // 
-            productID.Anchor = AnchorStyles.None;
-            productID.BackColor = Color.FromArgb(24, 30, 46);
-            productID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            productID.ForeColor = Color.White;
-            productID.Location = new Point(947, 12);
-            productID.Name = "productID";
-            productID.RightToLeft = RightToLeft.Yes;
-            productID.Size = new Size(154, 34);
-            productID.TabIndex = 138;
-            productID.Visible = false;
-            // 
-            // Date
-            // 
-            Date.Anchor = AnchorStyles.None;
-            Date.AutoSize = true;
-            Date.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            Date.ForeColor = Color.White;
-            Date.Location = new Point(1199, 896);
-            Date.Name = "Date";
-            Date.Size = new Size(153, 38);
-            Date.TabIndex = 139;
-            Date.Text = "3/11/2024";
-            // 
-            // UserName
-            // 
-            UserName.Anchor = AnchorStyles.None;
-            UserName.BackColor = Color.FromArgb(24, 30, 46);
-            UserName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            UserName.ForeColor = Color.White;
-            UserName.Location = new Point(285, 841);
-            UserName.Name = "UserName";
-            UserName.RightToLeft = RightToLeft.Yes;
-            UserName.Size = new Size(266, 34);
-            UserName.TabIndex = 140;
-            // 
-            // result
-            // 
-            result.AllowUserToAddRows = false;
-            result.AllowUserToDeleteRows = false;
-            result.AllowUserToResizeColumns = false;
-            result.AllowUserToResizeRows = false;
-            result.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            result.BackgroundColor = Color.FromArgb(224, 224, 224);
-            result.BorderStyle = BorderStyle.None;
-            result.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            result.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            result.Columns.AddRange(new DataGridViewColumn[] { Name });
-            result.Location = new Point(49, 103);
-            result.Name = "result";
-            result.RowHeadersVisible = false;
-            result.RowHeadersWidth = 51;
-            result.RowTemplate.Height = 29;
-            result.Size = new Size(330, 188);
-            result.TabIndex = 141;
-            // 
-            // Name
-            // 
-            Name.DataPropertyName = "Name";
-            Name.HeaderText = "Name";
-            Name.MinimumWidth = 6;
-            Name.Name = "Name";
-            Name.ReadOnly = true;
+            OrderID.HeaderText = "رقم الفاتورة";
+            OrderID.MinimumWidth = 6;
+            OrderID.Name = "OrderID";
+            OrderID.Visible = false;
             // 
             // SaleBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 30, 46);
-            Controls.Add(result);
-            Controls.Add(UserName);
+            Controls.Add(customerIDBox);
+            Controls.Add(UserIDBox);
+            Controls.Add(label19);
+            Controls.Add(label13);
+            Controls.Add(label7);
+            Controls.Add(cashierNameBox);
             Controls.Add(Date);
             Controls.Add(productID);
             Controls.Add(label10);
             Controls.Add(_discountBox);
             Controls.Add(deletebtn);
             Controls.Add(Updatebtn);
-            Controls.Add(label13);
             Controls.Add(ColorBox);
             Controls.Add(pictureBox1);
             Controls.Add(label9);
-            Controls.Add(SelingPrice);
+            Controls.Add(SellingPrice);
             Controls.Add(label3);
             Controls.Add(_CustomerNameBox);
             Controls.Add(button1);
@@ -827,7 +840,6 @@
             Controls.Add(Savebtn);
             Controls.Add(label20);
             Controls.Add(StockBox);
-            Controls.Add(label19);
             Controls.Add(label18);
             Controls.Add(FaturaDiscountBox);
             Controls.Add(label17);
@@ -842,7 +854,6 @@
             Controls.Add(SizeBox);
             Controls.Add(label8);
             Controls.Add(QuantityBox);
-            Controls.Add(label7);
             Controls.Add(ClassificationBox);
             Controls.Add(label6);
             Controls.Add(ProductnameBox);
@@ -864,7 +875,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)result).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -874,7 +884,6 @@
         private Button Addbtn;
         private Button Savebtn;
         private Label label20;
-        private ComboBox StockBox;
         private Label label19;
         private Label label18;
         private TextBox FaturaDiscountBox;
@@ -909,7 +918,7 @@
         private TextBox _CustomerNameBox;
         private Label label3;
         private Label label9;
-        private TextBox SelingPrice;
+        private TextBox SellingPrice;
         private PictureBox pictureBox1;
         private Panel panel3;
         private TextBox ColorBox;
@@ -919,7 +928,10 @@
         private Label label10;
         private TextBox productID;
         private Label Date;
-        private TextBox UserName;
+        public TextBox cashierNameBox;
+        public ComboBox StockBox;
+        public TextBox UserIDBox;
+        private TextBox customerIDBox;
         private DataGridViewTextBoxColumn _Barcode;
         private DataGridViewTextBoxColumn _Name;
         private DataGridViewTextBoxColumn _Classification;
@@ -931,7 +943,6 @@
         private DataGridViewTextBoxColumn Total;
         private DataGridViewTextBoxColumn _notes;
         private DataGridViewTextBoxColumn product_id;
-        private DataGridView result;
-        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn OrderID;
     }
 }
