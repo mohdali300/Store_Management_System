@@ -54,7 +54,7 @@ namespace Store_System.UI.ControlPanelUi
             ClassificationBox.ValueMember = "ID";
             ClassificationBox.SelectedIndex = -1;
             ProductCodeBox.Focus();
-            Date.Text = DateTime.Now.ToString();
+            Date.Text = DateTime.Now.ToString("yyyy/dd/MM");
 
 
 
@@ -210,7 +210,7 @@ namespace Store_System.UI.ControlPanelUi
             {
                 Order order = new Order();
                 order.IsSale = true;
-                order.OrderDate = DateTime.Parse(Date.Text);
+                order.OrderDate = DateTime.ParseExact(Date.Text, "yyyy/dd/MM", CultureInfo.InvariantCulture);
                 order.user_id = int.Parse(UserIDBox.Text);
                 await buyBillService.AddOrder(order);
                 int orderId = order.ID;

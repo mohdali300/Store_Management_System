@@ -95,7 +95,7 @@ namespace Store_System.UI.ControlPanelUi
             ClassificationBox.ValueMember = "ID";
             ClassificationBox.SelectedIndex = -1;
             ProductCodeBox.Focus();
-            Date.Text = DateTime.Now.ToString();
+            Date.Text = DateTime.Now.ToString("yyyy/dd/MM");
 
         }
         private AddCustomer addCustomer;
@@ -318,8 +318,8 @@ namespace Store_System.UI.ControlPanelUi
                 }
                 _order.user_id = int.Parse(UserIDBox.Text);
                 _order.IsSale = false;
-                _order.OrderDate = DateTime.Parse(Date.Text);
-               
+                _order.OrderDate = DateTime.ParseExact(Date.Text, "yyyy/dd/MM", CultureInfo.InvariantCulture);
+
                 await _saleBillService.AddOrder(_order);
                 int orderId = _order.ID;
                 OrderItems orderItems = new OrderItems();
@@ -348,7 +348,6 @@ namespace Store_System.UI.ControlPanelUi
                     {
                         MessageBox.Show($"الفاتورة تحتوى على بيانات ناقصة يرجى ملئ جميع البيانات ومن ثم حفظها", "System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         break;
-
                     }
                 }
 

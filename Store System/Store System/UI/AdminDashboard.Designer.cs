@@ -38,8 +38,6 @@
             mainStockBtn = new Button();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
-            suppliersBtn = new Button();
-            customersBtn = new Button();
             profitLossBtn = new Button();
             expensReportBtn = new Button();
             buyReportBtn = new Button();
@@ -56,10 +54,7 @@
             panel2 = new Panel();
             logOutBtn = new Button();
             pictureBox3 = new PictureBox();
-            mainStockPage1 = new MainStockPage();
-            shortFallsPage1 = new ShortFallsPage();
             welcomePage1 = new WelcomePage();
-            returnedItems1 = new ControlPanelUi.ReturnedItems();
             shiftLock1 = new ControlPanelUi.ShiftLock();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -185,8 +180,6 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(suppliersBtn);
-            groupBox3.Controls.Add(customersBtn);
             groupBox3.Controls.Add(profitLossBtn);
             groupBox3.Controls.Add(expensReportBtn);
             groupBox3.Controls.Add(buyReportBtn);
@@ -195,36 +188,10 @@
             groupBox3.ForeColor = Color.White;
             groupBox3.Location = new Point(16, 446);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(391, 244);
+            groupBox3.Size = new Size(391, 252);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "التقارير";
-            // 
-            // suppliersBtn
-            // 
-            suppliersBtn.BackColor = Color.White;
-            suppliersBtn.FlatStyle = FlatStyle.Flat;
-            suppliersBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            suppliersBtn.ForeColor = Color.Black;
-            suppliersBtn.Location = new Point(37, 182);
-            suppliersBtn.Name = "suppliersBtn";
-            suppliersBtn.Size = new Size(321, 41);
-            suppliersBtn.TabIndex = 4;
-            suppliersBtn.Text = "موردين";
-            suppliersBtn.UseVisualStyleBackColor = false;
-            // 
-            // customersBtn
-            // 
-            customersBtn.BackColor = Color.White;
-            customersBtn.FlatStyle = FlatStyle.Flat;
-            customersBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            customersBtn.ForeColor = Color.Black;
-            customersBtn.Location = new Point(37, 130);
-            customersBtn.Name = "customersBtn";
-            customersBtn.Size = new Size(321, 41);
-            customersBtn.TabIndex = 3;
-            customersBtn.Text = "عملاء";
-            customersBtn.UseVisualStyleBackColor = false;
             // 
             // profitLossBtn
             // 
@@ -232,9 +199,9 @@
             profitLossBtn.FlatStyle = FlatStyle.Flat;
             profitLossBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             profitLossBtn.ForeColor = Color.Black;
-            profitLossBtn.Location = new Point(36, 78);
+            profitLossBtn.Location = new Point(39, 193);
             profitLossBtn.Name = "profitLossBtn";
-            profitLossBtn.Size = new Size(143, 41);
+            profitLossBtn.Size = new Size(318, 41);
             profitLossBtn.TabIndex = 4;
             profitLossBtn.Text = " ربح وخسارة";
             profitLossBtn.UseVisualStyleBackColor = false;
@@ -245,9 +212,9 @@
             expensReportBtn.FlatStyle = FlatStyle.Flat;
             expensReportBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             expensReportBtn.ForeColor = Color.Black;
-            expensReportBtn.Location = new Point(206, 78);
+            expensReportBtn.Location = new Point(39, 141);
             expensReportBtn.Name = "expensReportBtn";
-            expensReportBtn.Size = new Size(152, 41);
+            expensReportBtn.Size = new Size(318, 41);
             expensReportBtn.TabIndex = 3;
             expensReportBtn.Text = "تقرير مصروفات";
             expensReportBtn.UseVisualStyleBackColor = false;
@@ -258,12 +225,13 @@
             buyReportBtn.FlatStyle = FlatStyle.Flat;
             buyReportBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             buyReportBtn.ForeColor = Color.Black;
-            buyReportBtn.Location = new Point(36, 26);
+            buyReportBtn.Location = new Point(39, 92);
             buyReportBtn.Name = "buyReportBtn";
-            buyReportBtn.Size = new Size(143, 41);
+            buyReportBtn.Size = new Size(318, 41);
             buyReportBtn.TabIndex = 2;
             buyReportBtn.Text = "تقرير مشتريات";
             buyReportBtn.UseVisualStyleBackColor = false;
+            buyReportBtn.Click += buyReportBtn_Click;
             // 
             // saleReportBtn
             // 
@@ -271,12 +239,13 @@
             saleReportBtn.FlatStyle = FlatStyle.Flat;
             saleReportBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             saleReportBtn.ForeColor = Color.Black;
-            saleReportBtn.Location = new Point(207, 26);
+            saleReportBtn.Location = new Point(39, 43);
             saleReportBtn.Name = "saleReportBtn";
-            saleReportBtn.Size = new Size(152, 41);
+            saleReportBtn.Size = new Size(318, 41);
             saleReportBtn.TabIndex = 1;
             saleReportBtn.Text = "تقرير مبيعات";
             saleReportBtn.UseVisualStyleBackColor = false;
+            saleReportBtn.Click += saleReportBtn_Click;
             // 
             // addSupplierBtn
             // 
@@ -439,24 +408,6 @@
             pictureBox3.TabIndex = 10;
             pictureBox3.TabStop = false;
             // 
-            // mainStockPage1
-            // 
-            mainStockPage1.BackColor = Color.FromArgb(24, 30, 46);
-            mainStockPage1.Location = new Point(-5, 51);
-            mainStockPage1.MinimumSize = new Size(1496, 949);
-            mainStockPage1.Name = "mainStockPage1";
-            mainStockPage1.Size = new Size(1496, 949);
-            mainStockPage1.TabIndex = 11;
-            // 
-            // shortFallsPage1
-            // 
-            shortFallsPage1.BackColor = Color.FromArgb(24, 30, 46);
-            shortFallsPage1.Location = new Point(-5, 54);
-            shortFallsPage1.MinimumSize = new Size(1496, 949);
-            shortFallsPage1.Name = "shortFallsPage1";
-            shortFallsPage1.Size = new Size(1496, 949);
-            shortFallsPage1.TabIndex = 12;
-            // 
             // welcomePage1
             // 
             welcomePage1.BackColor = Color.FromArgb(24, 30, 46);
@@ -465,15 +416,6 @@
             welcomePage1.Name = "welcomePage1";
             welcomePage1.Size = new Size(1496, 949);
             welcomePage1.TabIndex = 13;
-            // 
-            // returnedItems1
-            // 
-            returnedItems1.BackColor = Color.FromArgb(24, 30, 46);
-            returnedItems1.Location = new Point(-5, 50);
-            returnedItems1.MinimumSize = new Size(1496, 949);
-            returnedItems1.Name = "returnedItems1";
-            returnedItems1.Size = new Size(1496, 949);
-            returnedItems1.TabIndex = 16;
             // 
             // shiftLock1
             // 
@@ -493,10 +435,7 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(shiftLock1);
-            Controls.Add(returnedItems1);
             Controls.Add(welcomePage1);
-            Controls.Add(shortFallsPage1);
-            Controls.Add(mainStockPage1);
             MinimumSize = new Size(1918, 1028);
             Name = "AdminDashboard";
             StartPosition = FormStartPosition.CenterScreen;
@@ -530,8 +469,6 @@
         private Button expensReportBtn;
         private Button buyReportBtn;
         private Button saleReportBtn;
-        private Button suppliersBtn;
-        private Button customersBtn;
         private Button addSupplierBtn;
         private Button addProductBtn;
         private Button addCategoryBtn;

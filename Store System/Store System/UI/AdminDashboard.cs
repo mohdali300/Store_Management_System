@@ -1,5 +1,6 @@
 ﻿using Store_System.Models;
 using Store_System.Services;
+using Store_System.UI.UiReportsUserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,8 @@ namespace Store_System.UI
         public int UserID { get; set; }
 
         UserServices _userServices;
-
+        SaleingReports saleingReports;
+        BuyReports buyReports;
         public AdminDashboard()
         {
             InitializeComponent();
@@ -37,6 +39,8 @@ namespace Store_System.UI
                 returnedItems1 = new ControlPanelUi.ReturnedItems();
                 shiftLock1 = new ControlPanelUi.ShiftLock();
                 addCategoryPage1 = new AddCategoryPage();
+                saleingReports = new SaleingReports();
+                buyReports=new BuyReports();
                 Controls.Add(addUserPage1);
                 Controls.Add(addProductPage1);
                 Controls.Add(addSupplierPage1);
@@ -47,6 +51,8 @@ namespace Store_System.UI
                 Controls.Add(returnedItems1);
                 Controls.Add(shiftLock1);
                 Controls.Add(addCategoryPage1);
+                Controls.Add(saleingReports);
+                Controls.Add(buyReports);
 
                 saleBill1.Location = new System.Drawing.Point(-5, 50);
                 buyBill1.Location = new System.Drawing.Point(-5, 50);
@@ -58,7 +64,8 @@ namespace Store_System.UI
                 mainStockPage1.Location = new System.Drawing.Point(-5, 50);
                 shortFallsPage1.Location = new System.Drawing.Point(-5, 50);
                 returnedItems1.Location = new System.Drawing.Point(-5, 50);
-
+                saleingReports.Location = new System.Drawing.Point(-5, 50);
+                buyReports.Location= new System.Drawing.Point(-5, 50);
 
 
             }
@@ -93,8 +100,8 @@ namespace Store_System.UI
             returnedItems1.Visible = false;
             shiftLock1.Visible = false;
 
-            buyBill1.cashierNameBox.Text= CashierName;
-            buyBill1.UserIDBox.Text=UserID.ToString();
+            buyBill1.cashierNameBox.Text = CashierName;
+            buyBill1.UserIDBox.Text = UserID.ToString();
             saleBill1.cashierNameBox.Text = CashierName;
             saleBill1.StockBox.Text = StockMoneyName;
             saleBill1.UserIDBox.Text = UserID.ToString();
@@ -175,6 +182,14 @@ namespace Store_System.UI
             shiftLock1.BringToFront();
         }
 
+        private void saleReportBtn_Click(object sender, EventArgs e)
+        {
+            saleingReports.BringToFront();
+        }
 
+        private void buyReportBtn_Click(object sender, EventArgs e)
+        {
+            buyReports.BringToFront();
+        }
     }
 }
