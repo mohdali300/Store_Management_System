@@ -17,7 +17,7 @@ namespace Store_System.UI
     {
         Login Login;
 
-        AdminDashboard home;
+        Dashboard home;
         SaleBill _saleBill;
         BuyBill _buyBill;
 
@@ -28,9 +28,9 @@ namespace Store_System.UI
         {
             InitializeComponent();
             Login = new Login();
-            home = new AdminDashboard();
+            home = new Dashboard();
             _saleBill = new SaleBill();
-            _buyBill=new BuyBill();
+            _buyBill = new BuyBill();
         }
 
         private async void SignInBtn_Click(object sender, EventArgs e)

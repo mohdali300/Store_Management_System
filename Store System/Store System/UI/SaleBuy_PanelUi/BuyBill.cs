@@ -21,7 +21,6 @@ namespace Store_System.UI.ControlPanelUi
         ProductService productService;
         Order order;
         SupplierService _supplierService;
-        AdminDashboard adminDashboard;
         ProductsSuppliers _productsSuppliers;
         SuppliersProductsService _suppliersProductsService;
 
@@ -328,9 +327,5 @@ namespace Store_System.UI.ControlPanelUi
             }
         }
 
-        private void AfterDiscount_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
