@@ -91,8 +91,6 @@ namespace Store_System.Services
             }
 
         }
-
-
         public async Task<List<Product>> Search(string Name)
         {
             if (Name != "") { 
